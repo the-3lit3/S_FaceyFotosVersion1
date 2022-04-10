@@ -195,7 +195,7 @@
             this.tbLocation.Multiline = true;
             this.tbLocation.Name = "tbLocation";
             this.tbLocation.Size = new System.Drawing.Size(146, 22);
-            this.tbLocation.TabIndex = 8;
+            this.tbLocation.TabIndex = 15;
             // 
             // lblLocation
             // 
@@ -213,7 +213,7 @@
             this.cmbPackageSelect.Location = new System.Drawing.Point(155, 28);
             this.cmbPackageSelect.Name = "cmbPackageSelect";
             this.cmbPackageSelect.Size = new System.Drawing.Size(146, 25);
-            this.cmbPackageSelect.TabIndex = 6;
+            this.cmbPackageSelect.TabIndex = 12;
             // 
             // lblPkg
             // 
@@ -245,7 +245,7 @@
             this.cmbShootTime.Location = new System.Drawing.Point(155, 98);
             this.cmbShootTime.Name = "cmbShootTime";
             this.cmbShootTime.Size = new System.Drawing.Size(146, 25);
-            this.cmbShootTime.TabIndex = 4;
+            this.cmbShootTime.TabIndex = 14;
             // 
             // lblShootTime
             // 
@@ -271,7 +271,7 @@
             this.dtShootDate.Location = new System.Drawing.Point(155, 63);
             this.dtShootDate.Name = "dtShootDate";
             this.dtShootDate.Size = new System.Drawing.Size(146, 25);
-            this.dtShootDate.TabIndex = 0;
+            this.dtShootDate.TabIndex = 13;
             // 
             // groupBox3
             // 
@@ -297,7 +297,7 @@
             this.maskedTextBox1.Mask = "_ _ / _ _";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(111, 25);
-            this.maskedTextBox1.TabIndex = 7;
+            this.maskedTextBox1.TabIndex = 11;
             // 
             // label2
             // 
@@ -313,7 +313,7 @@
             this.textBox1.Location = new System.Drawing.Point(281, 53);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(67, 25);
-            this.textBox1.TabIndex = 5;
+            this.textBox1.TabIndex = 10;
             // 
             // lblCsv
             // 
@@ -334,7 +334,7 @@
             this.cmbCardType.Location = new System.Drawing.Point(119, 53);
             this.cmbCardType.Name = "cmbCardType";
             this.cmbCardType.Size = new System.Drawing.Size(111, 25);
-            this.cmbCardType.TabIndex = 3;
+            this.cmbCardType.TabIndex = 9;
             // 
             // lblCardType
             // 
@@ -350,7 +350,7 @@
             this.tbCardNumber.Location = new System.Drawing.Point(119, 22);
             this.tbCardNumber.Name = "tbCardNumber";
             this.tbCardNumber.Size = new System.Drawing.Size(229, 25);
-            this.tbCardNumber.TabIndex = 1;
+            this.tbCardNumber.TabIndex = 8;
             // 
             // label1
             // 
@@ -468,7 +468,7 @@
             this.btnBookNow.Location = new System.Drawing.Point(625, 449);
             this.btnBookNow.Name = "btnBookNow";
             this.btnBookNow.Size = new System.Drawing.Size(117, 27);
-            this.btnBookNow.TabIndex = 5;
+            this.btnBookNow.TabIndex = 16;
             this.btnBookNow.Text = "BOOK NOW";
             this.btnBookNow.UseVisualStyleBackColor = false;
             this.btnBookNow.Click += new System.EventHandler(this.btnBookNow_Click);

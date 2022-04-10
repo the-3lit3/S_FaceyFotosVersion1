@@ -12,20 +12,17 @@ namespace S_FaceyFotosVersion1
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_cardType
+    public partial class tb_shootTime
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_cardType()
+        public tb_shootTime()
         {
-            this.tb_userRegistration = new HashSet<tb_userRegistration>();
             this.tb_personalData2 = new HashSet<tb_personalData2>();
         }
     
         public int Id { get; set; }
-        public string Card_Type { get; set; }
+        public string Shoot_Time { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_userRegistration> tb_userRegistration { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_personalData2> tb_personalData2 { get; set; }
     }

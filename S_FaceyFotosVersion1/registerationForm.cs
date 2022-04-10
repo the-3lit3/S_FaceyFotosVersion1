@@ -12,11 +12,11 @@ namespace S_FaceyFotosVersion1
 {
     public partial class frmRegisterationForm : Form
     {
-        private readonly db_sfaceyFotos2Entities1 db_entity; 
+        private readonly db_sfaceyFotos2Entities2 db_entity; 
         public frmRegisterationForm()
         {
             InitializeComponent();
-              db_entity = new db_sfaceyFotos2Entities1();
+              db_entity = new db_sfaceyFotos2Entities2();
             
         }
 
@@ -29,10 +29,17 @@ namespace S_FaceyFotosVersion1
 
         private void frmRegisterationForm_Load(object sender, EventArgs e)
         {
-            var cardType = db_entity.tb_cardType.ToList();
-            cmbCardType.DisplayMember = "Card_Type";
-            cmbCardType.ValueMember = "Id";
-            cmbCardType.DataSource = cardType;
+            try
+            {
+                var cardType = db_entity.tb_cardType.ToList();
+                cmbCardType.DisplayMember = "Card_Type";
+                cmbCardType.ValueMember = "Id";
+                cmbCardType.DataSource = cardType;
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
 
         }
     }

@@ -12,28 +12,21 @@ namespace S_FaceyFotosVersion1
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_personalData2
+    public partial class tb_userRegistration
     {
         public int Id { get; set; }
-        public string Client_ID { get; set; }
+        public string UserID { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public string Email_Address { get; set; }
         public string Telephone { get; set; }
+        public string Username { get; set; }
+        public string Pass { get; set; }
         public string Card_Number { get; set; }
         public int Card_TypeID { get; set; }
         public int CSV_Number { get; set; }
         public System.DateTime Expiration_Date { get; set; }
-        public int Package_TypeID { get; set; }
-        public System.DateTime Shoot_Date { get; set; }
-        public int Shoot_TimeID { get; set; }
-        public string Shoot_Location { get; set; }
-        public decimal Unit_Cost { get; set; }
-        public decimal Deposit { get; set; }
-        public decimal Total { get; set; }
     
         public virtual tb_cardType tb_cardType { get; set; }
-        public virtual tb_packageType tb_packageType { get; set; }
-        public virtual tb_shootTime tb_shootTime { get; set; }
     }
 }

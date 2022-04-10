@@ -22,8 +22,18 @@ namespace S_FaceyFotosVersion1
 
         private void btnRegisterSubmit_Click(object sender, EventArgs e)
         {
-            
+            frmLoginForm launchLogin = new frmLoginForm();
+            launchLogin.Show();
+            this.Hide();
         }
-        
+
+        private void frmRegisterationForm_Load(object sender, EventArgs e)
+        {
+            var cardType = db_entity.tb_cardType.ToList();
+            cmbCardType.DisplayMember = "Card_Type";
+            cmbCardType.ValueMember = "Id";
+            cmbCardType.DataSource = cardType;
+
+        }
     }
 }

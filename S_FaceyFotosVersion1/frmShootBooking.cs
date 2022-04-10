@@ -12,9 +12,13 @@ namespace S_FaceyFotosVersion1
 {
     public partial class frmShootBooking : Form
     {
+        private readonly db_sfaceyFotos2Entities1 db_entity;
         public frmShootBooking()
         {
             InitializeComponent();
+            db_entity = new db_sfaceyFotos2Entities1();
+
+
         }
 
         private void btnBookNow_Click(object sender, EventArgs e)
@@ -27,6 +31,14 @@ namespace S_FaceyFotosVersion1
             frmLoginForm launchLogin = new frmLoginForm();
             launchLogin.Show();
             this.Hide();
+        }
+
+        private void frmShootBooking_Load(object sender, EventArgs e)
+        {
+            var cardType = db_entity.tb_cardType.ToList();
+            cmbCardType.DisplayMember = "Card_Type";
+            cmbCardType.ValueMember = "Id";
+            cmbCardType.DataSource = cardType;
         }
     }
 }

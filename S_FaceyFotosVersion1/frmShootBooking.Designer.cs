@@ -30,42 +30,42 @@
         {
             this.lblRegistrationForm = new System.Windows.Forms.Label();
             this.gpPersonal = new System.Windows.Forms.GroupBox();
-            this.gpShoot = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.gpBank = new System.Windows.Forms.GroupBox();
-            this.lblFname = new System.Windows.Forms.Label();
-            this.tbFname = new System.Windows.Forms.TextBox();
-            this.tbLname = new System.Windows.Forms.TextBox();
-            this.lbl_Lname = new System.Windows.Forms.Label();
+            this.mtbTelephone = new System.Windows.Forms.MaskedTextBox();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.tbEmailAdd = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.mtbTelephone = new System.Windows.Forms.MaskedTextBox();
-            this.dtShootDate = new System.Windows.Forms.DateTimePicker();
-            this.lblShootDate = new System.Windows.Forms.Label();
-            this.lblShootTime = new System.Windows.Forms.Label();
-            this.cmbShootTime = new System.Windows.Forms.ComboBox();
-            this.lblPkg = new System.Windows.Forms.Label();
-            this.cmbPackageSelect = new System.Windows.Forms.ComboBox();
-            this.lblLocation = new System.Windows.Forms.Label();
+            this.tbLname = new System.Windows.Forms.TextBox();
+            this.lbl_Lname = new System.Windows.Forms.Label();
+            this.tbFname = new System.Windows.Forms.TextBox();
+            this.lblFname = new System.Windows.Forms.Label();
+            this.gpShoot = new System.Windows.Forms.GroupBox();
             this.tbLocation = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbCardNumber = new System.Windows.Forms.TextBox();
-            this.lblCardType = new System.Windows.Forms.Label();
-            this.cmbCardType = new System.Windows.Forms.ComboBox();
-            this.lblCsv = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.cmbPackageSelect = new System.Windows.Forms.ComboBox();
+            this.lblPkg = new System.Windows.Forms.Label();
+            this.cmbShootTime = new System.Windows.Forms.ComboBox();
+            this.lblShootTime = new System.Windows.Forms.Label();
+            this.lblShootDate = new System.Windows.Forms.Label();
+            this.dtShootDate = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.lblUnitCost = new System.Windows.Forms.Label();
-            this.lblUnitCostDisplay = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblDeposit = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblCsv = new System.Windows.Forms.Label();
+            this.cmbCardType = new System.Windows.Forms.ComboBox();
+            this.lblCardType = new System.Windows.Forms.Label();
+            this.tbCardNumber = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gpBank = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblTotalCost = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblDeposit = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblUnitCostDisplay = new System.Windows.Forms.Label();
+            this.lblUnitCost = new System.Windows.Forms.Label();
             this.btnBookNow = new System.Windows.Forms.Button();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
             this.gpPersonal.SuspendLayout();
@@ -102,94 +102,23 @@
             this.gpPersonal.TabStop = false;
             this.gpPersonal.Text = "Personal Information";
             // 
-            // gpShoot
+            // mtbTelephone
             // 
-            this.gpShoot.Controls.Add(this.tbLocation);
-            this.gpShoot.Controls.Add(this.lblLocation);
-            this.gpShoot.Controls.Add(this.cmbPackageSelect);
-            this.gpShoot.Controls.Add(this.lblPkg);
-            this.gpShoot.Controls.Add(this.cmbShootTime);
-            this.gpShoot.Controls.Add(this.lblShootTime);
-            this.gpShoot.Controls.Add(this.lblShootDate);
-            this.gpShoot.Controls.Add(this.dtShootDate);
-            this.gpShoot.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpShoot.Location = new System.Drawing.Point(423, 100);
-            this.gpShoot.Name = "gpShoot";
-            this.gpShoot.Size = new System.Drawing.Size(319, 196);
-            this.gpShoot.TabIndex = 4;
-            this.gpShoot.TabStop = false;
-            this.gpShoot.Text = "Package Details";
+            this.mtbTelephone.Location = new System.Drawing.Point(173, 129);
+            this.mtbTelephone.Mask = "(999) 000-0000";
+            this.mtbTelephone.Name = "mtbTelephone";
+            this.mtbTelephone.Size = new System.Drawing.Size(175, 25);
+            this.mtbTelephone.TabIndex = 7;
             // 
-            // groupBox3
+            // lblPhone
             // 
-            this.groupBox3.Controls.Add(this.maskedTextBox1);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.lblCsv);
-            this.groupBox3.Controls.Add(this.cmbCardType);
-            this.groupBox3.Controls.Add(this.lblCardType);
-            this.groupBox3.Controls.Add(this.tbCardNumber);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(52, 302);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(365, 124);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Banking Information";
-            // 
-            // gpBank
-            // 
-            this.gpBank.Controls.Add(this.label7);
-            this.gpBank.Controls.Add(this.lblTotalCost);
-            this.gpBank.Controls.Add(this.label9);
-            this.gpBank.Controls.Add(this.label4);
-            this.gpBank.Controls.Add(this.lblDeposit);
-            this.gpBank.Controls.Add(this.label6);
-            this.gpBank.Controls.Add(this.label3);
-            this.gpBank.Controls.Add(this.lblUnitCostDisplay);
-            this.gpBank.Controls.Add(this.lblUnitCost);
-            this.gpBank.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpBank.Location = new System.Drawing.Point(423, 301);
-            this.gpBank.Name = "gpBank";
-            this.gpBank.Size = new System.Drawing.Size(319, 125);
-            this.gpBank.TabIndex = 4;
-            this.gpBank.TabStop = false;
-            this.gpBank.Text = "Package Cost";
-            // 
-            // lblFname
-            // 
-            this.lblFname.AutoSize = true;
-            this.lblFname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFname.Location = new System.Drawing.Point(20, 36);
-            this.lblFname.Name = "lblFname";
-            this.lblFname.Size = new System.Drawing.Size(98, 17);
-            this.lblFname.TabIndex = 0;
-            this.lblFname.Text = "FIRST NAME";
-            // 
-            // tbFname
-            // 
-            this.tbFname.Location = new System.Drawing.Point(173, 36);
-            this.tbFname.Name = "tbFname";
-            this.tbFname.Size = new System.Drawing.Size(175, 25);
-            this.tbFname.TabIndex = 1;
-            // 
-            // tbLname
-            // 
-            this.tbLname.Location = new System.Drawing.Point(173, 67);
-            this.tbLname.Name = "tbLname";
-            this.tbLname.Size = new System.Drawing.Size(175, 25);
-            this.tbLname.TabIndex = 3;
-            // 
-            // lbl_Lname
-            // 
-            this.lbl_Lname.AutoSize = true;
-            this.lbl_Lname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Lname.Location = new System.Drawing.Point(20, 67);
-            this.lbl_Lname.Name = "lbl_Lname";
-            this.lbl_Lname.Size = new System.Drawing.Size(95, 17);
-            this.lbl_Lname.TabIndex = 2;
-            this.lbl_Lname.Text = "LAST NAME";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(20, 129);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(59, 17);
+            this.lblPhone.TabIndex = 6;
+            this.lblPhone.Text = "PHONE";
             // 
             // tbEmailAdd
             // 
@@ -208,49 +137,92 @@
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "EMAIL";
             // 
-            // lblPhone
+            // tbLname
             // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(20, 129);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(59, 17);
-            this.lblPhone.TabIndex = 6;
-            this.lblPhone.Text = "PHONE";
+            this.tbLname.Location = new System.Drawing.Point(173, 67);
+            this.tbLname.Name = "tbLname";
+            this.tbLname.Size = new System.Drawing.Size(175, 25);
+            this.tbLname.TabIndex = 3;
             // 
-            // mtbTelephone
+            // lbl_Lname
             // 
-            this.mtbTelephone.Location = new System.Drawing.Point(173, 129);
-            this.mtbTelephone.Mask = "(999) 000-0000";
-            this.mtbTelephone.Name = "mtbTelephone";
-            this.mtbTelephone.Size = new System.Drawing.Size(175, 25);
-            this.mtbTelephone.TabIndex = 7;
+            this.lbl_Lname.AutoSize = true;
+            this.lbl_Lname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Lname.Location = new System.Drawing.Point(20, 67);
+            this.lbl_Lname.Name = "lbl_Lname";
+            this.lbl_Lname.Size = new System.Drawing.Size(95, 17);
+            this.lbl_Lname.TabIndex = 2;
+            this.lbl_Lname.Text = "LAST NAME";
             // 
-            // dtShootDate
+            // tbFname
             // 
-            this.dtShootDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtShootDate.Location = new System.Drawing.Point(155, 63);
-            this.dtShootDate.Name = "dtShootDate";
-            this.dtShootDate.Size = new System.Drawing.Size(146, 25);
-            this.dtShootDate.TabIndex = 0;
+            this.tbFname.Location = new System.Drawing.Point(173, 36);
+            this.tbFname.Name = "tbFname";
+            this.tbFname.Size = new System.Drawing.Size(175, 25);
+            this.tbFname.TabIndex = 1;
             // 
-            // lblShootDate
+            // lblFname
             // 
-            this.lblShootDate.AutoSize = true;
-            this.lblShootDate.Location = new System.Drawing.Point(23, 71);
-            this.lblShootDate.Name = "lblShootDate";
-            this.lblShootDate.Size = new System.Drawing.Size(94, 17);
-            this.lblShootDate.TabIndex = 1;
-            this.lblShootDate.Text = "Shoot Date";
+            this.lblFname.AutoSize = true;
+            this.lblFname.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFname.Location = new System.Drawing.Point(20, 36);
+            this.lblFname.Name = "lblFname";
+            this.lblFname.Size = new System.Drawing.Size(98, 17);
+            this.lblFname.TabIndex = 0;
+            this.lblFname.Text = "FIRST NAME";
             // 
-            // lblShootTime
+            // gpShoot
             // 
-            this.lblShootTime.AutoSize = true;
-            this.lblShootTime.Location = new System.Drawing.Point(23, 98);
-            this.lblShootTime.Name = "lblShootTime";
-            this.lblShootTime.Size = new System.Drawing.Size(98, 17);
-            this.lblShootTime.TabIndex = 3;
-            this.lblShootTime.Text = "Shoot Time";
+            this.gpShoot.Controls.Add(this.tbLocation);
+            this.gpShoot.Controls.Add(this.lblLocation);
+            this.gpShoot.Controls.Add(this.cmbPackageSelect);
+            this.gpShoot.Controls.Add(this.lblPkg);
+            this.gpShoot.Controls.Add(this.cmbShootTime);
+            this.gpShoot.Controls.Add(this.lblShootTime);
+            this.gpShoot.Controls.Add(this.lblShootDate);
+            this.gpShoot.Controls.Add(this.dtShootDate);
+            this.gpShoot.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpShoot.Location = new System.Drawing.Point(423, 100);
+            this.gpShoot.Name = "gpShoot";
+            this.gpShoot.Size = new System.Drawing.Size(319, 196);
+            this.gpShoot.TabIndex = 4;
+            this.gpShoot.TabStop = false;
+            this.gpShoot.Text = "Package Details";
+            // 
+            // tbLocation
+            // 
+            this.tbLocation.Location = new System.Drawing.Point(155, 129);
+            this.tbLocation.Multiline = true;
+            this.tbLocation.Name = "tbLocation";
+            this.tbLocation.Size = new System.Drawing.Size(146, 22);
+            this.tbLocation.TabIndex = 8;
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(23, 129);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(76, 17);
+            this.lblLocation.TabIndex = 7;
+            this.lblLocation.Text = "Location";
+            // 
+            // cmbPackageSelect
+            // 
+            this.cmbPackageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPackageSelect.FormattingEnabled = true;
+            this.cmbPackageSelect.Location = new System.Drawing.Point(155, 28);
+            this.cmbPackageSelect.Name = "cmbPackageSelect";
+            this.cmbPackageSelect.Size = new System.Drawing.Size(146, 25);
+            this.cmbPackageSelect.TabIndex = 6;
+            // 
+            // lblPkg
+            // 
+            this.lblPkg.AutoSize = true;
+            this.lblPkg.Location = new System.Drawing.Point(23, 36);
+            this.lblPkg.Name = "lblPkg";
+            this.lblPkg.Size = new System.Drawing.Size(73, 17);
+            this.lblPkg.TabIndex = 5;
+            this.lblPkg.Text = "Package";
             // 
             // cmbShootTime
             // 
@@ -275,69 +247,82 @@
             this.cmbShootTime.Size = new System.Drawing.Size(146, 25);
             this.cmbShootTime.TabIndex = 4;
             // 
-            // lblPkg
+            // lblShootTime
             // 
-            this.lblPkg.AutoSize = true;
-            this.lblPkg.Location = new System.Drawing.Point(23, 36);
-            this.lblPkg.Name = "lblPkg";
-            this.lblPkg.Size = new System.Drawing.Size(73, 17);
-            this.lblPkg.TabIndex = 5;
-            this.lblPkg.Text = "Package";
+            this.lblShootTime.AutoSize = true;
+            this.lblShootTime.Location = new System.Drawing.Point(23, 98);
+            this.lblShootTime.Name = "lblShootTime";
+            this.lblShootTime.Size = new System.Drawing.Size(98, 17);
+            this.lblShootTime.TabIndex = 3;
+            this.lblShootTime.Text = "Shoot Time";
             // 
-            // cmbPackageSelect
+            // lblShootDate
             // 
-            this.cmbPackageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPackageSelect.FormattingEnabled = true;
-            this.cmbPackageSelect.Items.AddRange(new object[] {
-            "BUDGET",
-            "VALUE PACK",
-            "DELUXE"});
-            this.cmbPackageSelect.Location = new System.Drawing.Point(155, 28);
-            this.cmbPackageSelect.Name = "cmbPackageSelect";
-            this.cmbPackageSelect.Size = new System.Drawing.Size(146, 25);
-            this.cmbPackageSelect.TabIndex = 6;
+            this.lblShootDate.AutoSize = true;
+            this.lblShootDate.Location = new System.Drawing.Point(23, 71);
+            this.lblShootDate.Name = "lblShootDate";
+            this.lblShootDate.Size = new System.Drawing.Size(94, 17);
+            this.lblShootDate.TabIndex = 1;
+            this.lblShootDate.Text = "Shoot Date";
             // 
-            // lblLocation
+            // dtShootDate
             // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(23, 129);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(76, 17);
-            this.lblLocation.TabIndex = 7;
-            this.lblLocation.Text = "Location";
+            this.dtShootDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtShootDate.Location = new System.Drawing.Point(155, 63);
+            this.dtShootDate.Name = "dtShootDate";
+            this.dtShootDate.Size = new System.Drawing.Size(146, 25);
+            this.dtShootDate.TabIndex = 0;
             // 
-            // tbLocation
+            // groupBox3
             // 
-            this.tbLocation.Location = new System.Drawing.Point(155, 129);
-            this.tbLocation.Multiline = true;
-            this.tbLocation.Name = "tbLocation";
-            this.tbLocation.Size = new System.Drawing.Size(146, 22);
-            this.tbLocation.TabIndex = 8;
+            this.groupBox3.Controls.Add(this.maskedTextBox1);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.lblCsv);
+            this.groupBox3.Controls.Add(this.cmbCardType);
+            this.groupBox3.Controls.Add(this.lblCardType);
+            this.groupBox3.Controls.Add(this.tbCardNumber);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(52, 302);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(365, 124);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Banking Information";
             // 
-            // label1
+            // maskedTextBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Card #";
+            this.maskedTextBox1.Location = new System.Drawing.Point(119, 84);
+            this.maskedTextBox1.Mask = "_ _ / _ _";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(111, 25);
+            this.maskedTextBox1.TabIndex = 7;
             // 
-            // tbCardNumber
+            // label2
             // 
-            this.tbCardNumber.Location = new System.Drawing.Point(119, 22);
-            this.tbCardNumber.Name = "tbCardNumber";
-            this.tbCardNumber.Size = new System.Drawing.Size(229, 25);
-            this.tbCardNumber.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Expiry Date";
             // 
-            // lblCardType
+            // textBox1
             // 
-            this.lblCardType.AutoSize = true;
-            this.lblCardType.Location = new System.Drawing.Point(6, 51);
-            this.lblCardType.Name = "lblCardType";
-            this.lblCardType.Size = new System.Drawing.Size(89, 17);
-            this.lblCardType.TabIndex = 2;
-            this.lblCardType.Text = "Card Type";
+            this.textBox1.Location = new System.Drawing.Point(281, 53);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(67, 25);
+            this.textBox1.TabIndex = 5;
+            // 
+            // lblCsv
+            // 
+            this.lblCsv.AutoSize = true;
+            this.lblCsv.Location = new System.Drawing.Point(236, 58);
+            this.lblCsv.Name = "lblCsv";
+            this.lblCsv.Size = new System.Drawing.Size(39, 17);
+            this.lblCsv.TabIndex = 4;
+            this.lblCsv.Text = "CSV";
             // 
             // cmbCardType
             // 
@@ -351,65 +336,76 @@
             this.cmbCardType.Size = new System.Drawing.Size(111, 25);
             this.cmbCardType.TabIndex = 3;
             // 
-            // lblCsv
+            // lblCardType
             // 
-            this.lblCsv.AutoSize = true;
-            this.lblCsv.Location = new System.Drawing.Point(236, 58);
-            this.lblCsv.Name = "lblCsv";
-            this.lblCsv.Size = new System.Drawing.Size(39, 17);
-            this.lblCsv.TabIndex = 4;
-            this.lblCsv.Text = "CSV";
+            this.lblCardType.AutoSize = true;
+            this.lblCardType.Location = new System.Drawing.Point(6, 51);
+            this.lblCardType.Name = "lblCardType";
+            this.lblCardType.Size = new System.Drawing.Size(89, 17);
+            this.lblCardType.TabIndex = 2;
+            this.lblCardType.Text = "Card Type";
             // 
-            // textBox1
+            // tbCardNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(281, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(67, 25);
-            this.textBox1.TabIndex = 5;
+            this.tbCardNumber.Location = new System.Drawing.Point(119, 22);
+            this.tbCardNumber.Name = "tbCardNumber";
+            this.tbCardNumber.Size = new System.Drawing.Size(229, 25);
+            this.tbCardNumber.TabIndex = 1;
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Expiry Date";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Card #";
             // 
-            // maskedTextBox1
+            // gpBank
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(119, 84);
-            this.maskedTextBox1.Mask = "_ _ / _ _";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(111, 25);
-            this.maskedTextBox1.TabIndex = 7;
+            this.gpBank.Controls.Add(this.label7);
+            this.gpBank.Controls.Add(this.lblTotalCost);
+            this.gpBank.Controls.Add(this.label9);
+            this.gpBank.Controls.Add(this.label4);
+            this.gpBank.Controls.Add(this.lblDeposit);
+            this.gpBank.Controls.Add(this.label6);
+            this.gpBank.Controls.Add(this.label3);
+            this.gpBank.Controls.Add(this.lblUnitCostDisplay);
+            this.gpBank.Controls.Add(this.lblUnitCost);
+            this.gpBank.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpBank.Location = new System.Drawing.Point(423, 301);
+            this.gpBank.Name = "gpBank";
+            this.gpBank.Size = new System.Drawing.Size(319, 125);
+            this.gpBank.TabIndex = 4;
+            this.gpBank.TabStop = false;
+            this.gpBank.Text = "Package Cost";
             // 
-            // lblUnitCost
+            // label7
             // 
-            this.lblUnitCost.AutoSize = true;
-            this.lblUnitCost.Location = new System.Drawing.Point(15, 26);
-            this.lblUnitCost.Name = "lblUnitCost";
-            this.lblUnitCost.Size = new System.Drawing.Size(80, 17);
-            this.lblUnitCost.TabIndex = 0;
-            this.lblUnitCost.Text = "Unit Cost";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(170, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(18, 17);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "$";
             // 
-            // lblUnitCostDisplay
+            // lblTotalCost
             // 
-            this.lblUnitCostDisplay.AutoSize = true;
-            this.lblUnitCostDisplay.Location = new System.Drawing.Point(221, 26);
-            this.lblUnitCostDisplay.Name = "lblUnitCostDisplay";
-            this.lblUnitCostDisplay.Size = new System.Drawing.Size(72, 17);
-            this.lblUnitCostDisplay.TabIndex = 1;
-            this.lblUnitCostDisplay.Text = "unitcost";
+            this.lblTotalCost.AutoSize = true;
+            this.lblTotalCost.Location = new System.Drawing.Point(221, 85);
+            this.lblTotalCost.Name = "lblTotalCost";
+            this.lblTotalCost.Size = new System.Drawing.Size(82, 17);
+            this.lblTotalCost.TabIndex = 7;
+            this.lblTotalCost.Text = "total cost";
             // 
-            // label3
+            // label9
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(170, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "$";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 85);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 17);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Total Cost";
             // 
             // label4
             // 
@@ -438,32 +434,32 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Deposit";
             // 
-            // label7
+            // label3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(170, 85);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 17);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "$";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(170, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(18, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "$";
             // 
-            // lblTotalCost
+            // lblUnitCostDisplay
             // 
-            this.lblTotalCost.AutoSize = true;
-            this.lblTotalCost.Location = new System.Drawing.Point(221, 85);
-            this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(82, 17);
-            this.lblTotalCost.TabIndex = 7;
-            this.lblTotalCost.Text = "total cost";
+            this.lblUnitCostDisplay.AutoSize = true;
+            this.lblUnitCostDisplay.Location = new System.Drawing.Point(221, 26);
+            this.lblUnitCostDisplay.Name = "lblUnitCostDisplay";
+            this.lblUnitCostDisplay.Size = new System.Drawing.Size(72, 17);
+            this.lblUnitCostDisplay.TabIndex = 1;
+            this.lblUnitCostDisplay.Text = "unitcost";
             // 
-            // label9
+            // lblUnitCost
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 85);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 17);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Total Cost";
+            this.lblUnitCost.AutoSize = true;
+            this.lblUnitCost.Location = new System.Drawing.Point(15, 26);
+            this.lblUnitCost.Name = "lblUnitCost";
+            this.lblUnitCost.Size = new System.Drawing.Size(80, 17);
+            this.lblUnitCost.TabIndex = 0;
+            this.lblUnitCost.Text = "Unit Cost";
             // 
             // btnBookNow
             // 
@@ -502,6 +498,7 @@
             this.Controls.Add(this.lblRegistrationForm);
             this.Name = "frmShootBooking";
             this.Text = "BOOK A SHOOT";
+            this.Load += new System.EventHandler(this.frmShootBooking_Load);
             this.gpPersonal.ResumeLayout(false);
             this.gpPersonal.PerformLayout();
             this.gpShoot.ResumeLayout(false);

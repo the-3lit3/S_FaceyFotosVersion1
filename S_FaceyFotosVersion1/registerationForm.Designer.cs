@@ -325,6 +325,7 @@
             this.Controls.Add(this.lblRegistrationForm);
             this.Name = "frmRegisterationForm";
             this.Text = "REGISTER";
+            this.Load += new System.EventHandler(this.frmRegisterationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -46,14 +46,16 @@
             this.mtbTelephone = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtbExpiry = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbCSV = new System.Windows.Forms.TextBox();
             this.lblCsv = new System.Windows.Forms.Label();
             this.cmbCardType = new System.Windows.Forms.ComboBox();
             this.lblCardType = new System.Windows.Forms.Label();
             this.tbCardNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.tbMemberID = new System.Windows.Forms.TextBox();
+            this.lblMemberID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +73,7 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(68, 82);
+            this.lblFirstName.Location = new System.Drawing.Point(68, 122);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(104, 19);
             this.lblFirstName.TabIndex = 0;
@@ -81,7 +83,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(68, 110);
+            this.lblLastName.Location = new System.Drawing.Point(68, 150);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(100, 19);
             this.lblLastName.TabIndex = 0;
@@ -91,7 +93,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(68, 141);
+            this.lblEmail.Location = new System.Drawing.Point(68, 181);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(60, 19);
             this.lblEmail.TabIndex = 0;
@@ -101,7 +103,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(68, 228);
+            this.label4.Location = new System.Drawing.Point(68, 268);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 19);
             this.label4.TabIndex = 0;
@@ -111,7 +113,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(68, 228);
+            this.lblPassword.Location = new System.Drawing.Point(68, 268);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(97, 19);
             this.lblPassword.TabIndex = 0;
@@ -121,7 +123,7 @@
             // 
             this.lblRetypePassword.AutoSize = true;
             this.lblRetypePassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetypePassword.Location = new System.Drawing.Point(68, 259);
+            this.lblRetypePassword.Location = new System.Drawing.Point(68, 299);
             this.lblRetypePassword.Name = "lblRetypePassword";
             this.lblRetypePassword.Size = new System.Drawing.Size(168, 19);
             this.lblRetypePassword.TabIndex = 0;
@@ -142,56 +144,56 @@
             this.btnRegisterSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnRegisterSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegisterSubmit.Location = new System.Drawing.Point(631, 369);
+            this.btnRegisterSubmit.Location = new System.Drawing.Point(616, 399);
             this.btnRegisterSubmit.Name = "btnRegisterSubmit";
             this.btnRegisterSubmit.Size = new System.Drawing.Size(141, 31);
-            this.btnRegisterSubmit.TabIndex = 17;
+            this.btnRegisterSubmit.TabIndex = 13;
             this.btnRegisterSubmit.Text = "REGISTER";
             this.btnRegisterSubmit.UseVisualStyleBackColor = false;
             this.btnRegisterSubmit.Click += new System.EventHandler(this.btnRegisterSubmit_Click);
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(272, 82);
+            this.tbFirstName.Location = new System.Drawing.Point(272, 122);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(172, 22);
-            this.tbFirstName.TabIndex = 6;
+            this.tbFirstName.TabIndex = 2;
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(272, 110);
+            this.tbLastName.Location = new System.Drawing.Point(272, 150);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(172, 22);
-            this.tbLastName.TabIndex = 7;
+            this.tbLastName.TabIndex = 3;
             // 
             // tbEmailAddress
             // 
-            this.tbEmailAddress.Location = new System.Drawing.Point(272, 138);
+            this.tbEmailAddress.Location = new System.Drawing.Point(272, 178);
             this.tbEmailAddress.Name = "tbEmailAddress";
             this.tbEmailAddress.Size = new System.Drawing.Size(172, 22);
-            this.tbEmailAddress.TabIndex = 8;
+            this.tbEmailAddress.TabIndex = 4;
             // 
             // mtbPass1
             // 
-            this.mtbPass1.Location = new System.Drawing.Point(272, 225);
+            this.mtbPass1.Location = new System.Drawing.Point(272, 265);
             this.mtbPass1.Name = "mtbPass1";
             this.mtbPass1.PasswordChar = '*';
             this.mtbPass1.Size = new System.Drawing.Size(172, 22);
-            this.mtbPass1.TabIndex = 11;
+            this.mtbPass1.TabIndex = 7;
             // 
             // mtbPass2
             // 
-            this.mtbPass2.Location = new System.Drawing.Point(272, 256);
+            this.mtbPass2.Location = new System.Drawing.Point(272, 296);
             this.mtbPass2.Name = "mtbPass2";
             this.mtbPass2.PasswordChar = '*';
             this.mtbPass2.Size = new System.Drawing.Size(172, 22);
-            this.mtbPass2.TabIndex = 12;
+            this.mtbPass2.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 166);
+            this.label1.Location = new System.Drawing.Point(68, 206);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 19);
             this.label1.TabIndex = 11;
@@ -199,17 +201,17 @@
             // 
             // mtbTelephone
             // 
-            this.mtbTelephone.Location = new System.Drawing.Point(272, 166);
+            this.mtbTelephone.Location = new System.Drawing.Point(272, 206);
             this.mtbTelephone.Mask = "(999) 000-0000";
             this.mtbTelephone.Name = "mtbTelephone";
             this.mtbTelephone.Size = new System.Drawing.Size(172, 22);
-            this.mtbTelephone.TabIndex = 9;
+            this.mtbTelephone.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 199);
+            this.label2.Location = new System.Drawing.Point(68, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 19);
             this.label2.TabIndex = 13;
@@ -217,39 +219,40 @@
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(272, 196);
+            this.tbUsername.Location = new System.Drawing.Point(272, 236);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(172, 22);
-            this.tbUsername.TabIndex = 10;
+            this.tbUsername.TabIndex = 6;
             // 
-            // maskedTextBox1
+            // mtbExpiry
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(272, 369);
-            this.maskedTextBox1.Mask = "_ _ / _ _";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(111, 22);
-            this.maskedTextBox1.TabIndex = 16;
+            this.mtbExpiry.Location = new System.Drawing.Point(272, 409);
+            this.mtbExpiry.Mask = "00/00/0000";
+            this.mtbExpiry.Name = "mtbExpiry";
+            this.mtbExpiry.Size = new System.Drawing.Size(111, 22);
+            this.mtbExpiry.TabIndex = 12;
+            this.mtbExpiry.ValidatingType = typeof(System.DateTime);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 374);
+            this.label3.Location = new System.Drawing.Point(69, 414);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 16);
             this.label3.TabIndex = 21;
             this.label3.Text = "Expiry Date";
             // 
-            // textBox1
+            // tbCSV
             // 
-            this.textBox1.Location = new System.Drawing.Point(434, 338);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(67, 22);
-            this.textBox1.TabIndex = 15;
+            this.tbCSV.Location = new System.Drawing.Point(434, 378);
+            this.tbCSV.Name = "tbCSV";
+            this.tbCSV.Size = new System.Drawing.Size(67, 22);
+            this.tbCSV.TabIndex = 11;
             // 
             // lblCsv
             // 
             this.lblCsv.AutoSize = true;
-            this.lblCsv.Location = new System.Drawing.Point(389, 343);
+            this.lblCsv.Location = new System.Drawing.Point(389, 383);
             this.lblCsv.Name = "lblCsv";
             this.lblCsv.Size = new System.Drawing.Size(34, 16);
             this.lblCsv.TabIndex = 19;
@@ -262,15 +265,16 @@
             this.cmbCardType.Items.AddRange(new object[] {
             "Debit",
             "Credit"});
-            this.cmbCardType.Location = new System.Drawing.Point(272, 338);
+            this.cmbCardType.Location = new System.Drawing.Point(272, 378);
+            this.cmbCardType.MaxDropDownItems = 10;
             this.cmbCardType.Name = "cmbCardType";
             this.cmbCardType.Size = new System.Drawing.Size(111, 24);
-            this.cmbCardType.TabIndex = 14;
+            this.cmbCardType.TabIndex = 10;
             // 
             // lblCardType
             // 
             this.lblCardType.AutoSize = true;
-            this.lblCardType.Location = new System.Drawing.Point(69, 338);
+            this.lblCardType.Location = new System.Drawing.Point(69, 378);
             this.lblCardType.Name = "lblCardType";
             this.lblCardType.Size = new System.Drawing.Size(71, 16);
             this.lblCardType.TabIndex = 17;
@@ -278,28 +282,47 @@
             // 
             // tbCardNumber
             // 
-            this.tbCardNumber.Location = new System.Drawing.Point(272, 307);
+            this.tbCardNumber.Location = new System.Drawing.Point(272, 347);
             this.tbCardNumber.Name = "tbCardNumber";
             this.tbCardNumber.Size = new System.Drawing.Size(229, 22);
-            this.tbCardNumber.TabIndex = 13;
+            this.tbCardNumber.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(69, 312);
+            this.label5.Location = new System.Drawing.Point(69, 352);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 16);
             this.label5.TabIndex = 15;
             this.label5.Text = "Card #";
+            // 
+            // tbMemberID
+            // 
+            this.tbMemberID.Location = new System.Drawing.Point(272, 91);
+            this.tbMemberID.Name = "tbMemberID";
+            this.tbMemberID.Size = new System.Drawing.Size(172, 22);
+            this.tbMemberID.TabIndex = 1;
+            // 
+            // lblMemberID
+            // 
+            this.lblMemberID.AutoSize = true;
+            this.lblMemberID.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberID.Location = new System.Drawing.Point(68, 91);
+            this.lblMemberID.Name = "lblMemberID";
+            this.lblMemberID.Size = new System.Drawing.Size(102, 19);
+            this.lblMemberID.TabIndex = 22;
+            this.lblMemberID.Text = "MEMBER ID";
             // 
             // frmRegisterationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.tbMemberID);
+            this.Controls.Add(this.lblMemberID);
+            this.Controls.Add(this.mtbExpiry);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbCSV);
             this.Controls.Add(this.lblCsv);
             this.Controls.Add(this.cmbCardType);
             this.Controls.Add(this.lblCardType);
@@ -352,13 +375,15 @@
         private System.Windows.Forms.MaskedTextBox mtbTelephone;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtbExpiry;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbCSV;
         private System.Windows.Forms.Label lblCsv;
         private System.Windows.Forms.ComboBox cmbCardType;
         private System.Windows.Forms.Label lblCardType;
         private System.Windows.Forms.TextBox tbCardNumber;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbMemberID;
+        private System.Windows.Forms.Label lblMemberID;
     }
 }

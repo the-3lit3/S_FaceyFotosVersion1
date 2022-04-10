@@ -95,6 +95,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmMainForm";
             this.Text = "S Facey Fotos V1";
+            this.Load += new System.EventHandler(this.frmMainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

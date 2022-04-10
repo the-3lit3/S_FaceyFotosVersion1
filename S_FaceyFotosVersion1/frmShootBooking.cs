@@ -35,10 +35,23 @@ namespace S_FaceyFotosVersion1
 
         private void frmShootBooking_Load(object sender, EventArgs e)
         {
+            //Populate the card type data field
             var cardType = db_entity.tb_cardType.ToList();
             cmbCardType.DisplayMember = "Card_Type";
             cmbCardType.ValueMember = "Id";
             cmbCardType.DataSource = cardType;
+
+            //Populate the Shoot Package datafield
+            var packageType = db_entity.tb_packageType.ToList();
+            cmbPackageSelect.DisplayMember = "Package_Name";
+            cmbPackageSelect.ValueMember = "Id";
+            cmbPackageSelect.DataSource = packageType;
+
+            //Populate the Shoot Time datafield 
+            var shootTime = db_entity.tb_shootTime.ToList();
+            cmbShootTime.DisplayMember = "Shoot_Time";
+            cmbShootTime.ValueMember = "Id";
+            cmbShootTime.DataSource = shootTime;
         }
     }
 }

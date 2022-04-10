@@ -32,5 +32,10 @@ namespace S_FaceyFotosVersion1
             showForm.Show();
             this.Hide();
         }
+
+        private void frmMainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

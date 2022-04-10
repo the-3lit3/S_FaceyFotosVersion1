@@ -87,6 +87,27 @@
     <Compile Include="registerationForm.Designer.cs">
       <DependentUpon>registerationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="sfaceyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sfaceyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sfaceyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sfaceyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sfaceyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sfaceyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="tb_cardType.cs">
+      <DependentUpon>sfaceyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_personalData2.cs">
+      <DependentUpon>sfaceyModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDatabaseView.resx">
       <DependentUpon>frmDatabaseView.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +143,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="sfaceyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>sfaceyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="sfaceyModel.edmx.diagram">
+      <DependentUpon>sfaceyModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -131,6 +159,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sfaceyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>sfaceyModel.edmx</DependentUpon>
+      <LastGenOutput>sfaceyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="sfaceyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>sfaceyModel.edmx</DependentUpon>
+      <LastGenOutput>sfaceyModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

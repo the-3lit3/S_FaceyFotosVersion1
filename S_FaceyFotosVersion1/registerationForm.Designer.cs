@@ -145,7 +145,7 @@
             this.btnRegisterSubmit.Location = new System.Drawing.Point(631, 369);
             this.btnRegisterSubmit.Name = "btnRegisterSubmit";
             this.btnRegisterSubmit.Size = new System.Drawing.Size(141, 31);
-            this.btnRegisterSubmit.TabIndex = 5;
+            this.btnRegisterSubmit.TabIndex = 17;
             this.btnRegisterSubmit.Text = "REGISTER";
             this.btnRegisterSubmit.UseVisualStyleBackColor = false;
             this.btnRegisterSubmit.Click += new System.EventHandler(this.btnRegisterSubmit_Click);
@@ -177,7 +177,7 @@
             this.mtbPass1.Name = "mtbPass1";
             this.mtbPass1.PasswordChar = '*';
             this.mtbPass1.Size = new System.Drawing.Size(172, 22);
-            this.mtbPass1.TabIndex = 9;
+            this.mtbPass1.TabIndex = 11;
             // 
             // mtbPass2
             // 
@@ -185,7 +185,7 @@
             this.mtbPass2.Name = "mtbPass2";
             this.mtbPass2.PasswordChar = '*';
             this.mtbPass2.Size = new System.Drawing.Size(172, 22);
-            this.mtbPass2.TabIndex = 10;
+            this.mtbPass2.TabIndex = 12;
             // 
             // label1
             // 
@@ -203,7 +203,7 @@
             this.mtbTelephone.Mask = "(999) 000-0000";
             this.mtbTelephone.Name = "mtbTelephone";
             this.mtbTelephone.Size = new System.Drawing.Size(172, 22);
-            this.mtbTelephone.TabIndex = 12;
+            this.mtbTelephone.TabIndex = 9;
             // 
             // label2
             // 
@@ -220,7 +220,7 @@
             this.tbUsername.Location = new System.Drawing.Point(272, 196);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(172, 22);
-            this.tbUsername.TabIndex = 14;
+            this.tbUsername.TabIndex = 10;
             // 
             // maskedTextBox1
             // 
@@ -228,7 +228,7 @@
             this.maskedTextBox1.Mask = "_ _ / _ _";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(111, 22);
-            this.maskedTextBox1.TabIndex = 22;
+            this.maskedTextBox1.TabIndex = 16;
             // 
             // label3
             // 
@@ -244,7 +244,7 @@
             this.textBox1.Location = new System.Drawing.Point(434, 338);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(67, 22);
-            this.textBox1.TabIndex = 20;
+            this.textBox1.TabIndex = 15;
             // 
             // lblCsv
             // 
@@ -265,7 +265,7 @@
             this.cmbCardType.Location = new System.Drawing.Point(272, 338);
             this.cmbCardType.Name = "cmbCardType";
             this.cmbCardType.Size = new System.Drawing.Size(111, 24);
-            this.cmbCardType.TabIndex = 18;
+            this.cmbCardType.TabIndex = 14;
             // 
             // lblCardType
             // 
@@ -281,7 +281,7 @@
             this.tbCardNumber.Location = new System.Drawing.Point(272, 307);
             this.tbCardNumber.Name = "tbCardNumber";
             this.tbCardNumber.Size = new System.Drawing.Size(229, 22);
-            this.tbCardNumber.TabIndex = 16;
+            this.tbCardNumber.TabIndex = 13;
             // 
             // label5
             // 

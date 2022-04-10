@@ -12,11 +12,11 @@ namespace S_FaceyFotosVersion1
 {
     public partial class frmRegisterationForm : Form
     {
-        private readonly db_sfaceyFotos2Entities db_entity; 
+        private readonly db_sfaceyFotos2Entities1 db_entity; 
         public frmRegisterationForm()
         {
             InitializeComponent();
-              db_entity = new db_sfaceyFotos2Entities();
+              db_entity = new db_sfaceyFotos2Entities1();
             
         }
 

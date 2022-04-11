@@ -22,13 +22,6 @@ namespace S_FaceyFotosVersion1
 
         private void btnRegisterSubmit_Click(object sender, EventArgs e)
         {
-            frmLoginForm launchLogin = new frmLoginForm();
-            launchLogin.Show();
-            this.Hide();
-        }
-
-        private void frmRegisterationForm_Load(object sender, EventArgs e)
-        {
             try
             {
                 var newClient = new tb_userRegistration();
@@ -43,7 +36,6 @@ namespace S_FaceyFotosVersion1
                 var CSV = tbCSV.Text;
                 var cardExpiry = mtbExpiry.Text;
 
-                var cardType = db_entity.tb_cardType.ToList();
                 newClient.UserID = clientID;
                 newClient.First_Name = fName;
                 newClient.Last_Name = lName;
@@ -52,9 +44,6 @@ namespace S_FaceyFotosVersion1
                 newClient.Username = cUser.Trim();
                 newClient.Pass = cPass;
                 newClient.Card_Number = cCardNumber;
-                cmbCardType.DisplayMember = "Card_Type";
-                cmbCardType.ValueMember = "Id";
-                cmbCardType.DataSource = cardType;
                 newClient.Card_TypeID = Convert.ToInt32(cmbCardType.SelectedValue);
                 newClient.CSV_Number = Convert.ToInt32(CSV);
                 newClient.Expiration_Date = DateTime.Parse(cardExpiry);
@@ -63,6 +52,25 @@ namespace S_FaceyFotosVersion1
 
                 MessageBox.Show("Registration successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                frmLoginForm launchLogin = new frmLoginForm();
+                launchLogin.Show();
+                this.Hide();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Critical error occured. Record failed.");
+            }
+            
+        }
+
+        private void frmRegisterationForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                var cardType = db_entity.tb_cardType.ToList();
+                cmbCardType.DisplayMember = "Card_Type";
+                cmbCardType.ValueMember = "Id";
+                cmbCardType.DataSource = cardType;
+
             }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -70,5 +78,6 @@ namespace S_FaceyFotosVersion1
             
 
         }
+
     }
 }

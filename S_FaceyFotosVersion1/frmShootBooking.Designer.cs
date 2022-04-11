@@ -48,9 +48,9 @@
             this.lblShootDate = new System.Windows.Forms.Label();
             this.dtShootDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtbExpiry = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbCSV = new System.Windows.Forms.TextBox();
             this.lblCsv = new System.Windows.Forms.Label();
             this.cmbCardType = new System.Windows.Forms.ComboBox();
             this.lblCardType = new System.Windows.Forms.Label();
@@ -58,16 +58,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gpBank = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalCost = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblDeposit = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblUnitCostDisplay = new System.Windows.Forms.Label();
             this.lblUnitCost = new System.Windows.Forms.Label();
             this.btnBookNow = new System.Windows.Forms.Button();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
+            this.tbUnitCost = new System.Windows.Forms.TextBox();
+            this.tbDeposit = new System.Windows.Forms.TextBox();
+            this.tbTotal = new System.Windows.Forms.TextBox();
             this.gpPersonal.SuspendLayout();
             this.gpShoot.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -275,9 +275,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.maskedTextBox1);
+            this.groupBox3.Controls.Add(this.mtbExpiry);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.tbCSV);
             this.groupBox3.Controls.Add(this.lblCsv);
             this.groupBox3.Controls.Add(this.cmbCardType);
             this.groupBox3.Controls.Add(this.lblCardType);
@@ -291,13 +291,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Banking Information";
             // 
-            // maskedTextBox1
+            // mtbExpiry
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(119, 84);
-            this.maskedTextBox1.Mask = "_ _ / _ _";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(111, 25);
-            this.maskedTextBox1.TabIndex = 11;
+            this.mtbExpiry.Location = new System.Drawing.Point(119, 84);
+            this.mtbExpiry.Mask = "00/00/0000";
+            this.mtbExpiry.Name = "mtbExpiry";
+            this.mtbExpiry.Size = new System.Drawing.Size(111, 25);
+            this.mtbExpiry.TabIndex = 11;
+            this.mtbExpiry.ValidatingType = typeof(System.DateTime);
             // 
             // label2
             // 
@@ -308,12 +309,12 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Expiry Date";
             // 
-            // textBox1
+            // tbCSV
             // 
-            this.textBox1.Location = new System.Drawing.Point(281, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(67, 25);
-            this.textBox1.TabIndex = 10;
+            this.tbCSV.Location = new System.Drawing.Point(281, 53);
+            this.tbCSV.Name = "tbCSV";
+            this.tbCSV.Size = new System.Drawing.Size(67, 25);
+            this.tbCSV.TabIndex = 10;
             // 
             // lblCsv
             // 
@@ -363,14 +364,14 @@
             // 
             // gpBank
             // 
+            this.gpBank.Controls.Add(this.tbTotal);
+            this.gpBank.Controls.Add(this.tbDeposit);
+            this.gpBank.Controls.Add(this.tbUnitCost);
             this.gpBank.Controls.Add(this.label7);
-            this.gpBank.Controls.Add(this.lblTotalCost);
             this.gpBank.Controls.Add(this.label9);
             this.gpBank.Controls.Add(this.label4);
-            this.gpBank.Controls.Add(this.lblDeposit);
             this.gpBank.Controls.Add(this.label6);
             this.gpBank.Controls.Add(this.label3);
-            this.gpBank.Controls.Add(this.lblUnitCostDisplay);
             this.gpBank.Controls.Add(this.lblUnitCost);
             this.gpBank.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpBank.Location = new System.Drawing.Point(423, 301);
@@ -388,15 +389,6 @@
             this.label7.Size = new System.Drawing.Size(18, 17);
             this.label7.TabIndex = 8;
             this.label7.Text = "$";
-            // 
-            // lblTotalCost
-            // 
-            this.lblTotalCost.AutoSize = true;
-            this.lblTotalCost.Location = new System.Drawing.Point(221, 85);
-            this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(82, 17);
-            this.lblTotalCost.TabIndex = 7;
-            this.lblTotalCost.Text = "total cost";
             // 
             // label9
             // 
@@ -416,15 +408,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "$";
             // 
-            // lblDeposit
-            // 
-            this.lblDeposit.AutoSize = true;
-            this.lblDeposit.Location = new System.Drawing.Point(221, 54);
-            this.lblDeposit.Name = "lblDeposit";
-            this.lblDeposit.Size = new System.Drawing.Size(66, 17);
-            this.lblDeposit.TabIndex = 4;
-            this.lblDeposit.Text = "deposit";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -443,15 +426,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "$";
             // 
-            // lblUnitCostDisplay
-            // 
-            this.lblUnitCostDisplay.AutoSize = true;
-            this.lblUnitCostDisplay.Location = new System.Drawing.Point(221, 26);
-            this.lblUnitCostDisplay.Name = "lblUnitCostDisplay";
-            this.lblUnitCostDisplay.Size = new System.Drawing.Size(72, 17);
-            this.lblUnitCostDisplay.TabIndex = 1;
-            this.lblUnitCostDisplay.Text = "unitcost";
-            // 
             // lblUnitCost
             // 
             this.lblUnitCost.AutoSize = true;
@@ -468,7 +442,7 @@
             this.btnBookNow.Location = new System.Drawing.Point(625, 449);
             this.btnBookNow.Name = "btnBookNow";
             this.btnBookNow.Size = new System.Drawing.Size(117, 27);
-            this.btnBookNow.TabIndex = 16;
+            this.btnBookNow.TabIndex = 19;
             this.btnBookNow.Text = "BOOK NOW";
             this.btnBookNow.UseVisualStyleBackColor = false;
             this.btnBookNow.Click += new System.EventHandler(this.btnBookNow_Click);
@@ -483,6 +457,31 @@
             this.linkLogout.TabStop = true;
             this.linkLogout.Text = "Logout";
             this.linkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogout_LinkClicked);
+            // 
+            // tbUnitCost
+            // 
+            this.tbUnitCost.Enabled = false;
+            this.tbUnitCost.Location = new System.Drawing.Point(202, 25);
+            this.tbUnitCost.Name = "tbUnitCost";
+            this.tbUnitCost.ReadOnly = true;
+            this.tbUnitCost.Size = new System.Drawing.Size(100, 25);
+            this.tbUnitCost.TabIndex = 16;
+            // 
+            // tbDeposit
+            // 
+            this.tbDeposit.Enabled = false;
+            this.tbDeposit.Location = new System.Drawing.Point(202, 57);
+            this.tbDeposit.Name = "tbDeposit";
+            this.tbDeposit.Size = new System.Drawing.Size(100, 25);
+            this.tbDeposit.TabIndex = 17;
+            // 
+            // tbTotal
+            // 
+            this.tbTotal.Enabled = false;
+            this.tbTotal.Location = new System.Drawing.Point(202, 88);
+            this.tbTotal.Name = "tbTotal";
+            this.tbTotal.Size = new System.Drawing.Size(100, 25);
+            this.tbTotal.TabIndex = 18;
             // 
             // frmShootBooking
             // 
@@ -535,24 +534,24 @@
         private System.Windows.Forms.Label lblLocation;
         private System.Windows.Forms.ComboBox cmbPackageSelect;
         private System.Windows.Forms.Label lblPkg;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtbExpiry;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbCSV;
         private System.Windows.Forms.Label lblCsv;
         private System.Windows.Forms.ComboBox cmbCardType;
         private System.Windows.Forms.Label lblCardType;
         private System.Windows.Forms.TextBox tbCardNumber;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblTotalCost;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblDeposit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblUnitCostDisplay;
         private System.Windows.Forms.Label lblUnitCost;
         private System.Windows.Forms.Button btnBookNow;
         private System.Windows.Forms.LinkLabel linkLogout;
+        private System.Windows.Forms.TextBox tbTotal;
+        private System.Windows.Forms.TextBox tbDeposit;
+        private System.Windows.Forms.TextBox tbUnitCost;
     }
 }

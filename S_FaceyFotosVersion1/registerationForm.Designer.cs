@@ -236,9 +236,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(69, 414);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 16);
+            this.label3.Size = new System.Drawing.Size(90, 19);
             this.label3.TabIndex = 21;
             this.label3.Text = "Expiry Date";
             // 
@@ -252,9 +253,10 @@
             // lblCsv
             // 
             this.lblCsv.AutoSize = true;
+            this.lblCsv.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCsv.Location = new System.Drawing.Point(389, 383);
             this.lblCsv.Name = "lblCsv";
-            this.lblCsv.Size = new System.Drawing.Size(34, 16);
+            this.lblCsv.Size = new System.Drawing.Size(40, 19);
             this.lblCsv.TabIndex = 19;
             this.lblCsv.Text = "CSV";
             // 
@@ -274,9 +276,10 @@
             // lblCardType
             // 
             this.lblCardType.AutoSize = true;
+            this.lblCardType.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCardType.Location = new System.Drawing.Point(69, 378);
             this.lblCardType.Name = "lblCardType";
-            this.lblCardType.Size = new System.Drawing.Size(71, 16);
+            this.lblCardType.Size = new System.Drawing.Size(77, 19);
             this.lblCardType.TabIndex = 17;
             this.lblCardType.Text = "Card Type";
             // 
@@ -290,9 +293,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(69, 352);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 16);
+            this.label5.Size = new System.Drawing.Size(54, 19);
             this.label5.TabIndex = 15;
             this.label5.Text = "Card #";
             // 
@@ -317,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 479);
             this.Controls.Add(this.tbMemberID);
             this.Controls.Add(this.lblMemberID);
             this.Controls.Add(this.mtbExpiry);

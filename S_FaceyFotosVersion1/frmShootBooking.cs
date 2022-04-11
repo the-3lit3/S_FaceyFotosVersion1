@@ -31,11 +31,12 @@ namespace S_FaceyFotosVersion1
                 var clientEmail = tbEmailAdd.Text;
                 var clientPhone = mtbTelephone.Text;
                 var cCardNumber = tbCardNumber.Text;
+                var cardT = cmbCardType.SelectedValue;
                 var CSV = tbCSV.Text;
                 var cardExpiry = mtbExpiry.Text;
-                var pkgID = Convert.ToInt32(cmbCardType.SelectedValue);
+                var pkgID = cmbPackageSelect.SelectedValue;
                 var shootDate = dtShootDate.Value;
-                var shootTimeID = Convert.ToInt32(cmbShootTime.Text);
+                var shootTimeID = cmbShootTime.SelectedValue;
                 var shootLocation = tbLocation.Text;
             
                 newClient.First_Name = fName;
@@ -46,56 +47,81 @@ namespace S_FaceyFotosVersion1
                 newClient.Card_TypeID = Convert.ToInt32(cmbCardType.SelectedValue);
                 newClient.CSV_Number = Convert.ToInt32(CSV);
                 newClient.Expiration_Date = DateTime.Parse(cardExpiry);
-                newClient.Package_TypeID = pkgID;
+                newClient.Package_TypeID = (int)pkgID;
+                
+                try
+                {
+                    if(pkgID.Equals(1))
+                    {
+                                double unitCost = 15000.00;
+                                double deposit = unitCost / 2;
+                                //double Taxes = unitCost * 0.165;
+                                double Total = unitCost;
+
+                                tbUnitCost.Text = unitCost.ToString();
+                                tbDeposit.Text = deposit.ToString();
+                                tbTotal.Text = Total.ToString();
+                                //lblUnitCostDisplay.Text = unitCost.ToString();
+                               
+                     }
+                    if(pkgID.Equals(2))
+                    {
+                        double unitCost = 25000.00;
+                        double deposit = unitCost / 2;
+                        //double Taxes = unitCost * 0.165;
+                        double Total = unitCost;
+
+                                tbUnitCost.Text = unitCost.ToString();
+                                tbDeposit.Text = deposit.ToString();
+                                tbTotal.Text = Total.ToString();
+                    }
+                          
+                          if(pkgID.Equals(3)) { 
+                                double unitCost = 40000.00;
+                                double deposit = unitCost / 2;
+                                //double Taxes = unitCost * 0.165;
+                                double Total = unitCost;
+
+                                tbUnitCost.Text = unitCost.ToString();
+                                tbDeposit.Text = deposit.ToString();
+                                tbTotal.Text = Total.ToString();
+                             
+                          }
+
+                    if (pkgID.Equals(4))
+                    {
+                        double unitCost = 40000.00;
+                        double deposit = unitCost / 2;
+                        //double Taxes = unitCost * 0.165;
+                        double Total = unitCost;
+
+                        tbUnitCost.Text = unitCost.ToString();
+                        tbDeposit.Text = deposit.ToString();
+                        tbTotal.Text = Total.ToString();
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
                 newClient.Shoot_Date = shootDate;
-                newClient.Shoot_TimeID = shootTimeID;
+                newClient.Shoot_TimeID = (int)shootTimeID;
                 newClient.Shoot_Location = shootLocation;
+                
+                    var uCost = Convert.ToDouble(tbUnitCost.Text);
+                    var getDeposit = Convert.ToDouble(tbDeposit.Text);
+                    var getTotal = Convert.ToDouble(tbTotal.Text);
 
-                if(pkgID == 1)
-                {
-                    double unitCost = 15000.00;
-                    double deposit = unitCost / 2;
-                    //double Taxes = unitCost * 0.165;
-                    double Total = unitCost;
-
-                    tbUnitCost.Text = unitCost.ToString();
-                    tbDeposit.Text = deposit.ToString();
-                    tbTotal.Text = Total.ToString();
-                    //lblUnitCostDisplay.Text = unitCost.ToString();
-                }
-                if (pkgID == 2)
-                {
-                    double unitCost = 25000.00;
-                    double deposit = unitCost / 2;
-                    //double Taxes = unitCost * 0.165;
-                    double Total = unitCost;
-
-                    tbUnitCost.Text = unitCost.ToString();
-                    tbDeposit.Text = deposit.ToString();
-                    tbTotal.Text = Total.ToString();
-                }
-                if (pkgID == 3)
-                {
-                    double unitCost = 40000.00;
-                    double deposit = unitCost / 2;
-                    //double Taxes = unitCost * 0.165;
-                    double Total = unitCost;
-
-                    tbUnitCost.Text = unitCost.ToString();
-                    tbDeposit.Text = deposit.ToString();
-                    tbTotal.Text = Total.ToString();
-                }
-                var uCost = Convert.ToDouble(tbUnitCost.Text);
-                var getDeposit = Convert.ToDouble(tbDeposit.Text);
-                var getTotal= Convert.ToDouble(tbTotal.Text);
-
-                newClient.Unit_Cost = (Decimal)uCost;
-                newClient.Deposit = (Decimal)getDeposit;
-                newClient.Total = (Decimal)getTotal;
+                    newClient.Unit_Cost = (Decimal)uCost;
+                    newClient.Deposit = (Decimal)getDeposit;
+                    newClient.Total = (Decimal)getTotal;               
 
                 db_entity.tb_personalData2.Add(newClient);
                 db_entity.SaveChanges();
-                this.Refresh();
+                //this.Refresh();
 
                 MessageBox.Show("Shoot successfully booked!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
            
@@ -126,6 +152,8 @@ namespace S_FaceyFotosVersion1
             cmbPackageSelect.DisplayMember = "Package_Name";
             cmbPackageSelect.ValueMember = "Id";
             cmbPackageSelect.DataSource = packageType;
+
+           
 
             //Populate the Shoot Time datafield 
             var shootTime = db_entity.tb_shootTime.ToList();

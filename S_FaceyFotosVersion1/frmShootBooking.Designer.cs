@@ -57,6 +57,9 @@
             this.tbCardNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gpBank = new System.Windows.Forms.GroupBox();
+            this.tbTotal = new System.Windows.Forms.TextBox();
+            this.tbDeposit = new System.Windows.Forms.TextBox();
+            this.tbUnitCost = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,9 +68,6 @@
             this.lblUnitCost = new System.Windows.Forms.Label();
             this.btnBookNow = new System.Windows.Forms.Button();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
-            this.tbUnitCost = new System.Windows.Forms.TextBox();
-            this.tbDeposit = new System.Windows.Forms.TextBox();
-            this.tbTotal = new System.Windows.Forms.TextBox();
             this.gpPersonal.SuspendLayout();
             this.gpShoot.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -381,6 +381,30 @@
             this.gpBank.TabStop = false;
             this.gpBank.Text = "Package Cost";
             // 
+            // tbTotal
+            // 
+            this.tbTotal.Enabled = false;
+            this.tbTotal.Location = new System.Drawing.Point(202, 88);
+            this.tbTotal.Name = "tbTotal";
+            this.tbTotal.Size = new System.Drawing.Size(100, 25);
+            this.tbTotal.TabIndex = 18;
+            // 
+            // tbDeposit
+            // 
+            this.tbDeposit.Enabled = false;
+            this.tbDeposit.Location = new System.Drawing.Point(202, 57);
+            this.tbDeposit.Name = "tbDeposit";
+            this.tbDeposit.Size = new System.Drawing.Size(100, 25);
+            this.tbDeposit.TabIndex = 17;
+            // 
+            // tbUnitCost
+            // 
+            this.tbUnitCost.Enabled = false;
+            this.tbUnitCost.Location = new System.Drawing.Point(202, 25);
+            this.tbUnitCost.Name = "tbUnitCost";
+            this.tbUnitCost.Size = new System.Drawing.Size(100, 25);
+            this.tbUnitCost.TabIndex = 16;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -457,31 +481,6 @@
             this.linkLogout.TabStop = true;
             this.linkLogout.Text = "Logout";
             this.linkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogout_LinkClicked);
-            // 
-            // tbUnitCost
-            // 
-            this.tbUnitCost.Enabled = false;
-            this.tbUnitCost.Location = new System.Drawing.Point(202, 25);
-            this.tbUnitCost.Name = "tbUnitCost";
-            this.tbUnitCost.ReadOnly = true;
-            this.tbUnitCost.Size = new System.Drawing.Size(100, 25);
-            this.tbUnitCost.TabIndex = 16;
-            // 
-            // tbDeposit
-            // 
-            this.tbDeposit.Enabled = false;
-            this.tbDeposit.Location = new System.Drawing.Point(202, 57);
-            this.tbDeposit.Name = "tbDeposit";
-            this.tbDeposit.Size = new System.Drawing.Size(100, 25);
-            this.tbDeposit.TabIndex = 17;
-            // 
-            // tbTotal
-            // 
-            this.tbTotal.Enabled = false;
-            this.tbTotal.Location = new System.Drawing.Point(202, 88);
-            this.tbTotal.Name = "tbTotal";
-            this.tbTotal.Size = new System.Drawing.Size(100, 25);
-            this.tbTotal.TabIndex = 18;
             // 
             // frmShootBooking
             // 

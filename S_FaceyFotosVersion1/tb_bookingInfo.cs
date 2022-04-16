@@ -12,10 +12,9 @@ namespace S_FaceyFotosVersion1
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_personalData2
+    public partial class tb_bookingInfo
     {
         public int Id { get; set; }
-        public string Client_ID { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public string Email_Address { get; set; }
@@ -28,7 +27,6 @@ namespace S_FaceyFotosVersion1
         public System.DateTime Shoot_Date { get; set; }
         public int Shoot_TimeID { get; set; }
         public string Shoot_Location { get; set; }
-        public decimal Unit_Cost { get; set; }
         public decimal Deposit { get; set; }
         public decimal Total { get; set; }
     

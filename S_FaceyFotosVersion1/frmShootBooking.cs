@@ -12,11 +12,11 @@ namespace S_FaceyFotosVersion1
 {
     public partial class frmShootBooking : Form
     {
-        private readonly db_sfaceyFotos2Entities2 db_entity;
+        private readonly db_sfaceyFotos2Entities3 db_entity;
         public frmShootBooking()
         {
             InitializeComponent();
-            db_entity = new db_sfaceyFotos2Entities2();
+            db_entity = new db_sfaceyFotos2Entities3();
 
 
         }
@@ -25,103 +25,45 @@ namespace S_FaceyFotosVersion1
         {
             try
             {
-                var newClient = new tb_personalData2();
+                var newClient = new tb_bookingInfo();
                 var fName = tbFname.Text;
                 var lName = tbLname.Text;
                 var clientEmail = tbEmailAdd.Text;
                 var clientPhone = mtbTelephone.Text;
                 var cCardNumber = tbCardNumber.Text;
-                var cardT = cmbCardType.SelectedValue;
+                var cardT = (int)cmbCardType.SelectedValue;
                 var CSV = tbCSV.Text;
                 var cardExpiry = mtbExpiry.Text;
-                var pkgID = cmbPackageSelect.SelectedValue;
+                var pkgID = (int)cmbPackageSelect.SelectedValue;
                 var shootDate = dtShootDate.Value;
-                var shootTimeID = cmbShootTime.SelectedValue;
+                var shootTimeID = (int)cmbShootTime.SelectedValue;
                 var shootLocation = tbLocation.Text;
-            
+                var pkgInfo = db_entity.tb_packageType.FirstOrDefault(q => q.Id == pkgID);
+
                 newClient.First_Name = fName;
                 newClient.Last_Name = lName;
                 newClient.Email_Address = clientEmail;
                 newClient.Telephone = clientPhone;            
                 newClient.Card_Number = cCardNumber;
-                newClient.Card_TypeID = Convert.ToInt32(cmbCardType.SelectedValue);
+
+                newClient.Card_TypeID = cardT;
                 newClient.CSV_Number = Convert.ToInt32(CSV);
                 newClient.Expiration_Date = DateTime.Parse(cardExpiry);
-                newClient.Package_TypeID = (int)pkgID;
-                
-                try
-                {
-                    if(pkgID.Equals(1))
-                    {
-                                double unitCost = 15000.00;
-                                double deposit = unitCost / 2;
-                                //double Taxes = unitCost * 0.165;
-                                double Total = unitCost;
-
-                                tbUnitCost.Text = unitCost.ToString();
-                                tbDeposit.Text = deposit.ToString();
-                                tbTotal.Text = Total.ToString();
-                                //lblUnitCostDisplay.Text = unitCost.ToString();
-                               
-                     }
-                    if(pkgID.Equals(2))
-                    {
-                        double unitCost = 25000.00;
-                        double deposit = unitCost / 2;
-                        //double Taxes = unitCost * 0.165;
-                        double Total = unitCost;
-
-                                tbUnitCost.Text = unitCost.ToString();
-                                tbDeposit.Text = deposit.ToString();
-                                tbTotal.Text = Total.ToString();
-                    }
-                          
-                          if(pkgID.Equals(3)) { 
-                                double unitCost = 40000.00;
-                                double deposit = unitCost / 2;
-                                //double Taxes = unitCost * 0.165;
-                                double Total = unitCost;
-
-                                tbUnitCost.Text = unitCost.ToString();
-                                tbDeposit.Text = deposit.ToString();
-                                tbTotal.Text = Total.ToString();
-                             
-                          }
-
-                    if (pkgID.Equals(4))
-                    {
-                        double unitCost = 40000.00;
-                        double deposit = unitCost / 2;
-                        //double Taxes = unitCost * 0.165;
-                        double Total = unitCost;
-
-                        tbUnitCost.Text = unitCost.ToString();
-                        tbDeposit.Text = deposit.ToString();
-                        tbTotal.Text = Total.ToString();
-
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-                newClient.Shoot_Date = shootDate;
-                newClient.Shoot_TimeID = (int)shootTimeID;
+                newClient.Shoot_TimeID = shootTimeID;
                 newClient.Shoot_Location = shootLocation;
-                
-                    var uCost = Convert.ToDouble(tbUnitCost.Text);
-                    var getDeposit = Convert.ToDouble(tbDeposit.Text);
-                    var getTotal = Convert.ToDouble(tbTotal.Text);
+                newClient.Shoot_Date = shootDate;
+                newClient.Package_TypeID = pkgID;               
+                newClient.Total = pkgInfo.Unit_Cost;
+                newClient.Deposit = pkgInfo.Unit_Cost * 0.5m;                               
+                tbUnitCost.Text = pkgInfo.Unit_Cost.ToString();
+                tbDeposit.Text = newClient.Deposit.ToString();
+                tbTotal.Text = newClient.Total.ToString();
+               
 
-                    newClient.Unit_Cost = (Decimal)uCost;
-                    newClient.Deposit = (Decimal)getDeposit;
-                    newClient.Total = (Decimal)getTotal;               
 
-                db_entity.tb_personalData2.Add(newClient);
+                db_entity.tb_bookingInfo.Add(newClient);              
                 db_entity.SaveChanges();
-                //this.Refresh();
+                this.Refresh();
 
                 MessageBox.Show("Shoot successfully booked!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
            
@@ -141,26 +83,33 @@ namespace S_FaceyFotosVersion1
 
         private void frmShootBooking_Load(object sender, EventArgs e)
         {
-            //Populate the card type data field
-            var cardType = db_entity.tb_cardType.ToList();
-            cmbCardType.DisplayMember = "Card_Type";
-            cmbCardType.ValueMember = "Id";
-            cmbCardType.DataSource = cardType;
+            try
+            {
+                //Populate the card type data field
+                var cardType = db_entity.tb_cardType.ToList();
+                cmbCardType.DisplayMember = "Card_Name";
+                cmbCardType.ValueMember = "Id";
+                cmbCardType.DataSource = cardType;
 
-            //Populate the Shoot Package datafield
-            var packageType = db_entity.tb_packageType.ToList();
-            cmbPackageSelect.DisplayMember = "Package_Name";
-            cmbPackageSelect.ValueMember = "Id";
-            cmbPackageSelect.DataSource = packageType;
+                //Populate the Shoot Package datafield
+                var packageType = db_entity.tb_packageType.ToList();
+                cmbPackageSelect.DisplayMember = "Package_Name";
+                cmbPackageSelect.ValueMember = "Id";
+                cmbPackageSelect.DataSource = packageType;
 
            
 
-            //Populate the Shoot Time datafield 
-            var shootTime = db_entity.tb_shootTime.ToList();
-            cmbShootTime.DisplayMember = "Shoot_Time";
-            cmbShootTime.ValueMember = "Id";
-            cmbShootTime.DataSource = shootTime;
+                //Populate the Shoot Time datafield 
+                var shootTime = db_entity.tb_shootTime.ToList();
+                cmbShootTime.DisplayMember = "Shoot_Time";
+                cmbShootTime.ValueMember = "Id";
+                cmbShootTime.DataSource = shootTime;
 
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+            
     }
 }

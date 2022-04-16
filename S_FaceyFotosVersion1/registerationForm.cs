@@ -12,11 +12,11 @@ namespace S_FaceyFotosVersion1
 {
     public partial class frmRegisterationForm : Form
     {
-        private readonly db_sfaceyFotos2Entities2 db_entity; 
+        private readonly db_sfaceyFotos2Entities3 db_entity; 
         public frmRegisterationForm()
         {
             InitializeComponent();
-              db_entity = new db_sfaceyFotos2Entities2();
+              db_entity = new db_sfaceyFotos2Entities3();
             
         }
 
@@ -25,7 +25,7 @@ namespace S_FaceyFotosVersion1
             try
             {
                 var newClient = new tb_userRegistration();
-                var clientID = tbMemberID.Text;
+         
                 var fName = tbFirstName.Text;
                 var lName = tbLastName.Text;
                 var clientEmail = tbEmailAddress.Text;
@@ -36,7 +36,6 @@ namespace S_FaceyFotosVersion1
                 var CSV = tbCSV.Text;
                 var cardExpiry = mtbExpiry.Text;
 
-                newClient.UserID = clientID;
                 newClient.First_Name = fName;
                 newClient.Last_Name = lName;
                 newClient.Email_Address = clientEmail;
@@ -47,8 +46,10 @@ namespace S_FaceyFotosVersion1
                 newClient.Card_TypeID = Convert.ToInt32(cmbCardType.SelectedValue);
                 newClient.CSV_Number = Convert.ToInt32(CSV);
                 newClient.Expiration_Date = DateTime.Parse(cardExpiry);
+
                 db_entity.tb_userRegistration.Add(newClient);
                 db_entity.SaveChanges();
+                this.Refresh();
 
                 MessageBox.Show("Registration successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -67,7 +68,7 @@ namespace S_FaceyFotosVersion1
             try
             {
                 var cardType = db_entity.tb_cardType.ToList();
-                cmbCardType.DisplayMember = "Card_Type";
+                cmbCardType.DisplayMember = "Card_Name";
                 cmbCardType.ValueMember = "Id";
                 cmbCardType.DataSource = cardType;
 

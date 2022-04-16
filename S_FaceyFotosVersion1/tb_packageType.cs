@@ -17,13 +17,14 @@ namespace S_FaceyFotosVersion1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_packageType()
         {
-            this.tb_personalData2 = new HashSet<tb_personalData2>();
+            this.tb_bookingInfo = new HashSet<tb_bookingInfo>();
         }
     
         public int Id { get; set; }
         public string Package_Name { get; set; }
+        public decimal Unit_Cost { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_personalData2> tb_personalData2 { get; set; }
+        public virtual ICollection<tb_bookingInfo> tb_bookingInfo { get; set; }
     }
 }

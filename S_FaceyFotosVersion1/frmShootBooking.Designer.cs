@@ -383,25 +383,25 @@
             // 
             // tbTotal
             // 
-            this.tbTotal.Enabled = false;
             this.tbTotal.Location = new System.Drawing.Point(202, 88);
             this.tbTotal.Name = "tbTotal";
+            this.tbTotal.ReadOnly = true;
             this.tbTotal.Size = new System.Drawing.Size(100, 25);
             this.tbTotal.TabIndex = 18;
             // 
             // tbDeposit
             // 
-            this.tbDeposit.Enabled = false;
             this.tbDeposit.Location = new System.Drawing.Point(202, 57);
             this.tbDeposit.Name = "tbDeposit";
+            this.tbDeposit.ReadOnly = true;
             this.tbDeposit.Size = new System.Drawing.Size(100, 25);
             this.tbDeposit.TabIndex = 17;
             // 
             // tbUnitCost
             // 
-            this.tbUnitCost.Enabled = false;
             this.tbUnitCost.Location = new System.Drawing.Point(202, 25);
             this.tbUnitCost.Name = "tbUnitCost";
+            this.tbUnitCost.ReadOnly = true;
             this.tbUnitCost.Size = new System.Drawing.Size(100, 25);
             this.tbUnitCost.TabIndex = 16;
             // 

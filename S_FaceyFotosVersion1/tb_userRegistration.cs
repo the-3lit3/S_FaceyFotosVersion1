@@ -15,7 +15,6 @@ namespace S_FaceyFotosVersion1
     public partial class tb_userRegistration
     {
         public int Id { get; set; }
-        public string UserID { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public string Email_Address { get; set; }

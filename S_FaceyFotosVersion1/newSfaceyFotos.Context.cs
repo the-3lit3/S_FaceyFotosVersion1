@@ -13,10 +13,10 @@ namespace S_FaceyFotosVersion1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class db_sfaceyFotos2Entities2 : DbContext
+    public partial class db_sfaceyFotos2Entities3 : DbContext
     {
-        public db_sfaceyFotos2Entities2()
-            : base("name=db_sfaceyFotos2Entities2")
+        public db_sfaceyFotos2Entities3()
+            : base("name=db_sfaceyFotos2Entities3")
         {
         }
     
@@ -27,8 +27,8 @@ namespace S_FaceyFotosVersion1
     
         public virtual DbSet<tb_cardType> tb_cardType { get; set; }
         public virtual DbSet<tb_packageType> tb_packageType { get; set; }
-        public virtual DbSet<tb_personalData2> tb_personalData2 { get; set; }
         public virtual DbSet<tb_shootTime> tb_shootTime { get; set; }
         public virtual DbSet<tb_userRegistration> tb_userRegistration { get; set; }
+        public virtual DbSet<tb_bookingInfo> tb_bookingInfo { get; set; }
     }
 }

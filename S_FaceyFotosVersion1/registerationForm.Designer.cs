@@ -54,8 +54,6 @@
             this.lblCardType = new System.Windows.Forms.Label();
             this.tbCardNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbMemberID = new System.Windows.Forms.TextBox();
-            this.lblMemberID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -300,30 +298,11 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Card #";
             // 
-            // tbMemberID
-            // 
-            this.tbMemberID.Location = new System.Drawing.Point(272, 91);
-            this.tbMemberID.Name = "tbMemberID";
-            this.tbMemberID.Size = new System.Drawing.Size(172, 22);
-            this.tbMemberID.TabIndex = 1;
-            // 
-            // lblMemberID
-            // 
-            this.lblMemberID.AutoSize = true;
-            this.lblMemberID.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMemberID.Location = new System.Drawing.Point(68, 91);
-            this.lblMemberID.Name = "lblMemberID";
-            this.lblMemberID.Size = new System.Drawing.Size(102, 19);
-            this.lblMemberID.TabIndex = 22;
-            this.lblMemberID.Text = "MEMBER ID";
-            // 
             // frmRegisterationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 479);
-            this.Controls.Add(this.tbMemberID);
-            this.Controls.Add(this.lblMemberID);
             this.Controls.Add(this.mtbExpiry);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbCSV);
@@ -387,7 +366,5 @@
         private System.Windows.Forms.Label lblCardType;
         private System.Windows.Forms.TextBox tbCardNumber;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbMemberID;
-        private System.Windows.Forms.Label lblMemberID;
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b81ee2383d334fa79de47df8f58470d2" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_cardType" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_packageType" Width="1.5" PointX="5.125" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_shootTime" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_userRegistration" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_userRegistration_tb_userRegistration" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_bookingInfo" Width="1.5" PointX="0.75" PointY="2.125" />
+        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType1" />
+        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType1" />
+        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

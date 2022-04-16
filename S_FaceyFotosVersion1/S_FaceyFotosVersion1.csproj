@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bookingReviewConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bookingReviewConfirmationForm.Designer.cs">
+      <DependentUpon>bookingReviewConfirmationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDatabaseView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,21 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="newSfaceyFotos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newSfaceyFotos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="newSfaceyFotos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newSfaceyFotos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="newSfaceyFotos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newSfaceyFotos.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registerationForm.cs">
@@ -87,35 +108,20 @@
     <Compile Include="registerationForm.Designer.cs">
       <DependentUpon>registerationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="sfaceyFotos.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sfaceyFotos.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sfaceyFotos.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sfaceyFotos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sfaceyFotos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sfaceyFotos.edmx</DependentUpon>
+    <Compile Include="tb_bookingInfo.cs">
+      <DependentUpon>newSfaceyFotos.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_cardType.cs">
-      <DependentUpon>sfaceyFotos.tt</DependentUpon>
+      <DependentUpon>newSfaceyFotos.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_packageType.cs">
-      <DependentUpon>sfaceyFotos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tb_personalData2.cs">
-      <DependentUpon>sfaceyFotos.tt</DependentUpon>
+      <DependentUpon>newSfaceyFotos.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_shootTime.cs">
-      <DependentUpon>sfaceyFotos.tt</DependentUpon>
+      <DependentUpon>newSfaceyFotos.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_userRegistration.cs">
-      <DependentUpon>sfaceyFotos.tt</DependentUpon>
+      <DependentUpon>newSfaceyFotos.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmDatabaseView.resx">
       <DependentUpon>frmDatabaseView.cs</DependentUpon>
@@ -142,6 +148,13 @@
     <EmbeddedResource Include="registerationForm.resx">
       <DependentUpon>registerationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="newSfaceyFotos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>newSfaceyFotos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="newSfaceyFotos.edmx.diagram">
+      <DependentUpon>newSfaceyFotos.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -152,13 +165,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="sfaceyFotos.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>sfaceyFotos.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="sfaceyFotos.edmx.diagram">
-      <DependentUpon>sfaceyFotos.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -170,15 +176,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sfaceyFotos.Context.tt">
+    <Content Include="newSfaceyFotos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>sfaceyFotos.edmx</DependentUpon>
-      <LastGenOutput>sfaceyFotos.Context.cs</LastGenOutput>
+      <DependentUpon>newSfaceyFotos.edmx</DependentUpon>
+      <LastGenOutput>newSfaceyFotos.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="sfaceyFotos.tt">
+    <Content Include="newSfaceyFotos.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>sfaceyFotos.edmx</DependentUpon>
-      <LastGenOutput>sfaceyFotos.cs</LastGenOutput>
+      <DependentUpon>newSfaceyFotos.edmx</DependentUpon>
+      <LastGenOutput>newSfaceyFotos.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -68,6 +68,7 @@
             this.lblUnitCost = new System.Windows.Forms.Label();
             this.btnBookNow = new System.Windows.Forms.Button();
             this.linkLogout = new System.Windows.Forms.LinkLabel();
+            this.btnClear = new System.Windows.Forms.Button();
             this.gpPersonal.SuspendLayout();
             this.gpShoot.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -453,7 +454,7 @@
             // lblUnitCost
             // 
             this.lblUnitCost.AutoSize = true;
-            this.lblUnitCost.Location = new System.Drawing.Point(15, 26);
+            this.lblUnitCost.Location = new System.Drawing.Point(15, 28);
             this.lblUnitCost.Name = "lblUnitCost";
             this.lblUnitCost.Size = new System.Drawing.Size(80, 17);
             this.lblUnitCost.TabIndex = 0;
@@ -463,6 +464,7 @@
             // 
             this.btnBookNow.BackColor = System.Drawing.Color.Green;
             this.btnBookNow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBookNow.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookNow.Location = new System.Drawing.Point(625, 449);
             this.btnBookNow.Name = "btnBookNow";
             this.btnBookNow.Size = new System.Drawing.Size(117, 27);
@@ -482,11 +484,26 @@
             this.linkLogout.Text = "Logout";
             this.linkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogout_LinkClicked);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Red;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(427, 449);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(117, 27);
+            this.btnClear.TabIndex = 20;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // frmShootBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 515);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.linkLogout);
             this.Controls.Add(this.btnBookNow);
             this.Controls.Add(this.gpShoot);
@@ -552,5 +569,6 @@
         private System.Windows.Forms.TextBox tbTotal;
         private System.Windows.Forms.TextBox tbDeposit;
         private System.Windows.Forms.TextBox tbUnitCost;
+        private System.Windows.Forms.Button btnClear;
     }
 }

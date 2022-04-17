@@ -33,18 +33,9 @@ namespace S_FaceyFotosVersion1
                 var clientEmail = tbEmailAddress.Text;
                 var clientPhone = mtbTelephone.Text;
                 
-                SHA256 sha = SHA256.Create();
                 var cUser = tbUsername.Text;
-                var cPass = mtbPass1.Text;                
-                byte[] data = sha.ComputeHash(Encoding.UTF8.GetBytes(cPass));
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < data.Length; i++)
-                {
-                    sb.Append(data[i].ToString("x2"));
-                }
-                var hashed_pass = sb.ToString();
-
-                var cPassVerify = mtbPass2.Text;
+                var cPass = mtbPass1.Text;
+                
                 var cCardNumber = tbCardNumber.Text;
                 var cType = (int)cmbCardType.SelectedValue;
                 var CSV = tbCSV.Text;
@@ -55,16 +46,16 @@ namespace S_FaceyFotosVersion1
                 newClient.Email_Address = clientEmail;
                 newClient.Telephone = clientPhone;
                 newClient.Username = cUser.Trim();
-                
-                if(cPass != cPassVerify)
+
+                SHA256 sha = SHA256.Create();
+                byte[] data = sha.ComputeHash(Encoding.UTF8.GetBytes(cPass));
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < data.Length; i++)
                 {
-                    MessageBox.Show("Password Mis-match.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    sb.Append(data[i].ToString("x2"));
                 }
-                else
-                {
-                    newClient.Pass = hashed_pass;
-                    newClient.Pass_Verif = hashed_pass;
-                }                
+                var hashed_pass = sb.ToString();
+                newClient.Pass = hashed_pass;
                 newClient.Card_Number = cCardNumber;
                 newClient.Card_TypeID = cType;
                 newClient.CSV_Number = Convert.ToInt32(CSV);

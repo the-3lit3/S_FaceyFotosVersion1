@@ -34,14 +34,12 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.lblRetypePassword = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRegisterSubmit = new System.Windows.Forms.Button();
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.tbEmailAddress = new System.Windows.Forms.TextBox();
             this.mtbPass1 = new System.Windows.Forms.MaskedTextBox();
-            this.mtbPass2 = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mtbTelephone = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -117,16 +115,6 @@
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "PASSWORD";
             // 
-            // lblRetypePassword
-            // 
-            this.lblRetypePassword.AutoSize = true;
-            this.lblRetypePassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetypePassword.Location = new System.Drawing.Point(68, 299);
-            this.lblRetypePassword.Name = "lblRetypePassword";
-            this.lblRetypePassword.Size = new System.Drawing.Size(168, 19);
-            this.lblRetypePassword.TabIndex = 0;
-            this.lblRetypePassword.Text = "RE-TYPE PASSWORD";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::S_FaceyFotosVersion1.Properties.Resources.Kandy;
@@ -178,14 +166,6 @@
             this.mtbPass1.PasswordChar = '*';
             this.mtbPass1.Size = new System.Drawing.Size(172, 22);
             this.mtbPass1.TabIndex = 7;
-            // 
-            // mtbPass2
-            // 
-            this.mtbPass2.Location = new System.Drawing.Point(272, 296);
-            this.mtbPass2.Name = "mtbPass2";
-            this.mtbPass2.PasswordChar = '*';
-            this.mtbPass2.Size = new System.Drawing.Size(172, 22);
-            this.mtbPass2.TabIndex = 8;
             // 
             // label1
             // 
@@ -315,14 +295,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mtbTelephone);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.mtbPass2);
             this.Controls.Add(this.mtbPass1);
             this.Controls.Add(this.tbEmailAddress);
             this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.btnRegisterSubmit);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblRetypePassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblEmail);
@@ -346,14 +324,12 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblRetypePassword;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnRegisterSubmit;
         private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.TextBox tbEmailAddress;
         private System.Windows.Forms.MaskedTextBox mtbPass1;
-        private System.Windows.Forms.MaskedTextBox mtbPass2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox mtbTelephone;
         private System.Windows.Forms.Label label2;

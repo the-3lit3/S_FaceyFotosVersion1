@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,10 +27,20 @@ namespace S_FaceyFotosVersion1
             
             try
             {
+                
+                SHA256 sha = SHA256.Create();
                 var frmUn = tbUsername.Text.Trim();
                 var frmPs = tbPassword.Text;
+                byte[] data = sha.ComputeHash(Encoding.UTF8.GetBytes(frmPs));
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sb.Append(data[i].ToString("x2"));
+                }
+                var hashed_pass = sb.ToString();
+                
 
-                var user = db_entity.tb_userRegistration.FirstOrDefault(getUser => getUser.Username == frmUn);
+                var user = db_entity.tb_userRegistration.FirstOrDefault(getUser => getUser.Username == frmUn && getUser.Pass == hashed_pass);
                 if(user == null)
                 {
                     MessageBox.Show("Invalid login credentials.\n\rEnter correct credentials or\n\rregister an account", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);

@@ -5,15 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b81ee2383d334fa79de47df8f58470d2" Name="Diagram1" ZoomLevel="97">
-        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_cardType" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_packageType" Width="1.5" PointX="5.125" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_shootTime" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_bookingInfo" Width="1.5" PointX="0.75" PointY="2.125" />
-        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType1" />
-        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType1" />
-        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime1" />
-        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_userRegistration" Width="1.5" PointX="8" PointY="1" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_cardType" Width="1.5" PointX="5.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_packageType" Width="1.5" PointX="7.625" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_shootTime" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_userRegistration" Width="1.5" PointX="10.5" PointY="0.625" />
         <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_userRegistration_tb_cardType" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_bookingInfo" Width="1.5" PointX="0.5" PointY="0.5" />
+        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType" />
+        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType" />
+        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

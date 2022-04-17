@@ -17,16 +17,16 @@ namespace S_FaceyFotosVersion1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_cardType()
         {
-            this.tb_bookingInfo = new HashSet<tb_bookingInfo>();
             this.tb_userRegistration = new HashSet<tb_userRegistration>();
+            this.tb_bookingInfo = new HashSet<tb_bookingInfo>();
         }
     
         public int Id { get; set; }
         public string Card_Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_bookingInfo> tb_bookingInfo { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_userRegistration> tb_userRegistration { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_bookingInfo> tb_bookingInfo { get; set; }
     }
 }

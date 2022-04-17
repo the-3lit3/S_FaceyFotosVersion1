@@ -57,14 +57,13 @@
           <Property Name="Email_Address" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Telephone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Pass" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Pass_Verif" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Card_Number" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Card_TypeID" Type="int" Nullable="false" />
           <Property Name="CSV_Number" Type="int" Nullable="false" />
           <Property Name="Expiration_Date" Type="date" Nullable="false" />
         </EntityType>
-        <Association Name="FK_tb_bookingInfo_tb_cardType1">
+        <Association Name="FK_tb_bookingInfo_tb_cardType">
           <End Role="tb_cardType" Type="Self.tb_cardType" Multiplicity="1" />
           <End Role="tb_bookingInfo" Type="Self.tb_bookingInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -76,7 +75,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tb_bookingInfo_tb_packageType1">
+        <Association Name="FK_tb_bookingInfo_tb_packageType">
           <End Role="tb_packageType" Type="Self.tb_packageType" Multiplicity="1" />
           <End Role="tb_bookingInfo" Type="Self.tb_bookingInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -88,7 +87,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tb_bookingInfo_tb_shootTime1">
+        <Association Name="FK_tb_bookingInfo_tb_shootTime">
           <End Role="tb_shootTime" Type="Self.tb_shootTime" Multiplicity="1" />
           <End Role="tb_bookingInfo" Type="Self.tb_bookingInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -118,15 +117,15 @@
           <EntitySet Name="tb_packageType" EntityType="Self.tb_packageType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_shootTime" EntityType="Self.tb_shootTime" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_userRegistration" EntityType="Self.tb_userRegistration" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_tb_bookingInfo_tb_cardType1" Association="Self.FK_tb_bookingInfo_tb_cardType1">
+          <AssociationSet Name="FK_tb_bookingInfo_tb_cardType" Association="Self.FK_tb_bookingInfo_tb_cardType">
             <End Role="tb_cardType" EntitySet="tb_cardType" />
             <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
           </AssociationSet>
-          <AssociationSet Name="FK_tb_bookingInfo_tb_packageType1" Association="Self.FK_tb_bookingInfo_tb_packageType1">
+          <AssociationSet Name="FK_tb_bookingInfo_tb_packageType" Association="Self.FK_tb_bookingInfo_tb_packageType">
             <End Role="tb_packageType" EntitySet="tb_packageType" />
             <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
           </AssociationSet>
-          <AssociationSet Name="FK_tb_bookingInfo_tb_shootTime1" Association="Self.FK_tb_bookingInfo_tb_shootTime1">
+          <AssociationSet Name="FK_tb_bookingInfo_tb_shootTime" Association="Self.FK_tb_bookingInfo_tb_shootTime">
             <End Role="tb_shootTime" EntitySet="tb_shootTime" />
             <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
           </AssociationSet>
@@ -145,8 +144,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Card_Name" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tb_bookingInfo" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType1" FromRole="tb_cardType" ToRole="tb_bookingInfo" />
           <NavigationProperty Name="tb_userRegistration" Relationship="db_sfaceyFotos2Model.FK_tb_userRegistration_tb_cardType" FromRole="tb_cardType" ToRole="tb_userRegistration" />
+          <NavigationProperty Name="tb_bookingInfo" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType" FromRole="tb_cardType" ToRole="tb_bookingInfo" />
         </EntityType>
         <EntityType Name="tb_packageType">
           <Key>
@@ -155,7 +154,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Package_Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Unit_Cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <NavigationProperty Name="tb_bookingInfo" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType1" FromRole="tb_packageType" ToRole="tb_bookingInfo" />
+          <NavigationProperty Name="tb_bookingInfo" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType" FromRole="tb_packageType" ToRole="tb_bookingInfo" />
           </EntityType>
         <EntityType Name="tb_shootTime">
           <Key>
@@ -163,31 +162,60 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Shoot_Time" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="tb_bookingInfo" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime1" FromRole="tb_shootTime" ToRole="tb_bookingInfo" />
+          <NavigationProperty Name="tb_bookingInfo" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime" FromRole="tb_shootTime" ToRole="tb_bookingInfo" />
         </EntityType>
         <EntityContainer Name="db_sfaceyFotos2Entities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tb_cardType" EntityType="Self.tb_cardType" />
           <EntitySet Name="tb_packageType" EntityType="Self.tb_packageType" />
           <EntitySet Name="tb_shootTime" EntityType="Self.tb_shootTime" />
-          <EntitySet Name="tb_bookingInfo" EntityType="db_sfaceyFotos2Model.tb_bookingInfo" />
-          <AssociationSet Name="FK_tb_bookingInfo_tb_cardType1" Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType1">
-            <End Role="tb_cardType" EntitySet="tb_cardType" />
-            <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tb_bookingInfo_tb_packageType1" Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType1">
-            <End Role="tb_packageType" EntitySet="tb_packageType" />
-            <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tb_bookingInfo_tb_shootTime1" Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime1">
-            <End Role="tb_shootTime" EntitySet="tb_shootTime" />
-            <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
-          </AssociationSet>
           <EntitySet Name="tb_userRegistration" EntityType="db_sfaceyFotos2Model.tb_userRegistration" />
           <AssociationSet Name="FK_tb_userRegistration_tb_cardType" Association="db_sfaceyFotos2Model.FK_tb_userRegistration_tb_cardType">
             <End Role="tb_cardType" EntitySet="tb_cardType" />
             <End Role="tb_userRegistration" EntitySet="tb_userRegistration" />
           </AssociationSet>
+          <EntitySet Name="tb_bookingInfo" EntityType="db_sfaceyFotos2Model.tb_bookingInfo" />
+          <AssociationSet Name="FK_tb_bookingInfo_tb_cardType" Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType">
+            <End Role="tb_cardType" EntitySet="tb_cardType" />
+            <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_bookingInfo_tb_packageType" Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType">
+            <End Role="tb_packageType" EntitySet="tb_packageType" />
+            <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_bookingInfo_tb_shootTime" Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime">
+            <End Role="tb_shootTime" EntitySet="tb_shootTime" />
+            <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
+          </AssociationSet>
           </EntityContainer>
+        <EntityType Name="tb_userRegistration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email_Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Card_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Card_TypeID" Type="Int32" Nullable="false" />
+          <Property Name="CSV_Number" Type="Int32" Nullable="false" />
+          <Property Name="Expiration_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="tb_cardType" Relationship="db_sfaceyFotos2Model.FK_tb_userRegistration_tb_cardType" FromRole="tb_userRegistration" ToRole="tb_cardType" />
+        </EntityType>
+        <Association Name="FK_tb_userRegistration_tb_cardType">
+          <End Type="db_sfaceyFotos2Model.tb_cardType" Role="tb_cardType" Multiplicity="1" />
+          <End Type="db_sfaceyFotos2Model.tb_userRegistration" Role="tb_userRegistration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cardType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tb_userRegistration">
+              <PropertyRef Name="Card_TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="tb_bookingInfo">
           <Key>
             <PropertyRef Name="Id" />
@@ -207,11 +235,11 @@
           <Property Name="Shoot_Location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Deposit" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <NavigationProperty Name="tb_cardType" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType1" FromRole="tb_bookingInfo" ToRole="tb_cardType" />
-          <NavigationProperty Name="tb_packageType" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType1" FromRole="tb_bookingInfo" ToRole="tb_packageType" />
-          <NavigationProperty Name="tb_shootTime" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime1" FromRole="tb_bookingInfo" ToRole="tb_shootTime" />
+          <NavigationProperty Name="tb_cardType" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType" FromRole="tb_bookingInfo" ToRole="tb_cardType" />
+          <NavigationProperty Name="tb_packageType" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType" FromRole="tb_bookingInfo" ToRole="tb_packageType" />
+          <NavigationProperty Name="tb_shootTime" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime" FromRole="tb_bookingInfo" ToRole="tb_shootTime" />
         </EntityType>
-        <Association Name="FK_tb_bookingInfo_tb_cardType1">
+        <Association Name="FK_tb_bookingInfo_tb_cardType">
           <End Type="db_sfaceyFotos2Model.tb_cardType" Role="tb_cardType" Multiplicity="1" />
           <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -223,7 +251,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tb_bookingInfo_tb_packageType1">
+        <Association Name="FK_tb_bookingInfo_tb_packageType">
           <End Type="db_sfaceyFotos2Model.tb_packageType" Role="tb_packageType" Multiplicity="1" />
           <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -235,7 +263,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tb_bookingInfo_tb_shootTime1">
+        <Association Name="FK_tb_bookingInfo_tb_shootTime">
           <End Type="db_sfaceyFotos2Model.tb_shootTime" Role="tb_shootTime" Multiplicity="1" />
           <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -244,36 +272,6 @@
             </Principal>
             <Dependent Role="tb_bookingInfo">
               <PropertyRef Name="Shoot_TimeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="tb_userRegistration">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Email_Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Telephone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pass" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Pass_Verif" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Card_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Card_TypeID" Type="Int32" Nullable="false" />
-          <Property Name="CSV_Number" Type="Int32" Nullable="false" />
-          <Property Name="Expiration_Date" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="tb_cardType" Relationship="db_sfaceyFotos2Model.FK_tb_userRegistration_tb_cardType" FromRole="tb_userRegistration" ToRole="tb_cardType" />
-        </EntityType>
-        <Association Name="FK_tb_userRegistration_tb_cardType">
-          <End Type="db_sfaceyFotos2Model.tb_cardType" Role="tb_cardType" Multiplicity="1" />
-          <End Type="db_sfaceyFotos2Model.tb_userRegistration" Role="tb_userRegistration" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_cardType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tb_userRegistration">
-              <PropertyRef Name="Card_TypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -308,6 +306,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tb_userRegistration">
+            <EntityTypeMapping TypeName="db_sfaceyFotos2Model.tb_userRegistration">
+              <MappingFragment StoreEntitySet="tb_userRegistration">
+                <ScalarProperty Name="Expiration_Date" ColumnName="Expiration_Date" />
+                <ScalarProperty Name="CSV_Number" ColumnName="CSV_Number" />
+                <ScalarProperty Name="Card_TypeID" ColumnName="Card_TypeID" />
+                <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tb_bookingInfo">
             <EntityTypeMapping TypeName="db_sfaceyFotos2Model.tb_bookingInfo">
               <MappingFragment StoreEntitySet="tb_bookingInfo">
@@ -321,24 +336,6 @@
                 <ScalarProperty Name="CSV_Number" ColumnName="CSV_Number" />
                 <ScalarProperty Name="Card_TypeID" ColumnName="Card_TypeID" />
                 <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
-                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
-                <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
-                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_userRegistration">
-            <EntityTypeMapping TypeName="db_sfaceyFotos2Model.tb_userRegistration">
-              <MappingFragment StoreEntitySet="tb_userRegistration">
-                <ScalarProperty Name="Expiration_Date" ColumnName="Expiration_Date" />
-                <ScalarProperty Name="CSV_Number" ColumnName="CSV_Number" />
-                <ScalarProperty Name="Card_TypeID" ColumnName="Card_TypeID" />
-                <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
-                <ScalarProperty Name="Pass_Verif" ColumnName="Pass_Verif" />
-                <ScalarProperty Name="Pass" ColumnName="Pass" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Telephone" ColumnName="Telephone" />
                 <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
                 <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />

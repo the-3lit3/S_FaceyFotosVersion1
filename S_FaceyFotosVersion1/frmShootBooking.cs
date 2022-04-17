@@ -45,7 +45,6 @@ namespace S_FaceyFotosVersion1
                 newClient.Email_Address = clientEmail;
                 newClient.Telephone = clientPhone;            
                 newClient.Card_Number = cCardNumber;
-
                 newClient.Card_TypeID = cardT;
                 newClient.CSV_Number = Convert.ToInt32(CSV);
                 newClient.Expiration_Date = DateTime.Parse(cardExpiry);
@@ -57,13 +56,10 @@ namespace S_FaceyFotosVersion1
                 newClient.Deposit = pkgInfo.Unit_Cost * 0.5m;                               
                 tbUnitCost.Text = pkgInfo.Unit_Cost.ToString();
                 tbDeposit.Text = newClient.Deposit.ToString();
-                tbTotal.Text = newClient.Total.ToString();
-               
-
+                tbTotal.Text = newClient.Total.ToString();              
 
                 db_entity.tb_bookingInfo.Add(newClient);              
                 db_entity.SaveChanges();
-                this.Refresh();
 
                 MessageBox.Show("Shoot successfully booked!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
            
@@ -110,6 +106,10 @@ namespace S_FaceyFotosVersion1
                 MessageBox.Show(ex.Message);
             }
         }
-            
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

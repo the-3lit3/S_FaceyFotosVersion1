@@ -48,8 +48,8 @@ namespace S_FaceyFotosVersion1
                 else
                 {
                     MessageBox.Show("Login Successful.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmShootBooking launchBooking = new frmShootBooking();
-                    launchBooking.Show();
+                    frmLaunchPad openLaunch = new frmLaunchPad();
+                    openLaunch.Show();
                     this.Hide();         
                 }
 

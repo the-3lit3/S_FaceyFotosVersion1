@@ -93,6 +93,12 @@
     <Compile Include="frmDatabaseView.Designer.cs">
       <DependentUpon>frmDatabaseView.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLaunchPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLaunchPad.Designer.cs">
+      <DependentUpon>frmLaunchPad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatabaseView.resx">
       <DependentUpon>frmDatabaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLaunchPad.resx">
+      <DependentUpon>frmLaunchPad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoginForm.resx">
       <DependentUpon>frmLoginForm.cs</DependentUpon>

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,8 +32,18 @@ namespace S_FaceyFotosVersion1
                 var lName = tbLastName.Text;
                 var clientEmail = tbEmailAddress.Text;
                 var clientPhone = mtbTelephone.Text;
+                
+                SHA256 sha = SHA256.Create();
                 var cUser = tbUsername.Text;
-                var cPass = mtbPass1.Text;
+                var cPass = mtbPass1.Text;                
+                byte[] data = sha.ComputeHash(Encoding.UTF8.GetBytes(cPass));
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sb.Append(data[i].ToString("x2"));
+                }
+                var hashed_pass = sb.ToString();
+
                 var cPassVerify = mtbPass2.Text;
                 var cCardNumber = tbCardNumber.Text;
                 var cType = (int)cmbCardType.SelectedValue;
@@ -51,10 +62,9 @@ namespace S_FaceyFotosVersion1
                 }
                 else
                 {
-                    newClient.Pass = cPass;
-                    newClient.Pass_Verif = cPassVerify;
-                }
-                
+                    newClient.Pass = hashed_pass;
+                    newClient.Pass_Verif = hashed_pass;
+                }                
                 newClient.Card_Number = cCardNumber;
                 newClient.Card_TypeID = cType;
                 newClient.CSV_Number = Convert.ToInt32(CSV);

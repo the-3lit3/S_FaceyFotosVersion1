@@ -32,7 +32,7 @@ namespace S_FaceyFotosVersion1
                 var user = db_entity.tb_userRegistration.FirstOrDefault(getUser => getUser.Username == frmUn);
                 if(user == null)
                 {
-                    MessageBox.Show("Invalid login credentials.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Invalid login credentials.\n\rEnter correct credentials or\n\rregister an account", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -48,5 +48,11 @@ namespace S_FaceyFotosVersion1
             }                
         }
 
+        private void linkedRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRegisterationForm shwFrm = new frmRegisterationForm();
+            shwFrm.Show();
+            this.Hide();
+        }
     }
 }

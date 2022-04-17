@@ -57,8 +57,8 @@
           <Property Name="Email_Address" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Telephone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Pass_Verif" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pass" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Pass_Verif" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Card_Number" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Card_TypeID" Type="int" Nullable="false" />
           <Property Name="CSV_Number" Type="int" Nullable="false" />
@@ -257,8 +257,8 @@
           <Property Name="Email_Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Telephone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pass_Verif" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pass_Verif" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Card_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Card_TypeID" Type="Int32" Nullable="false" />
           <Property Name="CSV_Number" Type="Int32" Nullable="false" />

@@ -103,6 +103,7 @@
             this.linkedRegister.TabIndex = 7;
             this.linkedRegister.TabStop = true;
             this.linkedRegister.Text = "Register";
+            this.linkedRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkedRegister_LinkClicked);
             // 
             // linkedPasswordRecovery
             // 

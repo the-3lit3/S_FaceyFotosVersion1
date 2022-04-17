@@ -32,7 +32,9 @@ namespace S_FaceyFotosVersion1
                 var clientPhone = mtbTelephone.Text;
                 var cUser = tbUsername.Text;
                 var cPass = mtbPass1.Text;
+                var cPassVerify = mtbPass2.Text;
                 var cCardNumber = tbCardNumber.Text;
+                var cType = (int)cmbCardType.SelectedValue;
                 var CSV = tbCSV.Text;
                 var cardExpiry = mtbExpiry.Text;
 
@@ -41,15 +43,24 @@ namespace S_FaceyFotosVersion1
                 newClient.Email_Address = clientEmail;
                 newClient.Telephone = clientPhone;
                 newClient.Username = cUser.Trim();
-                newClient.Pass = cPass;
+                
+                if(cPass != cPassVerify)
+                {
+                    MessageBox.Show("Password Mis-match.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    newClient.Pass = cPass;
+                }
+                
                 newClient.Card_Number = cCardNumber;
-                newClient.Card_TypeID = Convert.ToInt32(cmbCardType.SelectedValue);
+                newClient.Card_TypeID = cType;
                 newClient.CSV_Number = Convert.ToInt32(CSV);
                 newClient.Expiration_Date = DateTime.Parse(cardExpiry);
 
                 db_entity.tb_userRegistration.Add(newClient);
                 db_entity.SaveChanges();
-                this.Refresh();
+                //this.Refresh();
 
                 MessageBox.Show("Registration successful!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

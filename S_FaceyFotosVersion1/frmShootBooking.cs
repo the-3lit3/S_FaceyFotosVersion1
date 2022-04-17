@@ -109,6 +109,22 @@ namespace S_FaceyFotosVersion1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            tbFname.Clear();
+            tbLname.Clear();
+            tbEmailAdd.Clear();
+            mtbTelephone.Clear();
+            tbCardNumber.Clear();
+            cmbCardType.SelectedIndex = 0;
+            tbCSV.Clear();
+            mtbExpiry.Clear();
+            cmbPackageSelect.SelectedIndex = 0;
+            dtShootDate.ResetText();
+            cmbShootTime.SelectedIndex = 0;
+            tbLocation.Clear();
+            cmbPackageSelect.SelectedIndex = 0;
+            tbUnitCost.Clear();
+            tbDeposit.Clear();
+            tbTotal.Clear();
 
         }
     }

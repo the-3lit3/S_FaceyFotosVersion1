@@ -12,11 +12,12 @@ namespace S_FaceyFotosVersion1
 {
     public partial class frmRegisterationForm : Form
     {
-        private readonly db_sfaceyFotos2Entities3 db_entity; 
+        private readonly db_sfaceyFotos2Entities3 db_entity;
+
         public frmRegisterationForm()
         {
             InitializeComponent();
-              db_entity = new db_sfaceyFotos2Entities3();
+             db_entity = new db_sfaceyFotos2Entities3();
             
         }
 
@@ -51,6 +52,7 @@ namespace S_FaceyFotosVersion1
                 else
                 {
                     newClient.Pass = cPass;
+                    newClient.Pass_Verif = cPassVerify;
                 }
                 
                 newClient.Card_Number = cCardNumber;
@@ -87,9 +89,6 @@ namespace S_FaceyFotosVersion1
             {
                 MessageBox.Show(ex.Message);
             }
-            
-
         }
-
     }
 }

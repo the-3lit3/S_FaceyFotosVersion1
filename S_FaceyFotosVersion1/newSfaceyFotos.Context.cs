@@ -28,7 +28,7 @@ namespace S_FaceyFotosVersion1
         public virtual DbSet<tb_cardType> tb_cardType { get; set; }
         public virtual DbSet<tb_packageType> tb_packageType { get; set; }
         public virtual DbSet<tb_shootTime> tb_shootTime { get; set; }
-        public virtual DbSet<tb_userRegistration> tb_userRegistration { get; set; }
         public virtual DbSet<tb_bookingInfo> tb_bookingInfo { get; set; }
+        public virtual DbSet<tb_userRegistration> tb_userRegistration { get; set; }
     }
 }

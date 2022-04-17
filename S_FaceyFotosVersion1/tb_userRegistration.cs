@@ -21,6 +21,7 @@ namespace S_FaceyFotosVersion1
         public string Telephone { get; set; }
         public string Username { get; set; }
         public string Pass { get; set; }
+        public string Pass_Verif { get; set; }
         public string Card_Number { get; set; }
         public int Card_TypeID { get; set; }
         public int CSV_Number { get; set; }

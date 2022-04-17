@@ -108,7 +108,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmMainForm";
             this.Text = "S Facey Fotos V1";
-            this.Load += new System.EventHandler(this.frmMainForm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

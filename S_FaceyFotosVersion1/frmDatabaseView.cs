@@ -115,5 +115,12 @@ namespace S_FaceyFotosVersion1
         {
             
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmLoginForm launchLogin = new frmLoginForm();
+            launchLogin.Show();
+            this.Hide();
+        }
     }
 }

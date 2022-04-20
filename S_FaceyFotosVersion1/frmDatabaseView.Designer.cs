@@ -35,6 +35,7 @@
             this.btnModifyRecord = new System.Windows.Forms.Button();
             this.btnUserRecords = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridFotoDBview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1522, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1522, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -108,11 +109,22 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(780, 461);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(119, 49);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // frmDatabaseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1522, 535);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUserRecords);
             this.Controls.Add(this.btnModifyRecord);
@@ -137,5 +149,6 @@
         private System.Windows.Forms.Button btnModifyRecord;
         private System.Windows.Forms.Button btnUserRecords;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

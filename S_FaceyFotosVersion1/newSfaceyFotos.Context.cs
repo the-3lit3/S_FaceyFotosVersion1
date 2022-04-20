@@ -12,6 +12,8 @@ namespace S_FaceyFotosVersion1
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class db_sfaceyFotos2Entities3 : DbContext
     {
@@ -30,5 +32,15 @@ namespace S_FaceyFotosVersion1
         public virtual DbSet<tb_shootTime> tb_shootTime { get; set; }
         public virtual DbSet<tb_userRegistration> tb_userRegistration { get; set; }
         public virtual DbSet<tb_bookingInfo> tb_bookingInfo { get; set; }
+    
+        public virtual ObjectResult<pr_SelectBookingDetails_Result> pr_SelectBookingDetails()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_SelectBookingDetails_Result>("pr_SelectBookingDetails");
+        }
+    
+        public virtual ObjectResult<pr_bookingInfo_Result> pr_bookingInfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pr_bookingInfo_Result>("pr_bookingInfo");
+        }
     }
 }

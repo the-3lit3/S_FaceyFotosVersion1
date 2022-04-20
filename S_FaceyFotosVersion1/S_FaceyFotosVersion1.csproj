@@ -134,6 +134,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pr_bookingInfo_Result.cs">
+      <DependentUpon>newSfaceyFotos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pr_SelectBookingDetails_Result.cs">
+      <DependentUpon>newSfaceyFotos.tt</DependentUpon>
+    </Compile>
     <Compile Include="registerationForm.cs">
       <SubType>Form</SubType>
     </Compile>

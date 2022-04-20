@@ -31,16 +31,11 @@
             this.lblRegistrationForm = new System.Windows.Forms.Label();
             this.gridFotoDBview = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLoadBooking = new System.Windows.Forms.Button();
+            this.btnModifyRecord = new System.Windows.Forms.Button();
+            this.btnUserRecords = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridFotoDBview)).BeginInit();
-            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRegistrationForm
@@ -67,90 +62,67 @@
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 28);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1522, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1522, 30);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // menuStrip2
+            // btnLoadBooking
             // 
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem,
-            this.optionsToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1522, 28);
-            this.menuStrip2.TabIndex = 6;
-            this.menuStrip2.Text = "menuStrip2";
+            this.btnLoadBooking.Location = new System.Drawing.Point(113, 461);
+            this.btnLoadBooking.Name = "btnLoadBooking";
+            this.btnLoadBooking.Size = new System.Drawing.Size(151, 49);
+            this.btnLoadBooking.TabIndex = 6;
+            this.btnLoadBooking.Text = "Load Booking Records";
+            this.btnLoadBooking.UseVisualStyleBackColor = true;
+            this.btnLoadBooking.Click += new System.EventHandler(this.btnLoadBooking_Click);
             // 
-            // menuToolStripMenuItem
+            // btnModifyRecord
             // 
-            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewDatabaseToolStripMenuItem,
-            this.saveChangesToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
-            this.menuToolStripMenuItem.Text = "Menu";
+            this.btnModifyRecord.Location = new System.Drawing.Point(458, 461);
+            this.btnModifyRecord.Name = "btnModifyRecord";
+            this.btnModifyRecord.Size = new System.Drawing.Size(128, 49);
+            this.btnModifyRecord.TabIndex = 7;
+            this.btnModifyRecord.Text = "Modify";
+            this.btnModifyRecord.UseVisualStyleBackColor = true;
+            this.btnModifyRecord.Click += new System.EventHandler(this.btnModifyRecord_Click);
             // 
-            // viewDatabaseToolStripMenuItem
+            // btnUserRecords
             // 
-            this.viewDatabaseToolStripMenuItem.Name = "viewDatabaseToolStripMenuItem";
-            this.viewDatabaseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.viewDatabaseToolStripMenuItem.Text = "Load Client Records";
-            this.viewDatabaseToolStripMenuItem.Click += new System.EventHandler(this.viewDatabaseToolStripMenuItem_Click);
+            this.btnUserRecords.Location = new System.Drawing.Point(300, 461);
+            this.btnUserRecords.Name = "btnUserRecords";
+            this.btnUserRecords.Size = new System.Drawing.Size(120, 49);
+            this.btnUserRecords.TabIndex = 8;
+            this.btnUserRecords.Text = "Load User Records";
+            this.btnUserRecords.UseVisualStyleBackColor = true;
+            this.btnUserRecords.Click += new System.EventHandler(this.btnUserRecords_Click);
             // 
-            // saveChangesToolStripMenuItem
+            // btnDelete
             // 
-            this.saveChangesToolStripMenuItem.Name = "saveChangesToolStripMenuItem";
-            this.saveChangesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveChangesToolStripMenuItem.Text = "Load User Accounts";
-            this.saveChangesToolStripMenuItem.Click += new System.EventHandler(this.saveChangesToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editRecordToolStripMenuItem,
-            this.deleteRecordToolStripMenuItem});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
-            this.optionsToolStripMenuItem.Text = "Options";
-            // 
-            // editRecordToolStripMenuItem
-            // 
-            this.editRecordToolStripMenuItem.Name = "editRecordToolStripMenuItem";
-            this.editRecordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.editRecordToolStripMenuItem.Text = "Edit Record";
-            // 
-            // deleteRecordToolStripMenuItem
-            // 
-            this.deleteRecordToolStripMenuItem.Name = "deleteRecordToolStripMenuItem";
-            this.deleteRecordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.deleteRecordToolStripMenuItem.Text = "Delete Record";
+            this.btnDelete.Location = new System.Drawing.Point(626, 461);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(119, 49);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmDatabaseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1522, 535);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUserRecords);
+            this.Controls.Add(this.btnModifyRecord);
+            this.Controls.Add(this.btnLoadBooking);
             this.Controls.Add(this.gridFotoDBview);
             this.Controls.Add(this.lblRegistrationForm);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.menuStrip2);
-            this.MainMenuStrip = this.menuStrip2;
             this.Name = "frmDatabaseView";
             this.Text = "S Facey Fotos Database";
             ((System.ComponentModel.ISupportInitialize)(this.gridFotoDBview)).EndInit();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,13 +133,9 @@
         private System.Windows.Forms.Label lblRegistrationForm;
         private System.Windows.Forms.DataGridView gridFotoDBview;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewDatabaseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveChangesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editRecordToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteRecordToolStripMenuItem;
+        private System.Windows.Forms.Button btnLoadBooking;
+        private System.Windows.Forms.Button btnModifyRecord;
+        private System.Windows.Forms.Button btnUserRecords;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

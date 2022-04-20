@@ -63,6 +63,8 @@
           <Property Name="CSV_Number" Type="int" Nullable="false" />
           <Property Name="Expiration_Date" Type="date" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <Association Name="FK_tb_bookingInfo_tb_cardType">
           <End Role="tb_cardType" Type="Self.tb_cardType" Multiplicity="1" />
           <End Role="tb_bookingInfo" Type="Self.tb_bookingInfo" Multiplicity="*" />
@@ -111,6 +113,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="pr_bookingInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="db_sfaceyFotos2ModelStoreContainer">
           <EntitySet Name="tb_bookingInfo" EntityType="Self.tb_bookingInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_cardType" EntityType="Self.tb_cardType" Schema="dbo" store:Type="Tables" />
@@ -186,6 +189,8 @@
             <End Role="tb_shootTime" EntitySet="tb_shootTime" />
             <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
           </AssociationSet>
+          <FunctionImport Name="pr_SelectBookingDetails" ReturnType="Collection(db_sfaceyFotos2Model.pr_SelectBookingDetails_Result)" />
+          <FunctionImport Name="pr_bookingInfo" ReturnType="Collection(db_sfaceyFotos2Model.pr_bookingInfo_Result)" />
           </EntityContainer>
         <EntityType Name="tb_userRegistration">
           <Key>
@@ -275,6 +280,41 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="pr_SelectBookingDetails_Result">
+          <Property Type="String" Name="First_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Last_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email_Address" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Telephone" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Card_Number" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Card_Type" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="CSV" Nullable="false" />
+          <Property Type="DateTime" Name="Expiry_Datte" Nullable="false" />
+          <Property Type="String" Name="Package_Type" Nullable="false" MaxLength="15" />
+          <Property Type="DateTime" Name="Shoot_Date" Nullable="false" />
+          <Property Type="String" Name="Shoot_Time" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="Location" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="Unit_Cost" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Deposit" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="pr_bookingInfo_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="First_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Last_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email_Address" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Telephone" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Card_Number" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Card_Type" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="CSV" Nullable="false" />
+          <Property Type="DateTime" Name="Expiry_Date" Nullable="false" />
+          <Property Type="String" Name="Package_Type" Nullable="false" MaxLength="15" />
+          <Property Type="DateTime" Name="Shoot_Date" Nullable="false" />
+          <Property Type="String" Name="Shoot_Time" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="Location" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="Unit_Cost" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Deposit" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -344,6 +384,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="pr_bookingInfo" FunctionName="db_sfaceyFotos2Model.Store.pr_bookingInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_sfaceyFotos2Model.pr_bookingInfo_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="Email_Address" ColumnName="Email Address" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Card_Number" ColumnName="Card Number" />
+                <ScalarProperty Name="Card_Type" ColumnName="Card Type" />
+                <ScalarProperty Name="CSV" ColumnName="CSV" />
+                <ScalarProperty Name="Expiry_Date" ColumnName="Expiry Date" />
+                <ScalarProperty Name="Package_Type" ColumnName="Package Type" />
+                <ScalarProperty Name="Shoot_Date" ColumnName="Shoot Date" />
+                <ScalarProperty Name="Shoot_Time" ColumnName="Shoot Time" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Unit_Cost" ColumnName="Unit Cost" />
+                <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -18,6 +18,14 @@ namespace S_FaceyFotosVersion1
             InitializeComponent();
             db_entity = new db_sfaceyFotos2Entities3();
 
+
+        }
+
+        public frmDatabaseView(tb_userRegistration editUser)
+        {
+            InitializeComponent();
+            db_entity = new db_sfaceyFotos2Entities3();
+
         }
 
         private void btnLoadBooking_Click(object sender, EventArgs e)

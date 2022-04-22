@@ -65,7 +65,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1522, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1522, 30);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -133,7 +133,7 @@
             this.Controls.Add(this.lblRegistrationForm);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmDatabaseView";
-            this.Text = "S Facey Fotos Database";
+            this.Text = "S Facey Fotos Database Records View";
             ((System.ComponentModel.ISupportInitialize)(this.gridFotoDBview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

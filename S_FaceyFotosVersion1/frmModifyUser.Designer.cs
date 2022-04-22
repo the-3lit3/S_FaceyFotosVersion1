@@ -33,26 +33,26 @@
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.tblUserAccount = new System.Windows.Forms.TableLayoutPanel();
+            this.tbCSV = new System.Windows.Forms.TextBox();
+            this.cmbCardType = new System.Windows.Forms.ComboBox();
             this.lblExpiryDate = new System.Windows.Forms.Label();
+            this.tbCardNumber = new System.Windows.Forms.TextBox();
             this.lblCardType = new System.Windows.Forms.Label();
             this.lblCardNumber = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
             this.lblFname = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.lblCsv = new System.Windows.Forms.Label();
             this.mtbExpiry = new System.Windows.Forms.MaskedTextBox();
-            this.cmbCardType = new System.Windows.Forms.ComboBox();
-            this.tbCardNumber = new System.Windows.Forms.TextBox();
-            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.mtbTelephone = new System.Windows.Forms.MaskedTextBox();
-            this.mtbPass1 = new System.Windows.Forms.MaskedTextBox();
             this.tbEmailAddress = new System.Windows.Forms.TextBox();
-            this.tbLastName = new System.Windows.Forms.TextBox();
-            this.tbFirstName = new System.Windows.Forms.TextBox();
-            this.tbCSV = new System.Windows.Forms.TextBox();
+            this.mtbPass1 = new System.Windows.Forms.MaskedTextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvUserAccountDatabase)).BeginInit();
@@ -88,6 +88,7 @@
             this.btnDeleteUser.TabIndex = 2;
             this.btnDeleteUser.Text = "Delete";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
             // btnCancel
             // 
@@ -140,6 +141,26 @@
             this.tblUserAccount.Size = new System.Drawing.Size(680, 312);
             this.tblUserAccount.TabIndex = 4;
             // 
+            // tbCSV
+            // 
+            this.tbCSV.Location = new System.Drawing.Point(236, 248);
+            this.tbCSV.Name = "tbCSV";
+            this.tbCSV.Size = new System.Drawing.Size(441, 22);
+            this.tbCSV.TabIndex = 33;
+            // 
+            // cmbCardType
+            // 
+            this.cmbCardType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCardType.FormattingEnabled = true;
+            this.cmbCardType.Items.AddRange(new object[] {
+            "Debit",
+            "Credit"});
+            this.cmbCardType.Location = new System.Drawing.Point(236, 216);
+            this.cmbCardType.MaxDropDownItems = 10;
+            this.cmbCardType.Name = "cmbCardType";
+            this.cmbCardType.Size = new System.Drawing.Size(441, 24);
+            this.cmbCardType.TabIndex = 20;
+            // 
             // lblExpiryDate
             // 
             this.lblExpiryDate.AutoSize = true;
@@ -149,6 +170,13 @@
             this.lblExpiryDate.Size = new System.Drawing.Size(90, 19);
             this.lblExpiryDate.TabIndex = 31;
             this.lblExpiryDate.Text = "Expiry Date";
+            // 
+            // tbCardNumber
+            // 
+            this.tbCardNumber.Location = new System.Drawing.Point(236, 187);
+            this.tbCardNumber.Name = "tbCardNumber";
+            this.tbCardNumber.Size = new System.Drawing.Size(441, 22);
+            this.tbCardNumber.TabIndex = 19;
             // 
             // lblCardType
             // 
@@ -170,36 +198,6 @@
             this.lblCardNumber.TabIndex = 29;
             this.lblCardNumber.Text = "Card #";
             // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(3, 121);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(99, 19);
-            this.lblUsername.TabIndex = 28;
-            this.lblUsername.Text = "USERNAME";
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(3, 90);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(65, 19);
-            this.lblPhone.TabIndex = 27;
-            this.lblPhone.Text = "PHONE";
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(3, 153);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(97, 19);
-            this.lblPassword.TabIndex = 22;
-            this.lblPassword.Text = "PASSWORD";
-            // 
             // lblFname
             // 
             this.lblFname.AutoSize = true;
@@ -210,16 +208,6 @@
             this.lblFname.TabIndex = 23;
             this.lblFname.Text = "FIRST NAME";
             // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(3, 60);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(60, 19);
-            this.lblEmail.TabIndex = 24;
-            this.lblEmail.Text = "EMAIL";
-            // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
@@ -229,6 +217,40 @@
             this.lblLastName.Size = new System.Drawing.Size(100, 19);
             this.lblLastName.TabIndex = 25;
             this.lblLastName.Text = "LAST NAME";
+            // 
+            // tbLastName
+            // 
+            this.tbLastName.Location = new System.Drawing.Point(236, 33);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(441, 22);
+            this.tbLastName.TabIndex = 14;
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(3, 121);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(99, 19);
+            this.lblUsername.TabIndex = 28;
+            this.lblUsername.Text = "USERNAME";
+            // 
+            // tbFirstName
+            // 
+            this.tbFirstName.Location = new System.Drawing.Point(236, 3);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(441, 22);
+            this.tbFirstName.TabIndex = 13;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(3, 153);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(97, 19);
+            this.lblPassword.TabIndex = 22;
+            this.lblPassword.Text = "PASSWORD";
             // 
             // lblCsv
             // 
@@ -249,32 +271,25 @@
             this.mtbExpiry.TabIndex = 21;
             this.mtbExpiry.ValidatingType = typeof(System.DateTime);
             // 
-            // cmbCardType
+            // lblEmail
             // 
-            this.cmbCardType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCardType.FormattingEnabled = true;
-            this.cmbCardType.Items.AddRange(new object[] {
-            "Debit",
-            "Credit"});
-            this.cmbCardType.Location = new System.Drawing.Point(236, 216);
-            this.cmbCardType.MaxDropDownItems = 10;
-            this.cmbCardType.Name = "cmbCardType";
-            this.cmbCardType.Size = new System.Drawing.Size(441, 24);
-            this.cmbCardType.TabIndex = 20;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(3, 60);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(60, 19);
+            this.lblEmail.TabIndex = 24;
+            this.lblEmail.Text = "EMAIL";
             // 
-            // tbCardNumber
+            // lblPhone
             // 
-            this.tbCardNumber.Location = new System.Drawing.Point(236, 187);
-            this.tbCardNumber.Name = "tbCardNumber";
-            this.tbCardNumber.Size = new System.Drawing.Size(441, 22);
-            this.tbCardNumber.TabIndex = 19;
-            // 
-            // tbUsername
-            // 
-            this.tbUsername.Location = new System.Drawing.Point(236, 124);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(441, 22);
-            this.tbUsername.TabIndex = 17;
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(3, 90);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(65, 19);
+            this.lblPhone.TabIndex = 27;
+            this.lblPhone.Text = "PHONE";
             // 
             // mtbTelephone
             // 
@@ -284,14 +299,6 @@
             this.mtbTelephone.Size = new System.Drawing.Size(441, 22);
             this.mtbTelephone.TabIndex = 16;
             // 
-            // mtbPass1
-            // 
-            this.mtbPass1.Location = new System.Drawing.Point(236, 156);
-            this.mtbPass1.Name = "mtbPass1";
-            this.mtbPass1.PasswordChar = '*';
-            this.mtbPass1.Size = new System.Drawing.Size(441, 22);
-            this.mtbPass1.TabIndex = 18;
-            // 
             // tbEmailAddress
             // 
             this.tbEmailAddress.Location = new System.Drawing.Point(236, 63);
@@ -299,26 +306,24 @@
             this.tbEmailAddress.Size = new System.Drawing.Size(441, 22);
             this.tbEmailAddress.TabIndex = 15;
             // 
-            // tbLastName
+            // mtbPass1
             // 
-            this.tbLastName.Location = new System.Drawing.Point(236, 33);
-            this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(441, 22);
-            this.tbLastName.TabIndex = 14;
+            this.mtbPass1.Enabled = false;
+            this.mtbPass1.Location = new System.Drawing.Point(236, 156);
+            this.mtbPass1.Name = "mtbPass1";
+            this.mtbPass1.PasswordChar = '*';
+            this.mtbPass1.ReadOnly = true;
+            this.mtbPass1.Size = new System.Drawing.Size(441, 22);
+            this.mtbPass1.TabIndex = 18;
             // 
-            // tbFirstName
+            // tbUsername
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(236, 3);
-            this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(441, 22);
-            this.tbFirstName.TabIndex = 13;
-            // 
-            // tbCSV
-            // 
-            this.tbCSV.Location = new System.Drawing.Point(236, 248);
-            this.tbCSV.Name = "tbCSV";
-            this.tbCSV.Size = new System.Drawing.Size(441, 22);
-            this.tbCSV.TabIndex = 33;
+            this.tbUsername.Enabled = false;
+            this.tbUsername.Location = new System.Drawing.Point(236, 124);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.ReadOnly = true;
+            this.tbUsername.Size = new System.Drawing.Size(441, 22);
+            this.tbUsername.TabIndex = 17;
             // 
             // btnExit
             // 
@@ -339,6 +344,7 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmModifyUser
             // 

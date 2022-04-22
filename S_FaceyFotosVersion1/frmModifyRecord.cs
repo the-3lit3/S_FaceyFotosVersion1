@@ -30,5 +30,7 @@ namespace S_FaceyFotosVersion1
             editUser.MdiParent = this;
             editUser.Show();
         }
+
+        
     }
 }

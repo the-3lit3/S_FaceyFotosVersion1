@@ -71,7 +71,7 @@ namespace S_FaceyFotosVersion1
 
         private void btnUserRecords_Click(object sender, EventArgs e)
         {
-            var bookingRecords = db_entity.tb_userRegistration.Select(q => new
+            var userAccounts = db_entity.tb_userRegistration.Select(q => new
             {
                 ID = q.Id,
                 FIRST_NAME = q.First_Name,
@@ -86,7 +86,7 @@ namespace S_FaceyFotosVersion1
                 EXPIRY = q.Expiration_Date                
             }).ToList();
 
-            gridFotoDBview.DataSource = bookingRecords;
+            gridFotoDBview.DataSource = userAccounts;
             gridFotoDBview.Columns[0].Visible = false;
             gridFotoDBview.Columns[1].HeaderText = "FIRST NAME ";
             gridFotoDBview.Columns[2].HeaderText = "LAST NAME";

@@ -16,6 +16,7 @@ namespace S_FaceyFotosVersion1
         private frmDatabaseView launchDataGrid;
         private frmShootBooking launchShootForm;
         private frmLoginForm launchLoginForm;
+        private frmModifyRecord launchModifyRec;
         public frmLaunchPad()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace S_FaceyFotosVersion1
             launchDataGrid = new frmDatabaseView();
             launchShootForm = new frmShootBooking();
             launchLoginForm = new frmLoginForm();
+            launchModifyRec = new frmModifyRecord();
         }
 
         private void btnViewData_Click(object sender, EventArgs e)
@@ -40,6 +42,12 @@ namespace S_FaceyFotosVersion1
         private void btnLogout_Click(object sender, EventArgs e)
         {
             launchLoginForm.Show();
+            this.Hide();
+        }
+
+        private void btnModifyDB_Click(object sender, EventArgs e)
+        {
+            launchModifyRec.Show();
             this.Hide();
         }
     }

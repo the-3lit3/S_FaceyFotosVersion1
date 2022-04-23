@@ -130,7 +130,7 @@
             this.btnRegisterSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnRegisterSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegisterSubmit.Location = new System.Drawing.Point(616, 399);
+            this.btnRegisterSubmit.Location = new System.Drawing.Point(616, 400);
             this.btnRegisterSubmit.Name = "btnRegisterSubmit";
             this.btnRegisterSubmit.Size = new System.Drawing.Size(141, 31);
             this.btnRegisterSubmit.TabIndex = 13;

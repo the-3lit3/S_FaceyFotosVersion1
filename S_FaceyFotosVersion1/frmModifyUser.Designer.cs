@@ -55,6 +55,8 @@
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblEditFormId = new System.Windows.Forms.Label();
+            this.lblRegisteredUsers = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvUserAccountDatabase)).BeginInit();
             this.tblUserAccount.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +74,7 @@
             // 
             // btnEditUserRecord
             // 
-            this.btnEditUserRecord.Location = new System.Drawing.Point(375, 820);
+            this.btnEditUserRecord.Location = new System.Drawing.Point(388, 800);
             this.btnEditUserRecord.Name = "btnEditUserRecord";
             this.btnEditUserRecord.Size = new System.Drawing.Size(75, 23);
             this.btnEditUserRecord.TabIndex = 1;
@@ -82,7 +84,7 @@
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(808, 584);
+            this.btnDeleteUser.Location = new System.Drawing.Point(696, 800);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteUser.TabIndex = 2;
@@ -92,7 +94,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(808, 645);
+            this.btnCancel.Location = new System.Drawing.Point(844, 800);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -121,11 +123,11 @@
             this.tblUserAccount.Controls.Add(this.mtbExpiry, 1, 9);
             this.tblUserAccount.Controls.Add(this.lblEmail, 0, 2);
             this.tblUserAccount.Controls.Add(this.lblPhone, 0, 3);
-            this.tblUserAccount.Controls.Add(this.mtbTelephone, 1, 3);
             this.tblUserAccount.Controls.Add(this.tbEmailAddress, 1, 2);
             this.tblUserAccount.Controls.Add(this.mtbPass1, 1, 5);
             this.tblUserAccount.Controls.Add(this.tbUsername, 1, 4);
-            this.tblUserAccount.Location = new System.Drawing.Point(34, 467);
+            this.tblUserAccount.Controls.Add(this.mtbTelephone, 1, 3);
+            this.tblUserAccount.Location = new System.Drawing.Point(388, 462);
             this.tblUserAccount.Name = "tblUserAccount";
             this.tblUserAccount.RowCount = 10;
             this.tblUserAccount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -327,18 +329,17 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(808, 708);
+            this.btnExit.Location = new System.Drawing.Point(993, 800);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Visible = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(808, 523);
+            this.btnSave.Location = new System.Drawing.Point(541, 800);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 6;
@@ -346,11 +347,32 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblEditFormId
+            // 
+            this.lblEditFormId.AutoSize = true;
+            this.lblEditFormId.Location = new System.Drawing.Point(829, 427);
+            this.lblEditFormId.Name = "lblEditFormId";
+            this.lblEditFormId.Size = new System.Drawing.Size(0, 16);
+            this.lblEditFormId.TabIndex = 7;
+            this.lblEditFormId.Visible = false;
+            // 
+            // lblRegisteredUsers
+            // 
+            this.lblRegisteredUsers.AutoSize = true;
+            this.lblRegisteredUsers.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegisteredUsers.Location = new System.Drawing.Point(336, 7);
+            this.lblRegisteredUsers.Name = "lblRegisteredUsers";
+            this.lblRegisteredUsers.Size = new System.Drawing.Size(838, 90);
+            this.lblRegisteredUsers.TabIndex = 8;
+            this.lblRegisteredUsers.Text = "REGISTERED USERS";
+            // 
             // frmModifyUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1485, 855);
+            this.Controls.Add(this.lblRegisteredUsers);
+            this.Controls.Add(this.lblEditFormId);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tblUserAccount);
@@ -366,6 +388,7 @@
             this.tblUserAccount.ResumeLayout(false);
             this.tblUserAccount.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -398,5 +421,7 @@
         private System.Windows.Forms.TextBox tbCSV;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblEditFormId;
+        private System.Windows.Forms.Label lblRegisteredUsers;
     }
 }

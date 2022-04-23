@@ -121,6 +121,8 @@ namespace S_FaceyFotosVersion1
 
         private void btnModifyRecord_Click(object sender, EventArgs e)
         {
+            var launchModifyRec = new frmModifyRecord();
+            launchModifyRec.Show();
             
         }
 

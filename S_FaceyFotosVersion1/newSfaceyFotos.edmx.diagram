@@ -10,9 +10,10 @@
         <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_shootTime" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_userRegistration" Width="1.5" PointX="10.5" PointY="0.625" />
         <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_userRegistration_tb_cardType" />
-        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_bookingInfo" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="db_sfaceyFotos2Model.tb_bookingInfo" Width="1.5" PointX="0.75" PointY="1.5" />
         <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType" />
         <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType" />
+        <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType1" />
         <AssociationConnector Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime" />
       </Diagram>
     </edmx:Diagrams>

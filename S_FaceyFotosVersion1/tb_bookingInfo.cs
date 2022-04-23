@@ -27,11 +27,13 @@ namespace S_FaceyFotosVersion1
         public System.DateTime Shoot_Date { get; set; }
         public int Shoot_TimeID { get; set; }
         public string Shoot_Location { get; set; }
+        public int Unit_CostID { get; set; }
         public decimal Deposit { get; set; }
         public decimal Total { get; set; }
     
         public virtual tb_cardType tb_cardType { get; set; }
         public virtual tb_packageType tb_packageType { get; set; }
+        public virtual tb_packageType tb_packageType1 { get; set; }
         public virtual tb_shootTime tb_shootTime { get; set; }
     }
 }

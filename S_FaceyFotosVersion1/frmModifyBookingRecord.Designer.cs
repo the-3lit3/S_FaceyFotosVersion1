@@ -52,7 +52,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnEditUserRecord = new System.Windows.Forms.Button();
-            this.gvUserAccountDatabase = new System.Windows.Forms.DataGridView();
+            this.gvBookedShootDatabase = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbLocation = new System.Windows.Forms.TextBox();
             this.lblLocation = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblUnitCost = new System.Windows.Forms.Label();
             this.tblUserAccount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvUserAccountDatabase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBookedShootDatabase)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +100,7 @@
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnExit
             // 
@@ -318,16 +319,16 @@
             this.btnEditUserRecord.UseVisualStyleBackColor = true;
             this.btnEditUserRecord.Click += new System.EventHandler(this.btnEditUserRecord_Click);
             // 
-            // gvUserAccountDatabase
+            // gvBookedShootDatabase
             // 
-            this.gvUserAccountDatabase.AllowUserToAddRows = false;
-            this.gvUserAccountDatabase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvUserAccountDatabase.Location = new System.Drawing.Point(26, 102);
-            this.gvUserAccountDatabase.Name = "gvUserAccountDatabase";
-            this.gvUserAccountDatabase.RowHeadersWidth = 51;
-            this.gvUserAccountDatabase.RowTemplate.Height = 24;
-            this.gvUserAccountDatabase.Size = new System.Drawing.Size(1886, 325);
-            this.gvUserAccountDatabase.TabIndex = 9;
+            this.gvBookedShootDatabase.AllowUserToAddRows = false;
+            this.gvBookedShootDatabase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvBookedShootDatabase.Location = new System.Drawing.Point(26, 102);
+            this.gvBookedShootDatabase.Name = "gvBookedShootDatabase";
+            this.gvBookedShootDatabase.RowHeadersWidth = 51;
+            this.gvBookedShootDatabase.RowTemplate.Height = 24;
+            this.gvBookedShootDatabase.Size = new System.Drawing.Size(1886, 325);
+            this.gvBookedShootDatabase.TabIndex = 9;
             // 
             // tableLayoutPanel1
             // 
@@ -510,14 +511,14 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnEditUserRecord);
-            this.Controls.Add(this.gvUserAccountDatabase);
+            this.Controls.Add(this.gvBookedShootDatabase);
             this.Name = "frmModifyBookingRecord";
             this.Text = "frmModifyBookingRecord";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmModifyBookingRecord_Load);
             this.tblUserAccount.ResumeLayout(false);
             this.tblUserAccount.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvUserAccountDatabase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBookedShootDatabase)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -551,7 +552,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.Button btnEditUserRecord;
-        private System.Windows.Forms.DataGridView gvUserAccountDatabase;
+        private System.Windows.Forms.DataGridView gvBookedShootDatabase;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox tbLocation;
         private System.Windows.Forms.Label lblLocation;

@@ -22,6 +22,7 @@
           <Property Name="Shoot_Date" Type="date" Nullable="false" />
           <Property Name="Shoot_TimeID" Type="int" Nullable="false" />
           <Property Name="Shoot_Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Unit_CostID" Type="int" Nullable="false" />
           <Property Name="Deposit" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
@@ -63,8 +64,6 @@
           <Property Name="CSV_Number" Type="int" Nullable="false" />
           <Property Name="Expiration_Date" Type="date" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <Association Name="FK_tb_bookingInfo_tb_cardType">
           <End Role="tb_cardType" Type="Self.tb_cardType" Multiplicity="1" />
           <End Role="tb_bookingInfo" Type="Self.tb_bookingInfo" Multiplicity="*" />
@@ -86,6 +85,18 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
             </Principal>
             <Dependent Role="tb_bookingInfo">
               <PropertyRef Name="Package_TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_bookingInfo_tb_packageType1">
+          <End Role="tb_packageType" Type="Self.tb_packageType" Multiplicity="1" />
+          <End Role="tb_bookingInfo" Type="Self.tb_bookingInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_packageType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tb_bookingInfo">
+              <PropertyRef Name="Unit_CostID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -113,7 +124,6 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="pr_bookingInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="db_sfaceyFotos2ModelStoreContainer">
           <EntitySet Name="tb_bookingInfo" EntityType="Self.tb_bookingInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_cardType" EntityType="Self.tb_cardType" Schema="dbo" store:Type="Tables" />
@@ -125,6 +135,10 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
             <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
           </AssociationSet>
           <AssociationSet Name="FK_tb_bookingInfo_tb_packageType" Association="Self.FK_tb_bookingInfo_tb_packageType">
+            <End Role="tb_packageType" EntitySet="tb_packageType" />
+            <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_bookingInfo_tb_packageType1" Association="Self.FK_tb_bookingInfo_tb_packageType1">
             <End Role="tb_packageType" EntitySet="tb_packageType" />
             <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
           </AssociationSet>
@@ -158,6 +172,7 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
           <Property Name="Package_Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Unit_Cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <NavigationProperty Name="tb_bookingInfo" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType" FromRole="tb_packageType" ToRole="tb_bookingInfo" />
+          <NavigationProperty Name="tb_bookingInfo1" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType1" FromRole="tb_packageType" ToRole="tb_bookingInfo" />
           </EntityType>
         <EntityType Name="tb_shootTime">
           <Key>
@@ -176,6 +191,8 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
             <End Role="tb_cardType" EntitySet="tb_cardType" />
             <End Role="tb_userRegistration" EntitySet="tb_userRegistration" />
           </AssociationSet>
+          <FunctionImport Name="pr_SelectBookingDetails" ReturnType="Collection(db_sfaceyFotos2Model.pr_SelectBookingDetails_Result)" />
+          <FunctionImport Name="pr_bookingInfo" ReturnType="Collection(db_sfaceyFotos2Model.pr_bookingInfo_Result)" />
           <EntitySet Name="tb_bookingInfo" EntityType="db_sfaceyFotos2Model.tb_bookingInfo" />
           <AssociationSet Name="FK_tb_bookingInfo_tb_cardType" Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType">
             <End Role="tb_cardType" EntitySet="tb_cardType" />
@@ -185,12 +202,14 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
             <End Role="tb_packageType" EntitySet="tb_packageType" />
             <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
           </AssociationSet>
+          <AssociationSet Name="FK_tb_bookingInfo_tb_packageType1" Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType1">
+            <End Role="tb_packageType" EntitySet="tb_packageType" />
+            <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
+          </AssociationSet>
           <AssociationSet Name="FK_tb_bookingInfo_tb_shootTime" Association="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime">
             <End Role="tb_shootTime" EntitySet="tb_shootTime" />
             <End Role="tb_bookingInfo" EntitySet="tb_bookingInfo" />
           </AssociationSet>
-          <FunctionImport Name="pr_SelectBookingDetails" ReturnType="Collection(db_sfaceyFotos2Model.pr_SelectBookingDetails_Result)" />
-          <FunctionImport Name="pr_bookingInfo" ReturnType="Collection(db_sfaceyFotos2Model.pr_bookingInfo_Result)" />
           </EntityContainer>
         <EntityType Name="tb_userRegistration">
           <Key>
@@ -218,65 +237,6 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
             </Principal>
             <Dependent Role="tb_userRegistration">
               <PropertyRef Name="Card_TypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="tb_bookingInfo">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Email_Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Telephone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Card_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Card_TypeID" Type="Int32" Nullable="false" />
-          <Property Name="CSV_Number" Type="Int32" Nullable="false" />
-          <Property Name="Expiration_Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Package_TypeID" Type="Int32" Nullable="false" />
-          <Property Name="Shoot_Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Shoot_TimeID" Type="Int32" Nullable="false" />
-          <Property Name="Shoot_Location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Deposit" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <NavigationProperty Name="tb_cardType" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType" FromRole="tb_bookingInfo" ToRole="tb_cardType" />
-          <NavigationProperty Name="tb_packageType" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType" FromRole="tb_bookingInfo" ToRole="tb_packageType" />
-          <NavigationProperty Name="tb_shootTime" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime" FromRole="tb_bookingInfo" ToRole="tb_shootTime" />
-        </EntityType>
-        <Association Name="FK_tb_bookingInfo_tb_cardType">
-          <End Type="db_sfaceyFotos2Model.tb_cardType" Role="tb_cardType" Multiplicity="1" />
-          <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_cardType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tb_bookingInfo">
-              <PropertyRef Name="Card_TypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tb_bookingInfo_tb_packageType">
-          <End Type="db_sfaceyFotos2Model.tb_packageType" Role="tb_packageType" Multiplicity="1" />
-          <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_packageType">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tb_bookingInfo">
-              <PropertyRef Name="Package_TypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tb_bookingInfo_tb_shootTime">
-          <End Type="db_sfaceyFotos2Model.tb_shootTime" Role="tb_shootTime" Multiplicity="1" />
-          <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_shootTime">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tb_bookingInfo">
-              <PropertyRef Name="Shoot_TimeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -315,6 +275,79 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
           <Property Type="Decimal" Name="Deposit" Nullable="false" Precision="18" Scale="2" />
           <Property Type="Decimal" Name="Total" Nullable="false" Precision="18" Scale="2" />
         </ComplexType>
+        <EntityType Name="tb_bookingInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email_Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Card_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Card_TypeID" Type="Int32" Nullable="false" />
+          <Property Name="CSV_Number" Type="Int32" Nullable="false" />
+          <Property Name="Expiration_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Package_TypeID" Type="Int32" Nullable="false" />
+          <Property Name="Shoot_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Shoot_TimeID" Type="Int32" Nullable="false" />
+          <Property Name="Shoot_Location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Unit_CostID" Type="Int32" Nullable="false" />
+          <Property Name="Deposit" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="tb_cardType" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_cardType" FromRole="tb_bookingInfo" ToRole="tb_cardType" />
+          <NavigationProperty Name="tb_packageType" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType" FromRole="tb_bookingInfo" ToRole="tb_packageType" />
+          <NavigationProperty Name="tb_packageType1" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_packageType1" FromRole="tb_bookingInfo" ToRole="tb_packageType" />
+          <NavigationProperty Name="tb_shootTime" Relationship="db_sfaceyFotos2Model.FK_tb_bookingInfo_tb_shootTime" FromRole="tb_bookingInfo" ToRole="tb_shootTime" />
+        </EntityType>
+        <Association Name="FK_tb_bookingInfo_tb_cardType">
+          <End Type="db_sfaceyFotos2Model.tb_cardType" Role="tb_cardType" Multiplicity="1" />
+          <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cardType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tb_bookingInfo">
+              <PropertyRef Name="Card_TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_bookingInfo_tb_packageType">
+          <End Type="db_sfaceyFotos2Model.tb_packageType" Role="tb_packageType" Multiplicity="1" />
+          <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_packageType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tb_bookingInfo">
+              <PropertyRef Name="Package_TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_bookingInfo_tb_packageType1">
+          <End Type="db_sfaceyFotos2Model.tb_packageType" Role="tb_packageType" Multiplicity="1" />
+          <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_packageType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tb_bookingInfo">
+              <PropertyRef Name="Unit_CostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_bookingInfo_tb_shootTime">
+          <End Type="db_sfaceyFotos2Model.tb_shootTime" Role="tb_shootTime" Multiplicity="1" />
+          <End Type="db_sfaceyFotos2Model.tb_bookingInfo" Role="tb_bookingInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_shootTime">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tb_bookingInfo">
+              <PropertyRef Name="Shoot_TimeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -368,6 +401,7 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
               <MappingFragment StoreEntitySet="tb_bookingInfo">
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+                <ScalarProperty Name="Unit_CostID" ColumnName="Unit_CostID" />
                 <ScalarProperty Name="Shoot_Location" ColumnName="Shoot_Location" />
                 <ScalarProperty Name="Shoot_TimeID" ColumnName="Shoot_TimeID" />
                 <ScalarProperty Name="Shoot_Date" ColumnName="Shoot_Date" />
@@ -384,28 +418,6 @@ warning 6002: The table/view 'db_sfaceyFotos2.dbo.vw_BookingInfo' does not have 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="pr_bookingInfo" FunctionName="db_sfaceyFotos2Model.Store.pr_bookingInfo">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="db_sfaceyFotos2Model.pr_bookingInfo_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="First_Name" ColumnName="First Name" />
-                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
-                <ScalarProperty Name="Email_Address" ColumnName="Email Address" />
-                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
-                <ScalarProperty Name="Card_Number" ColumnName="Card Number" />
-                <ScalarProperty Name="Card_Type" ColumnName="Card Type" />
-                <ScalarProperty Name="CSV" ColumnName="CSV" />
-                <ScalarProperty Name="Expiry_Date" ColumnName="Expiry Date" />
-                <ScalarProperty Name="Package_Type" ColumnName="Package Type" />
-                <ScalarProperty Name="Shoot_Date" ColumnName="Shoot Date" />
-                <ScalarProperty Name="Shoot_Time" ColumnName="Shoot Time" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="Unit_Cost" ColumnName="Unit Cost" />
-                <ScalarProperty Name="Deposit" ColumnName="Deposit" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

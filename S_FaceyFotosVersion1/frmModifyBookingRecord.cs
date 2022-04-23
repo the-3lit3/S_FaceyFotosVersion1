@@ -89,7 +89,10 @@ namespace S_FaceyFotosVersion1
                 cmbPackageSelect.ValueMember = "Id";
                 cmbPackageSelect.DataSource = packageType;
 
-
+                //var unitCst = db_entity.tb_packageType.ToList();
+                //cmbPackageSelect.DisplayMember = "Unit_Cost";
+                //cmbPackageSelect.ValueMember = "Id";
+                //cmbPackageSelect.DataSource = unitCst;
 
                 //Populate the Shoot Time datafield 
                 var shootTime = db_entity.tb_shootTime.ToList();
@@ -98,23 +101,23 @@ namespace S_FaceyFotosVersion1
                 cmbShootTime.DataSource = shootTime;
 
                 //Code to draw and label the columns in the grid view
-                gvUserAccountDatabase.DataSource = userAccounts;
-                gvUserAccountDatabase.Columns[0].Visible = false;
-                gvUserAccountDatabase.Columns[1].HeaderText = "FIRST NAME ";
-                gvUserAccountDatabase.Columns[2].HeaderText = "LAST NAME";
-                gvUserAccountDatabase.Columns[3].HeaderText = "EMAIL";
-                gvUserAccountDatabase.Columns[4].HeaderText = "TELEPHONE";
-                gvUserAccountDatabase.Columns[5].HeaderText = "CARD #";
-                gvUserAccountDatabase.Columns[6].HeaderText = "CARD TYPE";
-                gvUserAccountDatabase.Columns[7].HeaderText = "CSV";
-                gvUserAccountDatabase.Columns[8].HeaderText = "EXPIRY DATE";
-                gvUserAccountDatabase.Columns[9].HeaderText = "PACKAGE TYPE";
-                gvUserAccountDatabase.Columns[10].HeaderText = "SHOOT DATE";
-                gvUserAccountDatabase.Columns[11].HeaderText = "SHOOT TIME";
-                gvUserAccountDatabase.Columns[12].HeaderText = "LOCATION";
-                gvUserAccountDatabase.Columns[13].HeaderText = "UNIT COST";
-                gvUserAccountDatabase.Columns[14].HeaderText = "DEPOSIT";
-                gvUserAccountDatabase.Columns[15].HeaderText = "TOTAL";
+                gvBookedShootDatabase.DataSource = userAccounts;
+                gvBookedShootDatabase.Columns[0].Visible = false;
+                gvBookedShootDatabase.Columns[1].HeaderText = "FIRST NAME ";
+                gvBookedShootDatabase.Columns[2].HeaderText = "LAST NAME";
+                gvBookedShootDatabase.Columns[3].HeaderText = "EMAIL";
+                gvBookedShootDatabase.Columns[4].HeaderText = "TELEPHONE";
+                gvBookedShootDatabase.Columns[5].HeaderText = "CARD #";
+                gvBookedShootDatabase.Columns[6].HeaderText = "CARD TYPE";
+                gvBookedShootDatabase.Columns[7].HeaderText = "CSV";
+                gvBookedShootDatabase.Columns[8].HeaderText = "EXPIRY DATE";
+                gvBookedShootDatabase.Columns[9].HeaderText = "PACKAGE TYPE";
+                gvBookedShootDatabase.Columns[10].HeaderText = "SHOOT DATE";
+                gvBookedShootDatabase.Columns[11].HeaderText = "SHOOT TIME";
+                gvBookedShootDatabase.Columns[12].HeaderText = "LOCATION";
+                gvBookedShootDatabase.Columns[13].HeaderText = "UNIT COST";
+                gvBookedShootDatabase.Columns[14].HeaderText = "DEPOSIT";
+                gvBookedShootDatabase.Columns[15].HeaderText = "TOTAL";
 
             }
             catch (Exception ex)
@@ -128,7 +131,7 @@ namespace S_FaceyFotosVersion1
             try
             {
                 //Code to query the database for a single record via ID value and column name
-                var id = (int)gvUserAccountDatabase.SelectedRows[0].Cells["Id"].Value;
+                var id = (int)gvBookedShootDatabase.SelectedRows[0].Cells["Id"].Value;
                 var getBookingRecord = db_entity.tb_bookingInfo.FirstOrDefault(q => q.Id == id);
                 this.populateForm(getBookingRecord);//Loading the database entry into the form fields
             }
@@ -136,6 +139,128 @@ namespace S_FaceyFotosVersion1
             {
 
                 MessageBox.Show(ex.Message + " User not found!");
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Code to update the edited record
+                var id = int.Parse(lblEditFormId.Text);
+                var uCid = int.Parse(tbUnitCost.Text);
+
+                var updateBookingRecord = db_entity.tb_bookingInfo.FirstOrDefault(q => q.Id == id);
+                var updatePackageTable = db_entity.tb_packageType.FirstOrDefault(q => q.Id == uCid);
+
+                var fName = tbFirstName.Text;
+                var lName = tbLastName.Text;
+                var clientEmail = tbEmailAddress.Text;
+                var clientPhone = mtbTelephone.Text;
+
+                var cCardNumber = tbCardNumber.Text;
+                var cType = (int)cmbCardType.SelectedValue;
+                var CSV = tbCSV.Text;
+                var cardExpiry = mtbExpiry.Text;
+                var pkgType = (int)cmbPackageSelect.SelectedValue;
+                var shootDate = dtShootDate.Text;
+                var shtTime = (int)cmbShootTime.SelectedValue;
+                var shtLocation = tbLocation.Text;
+                var UnitCost = decimal.Parse(tbUnitCost.Text); 
+                var deposit = tbDeposit.Text;
+                //var depositValue = decimal.Parse(deposit) * 0.5m;
+                var total = tbTotal.Text;
+
+                //Populate the Shoot Package datafield
+                var packageType = db_entity.tb_packageType.ToList();
+                cmbPackageSelect.DisplayMember = "Package_Name";
+                cmbPackageSelect.ValueMember = "Id";
+                cmbPackageSelect.DataSource = packageType;
+
+               //Populate the Shoot Time datafield 
+                var shootTime = db_entity.tb_shootTime.ToList();
+                cmbShootTime.DisplayMember = "Shoot_Time";
+                cmbShootTime.ValueMember = "Id";
+                cmbShootTime.DataSource = shootTime;
+
+                updateBookingRecord.First_Name = fName;
+                updateBookingRecord.Last_Name = lName;
+                updateBookingRecord.Email_Address = clientEmail;
+                updateBookingRecord.Telephone = clientPhone;
+                updateBookingRecord.Card_Number = cCardNumber;
+                updateBookingRecord.Card_TypeID = cType;
+                updateBookingRecord.CSV_Number = Convert.ToInt32(CSV);
+                updateBookingRecord.Expiration_Date = DateTime.Parse(cardExpiry);
+                updateBookingRecord.Package_TypeID = pkgType;
+                updateBookingRecord.Shoot_Date = DateTime.Parse(shootDate);
+                updateBookingRecord.Shoot_TimeID = shtTime;
+                updateBookingRecord.Shoot_Location = shtLocation;
+                updateBookingRecord.Unit_CostID = (int)UnitCost;
+                updateBookingRecord.Deposit = decimal.Parse(deposit);
+                updateBookingRecord.Total = decimal.Parse(total);
+
+                db_entity.SaveChanges();
+
+                //Because the Refresh() didnt work I copied and paste the refresh code here temporarily
+                var userAccounts = db_entity.tb_bookingInfo.Select(q => new
+                {
+                    ID = q.Id,
+                    FIRST_NAME = q.First_Name,
+                    LAST_NAME = q.Last_Name,
+                    EMAIL = q.Email_Address,
+                    TELEPHONE = q.Telephone,
+                    CARD_NUMBER = q.Card_Number,
+                    CARD_TYPE = q.tb_cardType.Card_Name,
+                    CSV = q.CSV_Number,
+                    EXPIRY = q.Expiration_Date,
+                    PACKAGE = q.tb_packageType.Package_Name,
+                    SHOOT_DATE = q.Shoot_Date,
+                    SHOOT_TIME = q.tb_shootTime.Shoot_Time,
+                    LOCATION = q.Shoot_Location,
+                    UNIT_COST = q.tb_packageType.Unit_Cost,
+                    DEPOSIT = q.Deposit,
+                    TOTAL = q.Total 
+                }).ToList();
+
+                gvBookedShootDatabase.DataSource = userAccounts;
+                gvBookedShootDatabase.Columns[0].Visible = false;
+                gvBookedShootDatabase.Columns[1].HeaderText = "FIRST NAME ";
+                gvBookedShootDatabase.Columns[2].HeaderText = "LAST NAME";
+                gvBookedShootDatabase.Columns[3].HeaderText = "EMAIL";
+                gvBookedShootDatabase.Columns[4].HeaderText = "TELEPHONE";
+                gvBookedShootDatabase.Columns[5].HeaderText = "CARD #";
+                gvBookedShootDatabase.Columns[6].HeaderText = "CARD TYPE";
+                gvBookedShootDatabase.Columns[7].HeaderText = "CSV";
+                gvBookedShootDatabase.Columns[8].HeaderText = "EXPIRY DATE";
+                gvBookedShootDatabase.Columns[9].HeaderText = "PACKAGE TYPE";
+                gvBookedShootDatabase.Columns[10].HeaderText = "SHOOT DATE";
+                gvBookedShootDatabase.Columns[11].HeaderText = "SHOOT TIME";
+                gvBookedShootDatabase.Columns[12].HeaderText = "LOCATION";
+                gvBookedShootDatabase.Columns[13].HeaderText = "UNIT COST";
+                gvBookedShootDatabase.Columns[14].HeaderText = "DEPOSIT";
+                gvBookedShootDatabase.Columns[15].HeaderText = "TOTAL";
+
+                MessageBox.Show("Booked shoot record updated successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Code to clear form fields after record update was successful
+                tbFirstName.Clear();
+                tbLastName.Clear();
+                tbEmailAddress.Clear();
+                mtbTelephone.Clear();
+                tbCardNumber.Clear();
+                cmbCardType.SelectedIndex = 0;
+                tbCSV.Clear();
+                mtbExpiry.Clear();
+                cmbPackageSelect.SelectedIndex = 0;
+                dtShootDate.ResetText();
+                cmbShootTime.SelectedIndex = 0;
+                tbLocation.Clear();
+                tbUnitCost.Clear();
+                tbDeposit.Clear();
+                tbTotal.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Critical error occured. Shoot record failed to update.");
             }
         }
     }

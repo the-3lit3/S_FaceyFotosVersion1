@@ -18,6 +18,7 @@ namespace S_FaceyFotosVersion1
         public tb_packageType()
         {
             this.tb_bookingInfo = new HashSet<tb_bookingInfo>();
+            this.tb_bookingInfo1 = new HashSet<tb_bookingInfo>();
         }
     
         public int Id { get; set; }
@@ -26,5 +27,7 @@ namespace S_FaceyFotosVersion1
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_bookingInfo> tb_bookingInfo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_bookingInfo> tb_bookingInfo1 { get; set; }
     }
 }

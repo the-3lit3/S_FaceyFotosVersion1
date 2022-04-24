@@ -140,7 +140,7 @@ namespace S_FaceyFotosVersion1
                 updateUser.CSV_Number = Convert.ToInt32(CSV);
                 updateUser.Expiration_Date = DateTime.Parse(cardExpiry);
                 db_entity.SaveChanges();
-
+                
                 //Because the Refresh() didnt work I copied and paste the refresh code here temporarily
                 var userAccounts = db_entity.tb_userRegistration.Select(q => new
                 {
@@ -161,7 +161,7 @@ namespace S_FaceyFotosVersion1
                 cmbCardType.DisplayMember = "Card_Name";
                 cmbCardType.ValueMember = "Id";
                 cmbCardType.DataSource = cardType;
-
+                
                 gvUserAccountDatabase.DataSource = userAccounts;
                 gvUserAccountDatabase.Columns[0].Visible = false;
                 gvUserAccountDatabase.Columns[1].HeaderText = "FIRST NAME ";
@@ -174,8 +174,9 @@ namespace S_FaceyFotosVersion1
                 gvUserAccountDatabase.Columns[8].HeaderText = "CARD TYPE";
                 gvUserAccountDatabase.Columns[9].HeaderText = "CSV";
                 gvUserAccountDatabase.Columns[10].HeaderText = "EXPIRY DATE";
-
+                
                 MessageBox.Show("User record updated successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 //Code to clear form fields after record update was successful
                 tbFirstName.Clear();
                 tbLastName.Clear();
@@ -205,41 +206,39 @@ namespace S_FaceyFotosVersion1
 
                 db_entity.tb_userRegistration.Remove(deleteUser);
                 db_entity.SaveChanges();
+                
+                var userAccounts = db_entity.tb_userRegistration.Select(q => new
+                {
+                    ID = q.Id,
+                    FIRST_NAME = q.First_Name,
+                    LAST_NAME = q.Last_Name,
+                    EMAIL = q.Email_Address,
+                    TELEPHONE = q.Telephone,
+                    USERNAME = q.Username,
+                    PASSWORD = q.Pass,
+                    CARD_NUMBER = q.Card_Number,
+                    CARD_TYPE = q.tb_cardType.Card_Name,
+                    CSV = q.CSV_Number,
+                    EXPIRY = q.Expiration_Date
+                }).ToList();
 
-                gvUserAccountDatabase.Refresh();
-
-                //var userAccounts = db_entity.tb_userRegistration.Select(q => new
-                //{
-                //    ID = q.Id,
-                //    FIRST_NAME = q.First_Name,
-                //    LAST_NAME = q.Last_Name,
-                //    EMAIL = q.Email_Address,
-                //    TELEPHONE = q.Telephone,
-                //    USERNAME = q.Username,
-                //    PASSWORD = q.Pass,
-                //    CARD_NUMBER = q.Card_Number,
-                //    CARD_TYPE = q.tb_cardType.Card_Name,
-                //    CSV = q.CSV_Number,
-                //    EXPIRY = q.Expiration_Date
-                //}).ToList();
-
-                //var cardType = db_entity.tb_cardType.ToList();
-                //cmbCardType.DisplayMember = "Card_Name";
-                //cmbCardType.ValueMember = "Id";
-                //cmbCardType.DataSource = cardType;
-
-                //gvUserAccountDatabase.DataSource = userAccounts;
-                //gvUserAccountDatabase.Columns[0].Visible = false;
-                //gvUserAccountDatabase.Columns[1].HeaderText = "FIRST NAME ";
-                //gvUserAccountDatabase.Columns[2].HeaderText = "LAST NAME";
-                //gvUserAccountDatabase.Columns[3].HeaderText = "EMAIL";
-                //gvUserAccountDatabase.Columns[4].HeaderText = "TELEPHONE";
-                //gvUserAccountDatabase.Columns[5].HeaderText = "USERNAME";
-                //gvUserAccountDatabase.Columns[6].HeaderText = "PASSWORD";
-                //gvUserAccountDatabase.Columns[7].HeaderText = "CARD #";
-                //gvUserAccountDatabase.Columns[8].HeaderText = "CARD TYPE";
-                //gvUserAccountDatabase.Columns[9].HeaderText = "CSV";
-                //gvUserAccountDatabase.Columns[10].HeaderText = "EXPIRY DATE";
+                var cardType = db_entity.tb_cardType.ToList();
+                cmbCardType.DisplayMember = "Card_Name";
+                cmbCardType.ValueMember = "Id";
+                cmbCardType.DataSource = cardType;
+                
+                gvUserAccountDatabase.DataSource = userAccounts;
+                gvUserAccountDatabase.Columns[0].Visible = false;
+                gvUserAccountDatabase.Columns[1].HeaderText = "FIRST NAME ";
+                gvUserAccountDatabase.Columns[2].HeaderText = "LAST NAME";
+                gvUserAccountDatabase.Columns[3].HeaderText = "EMAIL";
+                gvUserAccountDatabase.Columns[4].HeaderText = "TELEPHONE";
+                gvUserAccountDatabase.Columns[5].HeaderText = "USERNAME";
+                gvUserAccountDatabase.Columns[6].HeaderText = "PASSWORD";
+                gvUserAccountDatabase.Columns[7].HeaderText = "CARD #";
+                gvUserAccountDatabase.Columns[8].HeaderText = "CARD TYPE";
+                gvUserAccountDatabase.Columns[9].HeaderText = "CSV";
+                gvUserAccountDatabase.Columns[10].HeaderText = "EXPIRY DATE";
                 
                 MessageBox.Show("User record deleted successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -33,40 +33,40 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.tblUserAccount = new System.Windows.Forms.TableLayoutPanel();
-            this.tbCSV = new System.Windows.Forms.TextBox();
-            this.cmbCardType = new System.Windows.Forms.ComboBox();
-            this.lblExpiryDate = new System.Windows.Forms.Label();
-            this.tbCardNumber = new System.Windows.Forms.TextBox();
-            this.lblCardType = new System.Windows.Forms.Label();
-            this.lblCardNumber = new System.Windows.Forms.Label();
             this.lblFname = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.tbFirstName = new System.Windows.Forms.TextBox();
-            this.lblCsv = new System.Windows.Forms.Label();
-            this.mtbExpiry = new System.Windows.Forms.MaskedTextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.tbEmailAddress = new System.Windows.Forms.TextBox();
             this.mtbTelephone = new System.Windows.Forms.MaskedTextBox();
+            this.lblCardNumber = new System.Windows.Forms.Label();
+            this.lblCardType = new System.Windows.Forms.Label();
+            this.lblCsv = new System.Windows.Forms.Label();
+            this.lblExpiryDate = new System.Windows.Forms.Label();
+            this.tbCardNumber = new System.Windows.Forms.TextBox();
+            this.cmbCardType = new System.Windows.Forms.ComboBox();
+            this.tbCSV = new System.Windows.Forms.TextBox();
+            this.mtbExpiry = new System.Windows.Forms.MaskedTextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnEditUserRecord = new System.Windows.Forms.Button();
             this.gvBookedShootDatabase = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tbLocation = new System.Windows.Forms.TextBox();
-            this.lblLocation = new System.Windows.Forms.Label();
-            this.cmbPackageSelect = new System.Windows.Forms.ComboBox();
-            this.lblPkg = new System.Windows.Forms.Label();
-            this.cmbShootTime = new System.Windows.Forms.ComboBox();
-            this.lblShootTime = new System.Windows.Forms.Label();
-            this.lblShootDate = new System.Windows.Forms.Label();
-            this.dtShootDate = new System.Windows.Forms.DateTimePicker();
-            this.tbTotal = new System.Windows.Forms.TextBox();
             this.tbDeposit = new System.Windows.Forms.TextBox();
-            this.tbUnitCost = new System.Windows.Forms.TextBox();
+            this.tbLocation = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.lblShootDate = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblPkg = new System.Windows.Forms.Label();
+            this.lblShootTime = new System.Windows.Forms.Label();
+            this.dtShootDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbShootTime = new System.Windows.Forms.ComboBox();
+            this.cmbPackageSelect = new System.Windows.Forms.ComboBox();
+            this.tbTotal = new System.Windows.Forms.TextBox();
+            this.tbUnitCost = new System.Windows.Forms.TextBox();
             this.lblUnitCost = new System.Windows.Forms.Label();
             this.tblUserAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvBookedShootDatabase)).BeginInit();
@@ -110,6 +110,7 @@
             this.btnExit.TabIndex = 14;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // tblUserAccount
             // 
@@ -146,63 +147,6 @@
             this.tblUserAccount.Size = new System.Drawing.Size(680, 270);
             this.tblUserAccount.TabIndex = 13;
             // 
-            // tbCSV
-            // 
-            this.tbCSV.Location = new System.Drawing.Point(236, 201);
-            this.tbCSV.Name = "tbCSV";
-            this.tbCSV.Size = new System.Drawing.Size(441, 22);
-            this.tbCSV.TabIndex = 33;
-            // 
-            // cmbCardType
-            // 
-            this.cmbCardType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCardType.FormattingEnabled = true;
-            this.cmbCardType.Items.AddRange(new object[] {
-            "Debit",
-            "Credit"});
-            this.cmbCardType.Location = new System.Drawing.Point(236, 168);
-            this.cmbCardType.MaxDropDownItems = 10;
-            this.cmbCardType.Name = "cmbCardType";
-            this.cmbCardType.Size = new System.Drawing.Size(441, 24);
-            this.cmbCardType.TabIndex = 20;
-            // 
-            // lblExpiryDate
-            // 
-            this.lblExpiryDate.AutoSize = true;
-            this.lblExpiryDate.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpiryDate.Location = new System.Drawing.Point(3, 231);
-            this.lblExpiryDate.Name = "lblExpiryDate";
-            this.lblExpiryDate.Size = new System.Drawing.Size(90, 19);
-            this.lblExpiryDate.TabIndex = 31;
-            this.lblExpiryDate.Text = "Expiry Date";
-            // 
-            // tbCardNumber
-            // 
-            this.tbCardNumber.Location = new System.Drawing.Point(236, 135);
-            this.tbCardNumber.Name = "tbCardNumber";
-            this.tbCardNumber.Size = new System.Drawing.Size(441, 22);
-            this.tbCardNumber.TabIndex = 19;
-            // 
-            // lblCardType
-            // 
-            this.lblCardType.AutoSize = true;
-            this.lblCardType.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCardType.Location = new System.Drawing.Point(3, 165);
-            this.lblCardType.Name = "lblCardType";
-            this.lblCardType.Size = new System.Drawing.Size(77, 19);
-            this.lblCardType.TabIndex = 30;
-            this.lblCardType.Text = "Card Type";
-            // 
-            // lblCardNumber
-            // 
-            this.lblCardNumber.AutoSize = true;
-            this.lblCardNumber.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCardNumber.Location = new System.Drawing.Point(3, 132);
-            this.lblCardNumber.Name = "lblCardNumber";
-            this.lblCardNumber.Size = new System.Drawing.Size(54, 19);
-            this.lblCardNumber.TabIndex = 29;
-            this.lblCardNumber.Text = "Card #";
-            // 
             // lblFname
             // 
             this.lblFname.AutoSize = true;
@@ -236,25 +180,6 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(441, 22);
             this.tbFirstName.TabIndex = 13;
-            // 
-            // lblCsv
-            // 
-            this.lblCsv.AutoSize = true;
-            this.lblCsv.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCsv.Location = new System.Drawing.Point(3, 198);
-            this.lblCsv.Name = "lblCsv";
-            this.lblCsv.Size = new System.Drawing.Size(40, 19);
-            this.lblCsv.TabIndex = 32;
-            this.lblCsv.Text = "CSV";
-            // 
-            // mtbExpiry
-            // 
-            this.mtbExpiry.Location = new System.Drawing.Point(236, 234);
-            this.mtbExpiry.Mask = "00/00/0000";
-            this.mtbExpiry.Name = "mtbExpiry";
-            this.mtbExpiry.Size = new System.Drawing.Size(441, 22);
-            this.mtbExpiry.TabIndex = 21;
-            this.mtbExpiry.ValidatingType = typeof(System.DateTime);
             // 
             // lblEmail
             // 
@@ -291,6 +216,82 @@
             this.mtbTelephone.Size = new System.Drawing.Size(441, 22);
             this.mtbTelephone.TabIndex = 16;
             // 
+            // lblCardNumber
+            // 
+            this.lblCardNumber.AutoSize = true;
+            this.lblCardNumber.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCardNumber.Location = new System.Drawing.Point(3, 132);
+            this.lblCardNumber.Name = "lblCardNumber";
+            this.lblCardNumber.Size = new System.Drawing.Size(54, 19);
+            this.lblCardNumber.TabIndex = 29;
+            this.lblCardNumber.Text = "Card #";
+            // 
+            // lblCardType
+            // 
+            this.lblCardType.AutoSize = true;
+            this.lblCardType.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCardType.Location = new System.Drawing.Point(3, 165);
+            this.lblCardType.Name = "lblCardType";
+            this.lblCardType.Size = new System.Drawing.Size(77, 19);
+            this.lblCardType.TabIndex = 30;
+            this.lblCardType.Text = "Card Type";
+            // 
+            // lblCsv
+            // 
+            this.lblCsv.AutoSize = true;
+            this.lblCsv.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCsv.Location = new System.Drawing.Point(3, 198);
+            this.lblCsv.Name = "lblCsv";
+            this.lblCsv.Size = new System.Drawing.Size(40, 19);
+            this.lblCsv.TabIndex = 32;
+            this.lblCsv.Text = "CSV";
+            // 
+            // lblExpiryDate
+            // 
+            this.lblExpiryDate.AutoSize = true;
+            this.lblExpiryDate.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpiryDate.Location = new System.Drawing.Point(3, 231);
+            this.lblExpiryDate.Name = "lblExpiryDate";
+            this.lblExpiryDate.Size = new System.Drawing.Size(90, 19);
+            this.lblExpiryDate.TabIndex = 31;
+            this.lblExpiryDate.Text = "Expiry Date";
+            // 
+            // tbCardNumber
+            // 
+            this.tbCardNumber.Location = new System.Drawing.Point(236, 135);
+            this.tbCardNumber.Name = "tbCardNumber";
+            this.tbCardNumber.Size = new System.Drawing.Size(441, 22);
+            this.tbCardNumber.TabIndex = 19;
+            // 
+            // cmbCardType
+            // 
+            this.cmbCardType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCardType.FormattingEnabled = true;
+            this.cmbCardType.Items.AddRange(new object[] {
+            "Debit",
+            "Credit"});
+            this.cmbCardType.Location = new System.Drawing.Point(236, 168);
+            this.cmbCardType.MaxDropDownItems = 10;
+            this.cmbCardType.Name = "cmbCardType";
+            this.cmbCardType.Size = new System.Drawing.Size(441, 24);
+            this.cmbCardType.TabIndex = 20;
+            // 
+            // tbCSV
+            // 
+            this.tbCSV.Location = new System.Drawing.Point(236, 201);
+            this.tbCSV.Name = "tbCSV";
+            this.tbCSV.Size = new System.Drawing.Size(441, 22);
+            this.tbCSV.TabIndex = 33;
+            // 
+            // mtbExpiry
+            // 
+            this.mtbExpiry.Location = new System.Drawing.Point(236, 234);
+            this.mtbExpiry.Mask = "00/00/0000";
+            this.mtbExpiry.Name = "mtbExpiry";
+            this.mtbExpiry.Size = new System.Drawing.Size(441, 22);
+            this.mtbExpiry.TabIndex = 21;
+            this.mtbExpiry.ValidatingType = typeof(System.DateTime);
+            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(1041, 788);
@@ -299,6 +300,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDeleteUser
             // 
@@ -308,6 +310,7 @@
             this.btnDeleteUser.TabIndex = 11;
             this.btnDeleteUser.Text = "Delete";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
             // btnEditUserRecord
             // 
@@ -343,15 +346,15 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblPkg, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblShootTime, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblUnitCost, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.dtShootDate, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbShootTime, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.cmbPackageSelect, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tbTotal, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.tbUnitCost, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblUnitCost, 0, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(995, 467);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -359,34 +362,61 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(660, 267);
             this.tableLayoutPanel1.TabIndex = 18;
             // 
+            // tbDeposit
+            // 
+            this.tbDeposit.Location = new System.Drawing.Point(257, 178);
+            this.tbDeposit.Name = "tbDeposit";
+            this.tbDeposit.ReadOnly = true;
+            this.tbDeposit.Size = new System.Drawing.Size(400, 22);
+            this.tbDeposit.TabIndex = 34;
+            // 
             // tbLocation
             // 
-            this.tbLocation.Location = new System.Drawing.Point(257, 117);
+            this.tbLocation.Location = new System.Drawing.Point(257, 108);
             this.tbLocation.Multiline = true;
             this.tbLocation.Name = "tbLocation";
             this.tbLocation.Size = new System.Drawing.Size(400, 22);
             this.tbLocation.TabIndex = 26;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 210);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 16);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Total Cost";
+            // 
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(3, 114);
+            this.lblLocation.Location = new System.Drawing.Point(3, 105);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(58, 16);
             this.lblLocation.TabIndex = 22;
             this.lblLocation.Text = "Location";
             // 
-            // cmbPackageSelect
+            // lblShootDate
             // 
-            this.cmbPackageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPackageSelect.FormattingEnabled = true;
-            this.cmbPackageSelect.Location = new System.Drawing.Point(257, 3);
-            this.cmbPackageSelect.Name = "cmbPackageSelect";
-            this.cmbPackageSelect.Size = new System.Drawing.Size(400, 24);
-            this.cmbPackageSelect.TabIndex = 23;
+            this.lblShootDate.AutoSize = true;
+            this.lblShootDate.Location = new System.Drawing.Point(3, 35);
+            this.lblShootDate.Name = "lblShootDate";
+            this.lblShootDate.Size = new System.Drawing.Size(74, 16);
+            this.lblShootDate.TabIndex = 19;
+            this.lblShootDate.Text = "Shoot Date";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 175);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 16);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Deposit";
             // 
             // lblPkg
             // 
@@ -396,6 +426,23 @@
             this.lblPkg.Size = new System.Drawing.Size(62, 16);
             this.lblPkg.TabIndex = 21;
             this.lblPkg.Text = "Package";
+            // 
+            // lblShootTime
+            // 
+            this.lblShootTime.AutoSize = true;
+            this.lblShootTime.Location = new System.Drawing.Point(3, 70);
+            this.lblShootTime.Name = "lblShootTime";
+            this.lblShootTime.Size = new System.Drawing.Size(76, 16);
+            this.lblShootTime.TabIndex = 20;
+            this.lblShootTime.Text = "Shoot Time";
+            // 
+            // dtShootDate
+            // 
+            this.dtShootDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtShootDate.Location = new System.Drawing.Point(257, 38);
+            this.dtShootDate.Name = "dtShootDate";
+            this.dtShootDate.Size = new System.Drawing.Size(400, 22);
+            this.dtShootDate.TabIndex = 24;
             // 
             // cmbShootTime
             // 
@@ -415,86 +462,43 @@
             "4:00 P.M",
             "5:00 P.M",
             "6:00 P.M"});
-            this.cmbShootTime.Location = new System.Drawing.Point(257, 79);
+            this.cmbShootTime.Location = new System.Drawing.Point(257, 73);
             this.cmbShootTime.Name = "cmbShootTime";
             this.cmbShootTime.Size = new System.Drawing.Size(400, 24);
             this.cmbShootTime.TabIndex = 25;
             // 
-            // lblShootTime
+            // cmbPackageSelect
             // 
-            this.lblShootTime.AutoSize = true;
-            this.lblShootTime.Location = new System.Drawing.Point(3, 76);
-            this.lblShootTime.Name = "lblShootTime";
-            this.lblShootTime.Size = new System.Drawing.Size(76, 16);
-            this.lblShootTime.TabIndex = 20;
-            this.lblShootTime.Text = "Shoot Time";
-            // 
-            // lblShootDate
-            // 
-            this.lblShootDate.AutoSize = true;
-            this.lblShootDate.Location = new System.Drawing.Point(3, 38);
-            this.lblShootDate.Name = "lblShootDate";
-            this.lblShootDate.Size = new System.Drawing.Size(74, 16);
-            this.lblShootDate.TabIndex = 19;
-            this.lblShootDate.Text = "Shoot Date";
-            // 
-            // dtShootDate
-            // 
-            this.dtShootDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtShootDate.Location = new System.Drawing.Point(257, 41);
-            this.dtShootDate.Name = "dtShootDate";
-            this.dtShootDate.Size = new System.Drawing.Size(400, 22);
-            this.dtShootDate.TabIndex = 24;
+            this.cmbPackageSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPackageSelect.FormattingEnabled = true;
+            this.cmbPackageSelect.Location = new System.Drawing.Point(257, 3);
+            this.cmbPackageSelect.Name = "cmbPackageSelect";
+            this.cmbPackageSelect.Size = new System.Drawing.Size(400, 24);
+            this.cmbPackageSelect.TabIndex = 23;
             // 
             // tbTotal
             // 
-            this.tbTotal.Location = new System.Drawing.Point(257, 231);
+            this.tbTotal.Location = new System.Drawing.Point(257, 213);
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.ReadOnly = true;
             this.tbTotal.Size = new System.Drawing.Size(400, 22);
             this.tbTotal.TabIndex = 35;
             // 
-            // tbDeposit
-            // 
-            this.tbDeposit.Location = new System.Drawing.Point(257, 193);
-            this.tbDeposit.Name = "tbDeposit";
-            this.tbDeposit.ReadOnly = true;
-            this.tbDeposit.Size = new System.Drawing.Size(400, 22);
-            this.tbDeposit.TabIndex = 34;
-            // 
             // tbUnitCost
             // 
-            this.tbUnitCost.Location = new System.Drawing.Point(257, 155);
+            this.tbUnitCost.Location = new System.Drawing.Point(257, 143);
             this.tbUnitCost.Name = "tbUnitCost";
             this.tbUnitCost.ReadOnly = true;
             this.tbUnitCost.Size = new System.Drawing.Size(400, 22);
-            this.tbUnitCost.TabIndex = 33;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 228);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 16);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Total Cost";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 190);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 16);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Deposit";
+            this.tbUnitCost.TabIndex = 37;
             // 
             // lblUnitCost
             // 
             this.lblUnitCost.AutoSize = true;
-            this.lblUnitCost.Location = new System.Drawing.Point(3, 152);
+            this.lblUnitCost.Location = new System.Drawing.Point(3, 140);
             this.lblUnitCost.Name = "lblUnitCost";
             this.lblUnitCost.Size = new System.Drawing.Size(60, 16);
-            this.lblUnitCost.TabIndex = 27;
+            this.lblUnitCost.TabIndex = 36;
             this.lblUnitCost.Text = "Unit Cost";
             // 
             // frmModifyBookingRecord
@@ -563,10 +567,10 @@
         private System.Windows.Forms.ComboBox cmbPackageSelect;
         private System.Windows.Forms.ComboBox cmbShootTime;
         private System.Windows.Forms.TextBox tbDeposit;
-        private System.Windows.Forms.TextBox tbUnitCost;
         private System.Windows.Forms.TextBox tbTotal;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbUnitCost;
         private System.Windows.Forms.Label lblUnitCost;
     }
 }

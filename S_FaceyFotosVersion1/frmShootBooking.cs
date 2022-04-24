@@ -51,9 +51,11 @@ namespace S_FaceyFotosVersion1
                 newClient.Shoot_TimeID = shootTimeID;
                 newClient.Shoot_Location = shootLocation;
                 newClient.Shoot_Date = shootDate;
-                newClient.Package_TypeID = pkgID;               
+                newClient.Package_TypeID = pkgID;
+                newClient.Deposit = pkgInfo.Unit_Cost * 0.5m;
                 newClient.Total = pkgInfo.Unit_Cost;
-                newClient.Deposit = pkgInfo.Unit_Cost * 0.5m;                               
+                newClient.Unit_CostID = pkgID;
+
                 tbUnitCost.Text = pkgInfo.Unit_Cost.ToString();
                 tbDeposit.Text = newClient.Deposit.ToString();
                 tbTotal.Text = newClient.Total.ToString();              

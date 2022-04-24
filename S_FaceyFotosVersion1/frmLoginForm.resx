@@ -117,4 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>At S. Facey Fotos, we have only one goal. That is, "Guaranteed satisfaction to all parties involved." 
+We offer a wide range of photography services at the most reasonable cost you will ever find. Your experience will be one in a lifetime with our jovial, pleasant staff.
+
+Book your shoot today and experience the magic!
+
+**IMPORTANT**
+1. For date reservation a fifty percent (50%) deposit is required. This deposit is non-refundable. 
+2. If you are late for your session, time will only be added at an additional cost if there is an open slot.
+3. Rescheduling should be done at least seven (7) days prior to the reserved date.
+4. Travel/Transportation may incur additional charge.
+5. S. Facey Fotos retains all right to the photos taken unless otherwise agreed.
+6. Thank you for making it S. Facey Fotos</value>
+  </data>
 </root>

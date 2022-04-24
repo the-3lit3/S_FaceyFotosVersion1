@@ -36,7 +36,7 @@
             // 
             // btnViewData
             // 
-            this.btnViewData.Location = new System.Drawing.Point(137, 211);
+            this.btnViewData.Location = new System.Drawing.Point(691, 504);
             this.btnViewData.Name = "btnViewData";
             this.btnViewData.Size = new System.Drawing.Size(130, 49);
             this.btnViewData.TabIndex = 0;
@@ -46,30 +46,30 @@
             // 
             // btnCreateBooking
             // 
-            this.btnCreateBooking.Location = new System.Drawing.Point(409, 211);
+            this.btnCreateBooking.Location = new System.Drawing.Point(963, 504);
             this.btnCreateBooking.Name = "btnCreateBooking";
             this.btnCreateBooking.Size = new System.Drawing.Size(130, 49);
-            this.btnCreateBooking.TabIndex = 1;
+            this.btnCreateBooking.TabIndex = 2;
             this.btnCreateBooking.Text = "Book Shoot";
             this.btnCreateBooking.UseVisualStyleBackColor = true;
             this.btnCreateBooking.Click += new System.EventHandler(this.btnCreateBooking_Click);
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(545, 211);
+            this.btnLogout.Location = new System.Drawing.Point(1099, 504);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(130, 49);
-            this.btnLogout.TabIndex = 2;
+            this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnModifyDB
             // 
-            this.btnModifyDB.Location = new System.Drawing.Point(273, 211);
+            this.btnModifyDB.Location = new System.Drawing.Point(827, 504);
             this.btnModifyDB.Name = "btnModifyDB";
             this.btnModifyDB.Size = new System.Drawing.Size(130, 49);
-            this.btnModifyDB.TabIndex = 3;
+            this.btnModifyDB.TabIndex = 1;
             this.btnModifyDB.Text = "Modify Database Records";
             this.btnModifyDB.UseVisualStyleBackColor = true;
             this.btnModifyDB.Click += new System.EventHandler(this.btnModifyDB_Click);
@@ -78,13 +78,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1839, 602);
             this.Controls.Add(this.btnModifyDB);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnCreateBooking);
             this.Controls.Add(this.btnViewData);
             this.Name = "frmLaunchPad";
             this.Text = "frmLaunchPad";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

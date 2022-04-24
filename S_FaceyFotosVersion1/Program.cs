@@ -16,7 +16,7 @@ namespace S_FaceyFotosVersion1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMainForm());
+            Application.Run(new frmLoginForm());
         }
     }
 }

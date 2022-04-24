@@ -42,10 +42,10 @@
             // lblRegistrationForm
             // 
             this.lblRegistrationForm.AutoSize = true;
-            this.lblRegistrationForm.Font = new System.Drawing.Font("Copperplate Gothic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrationForm.Location = new System.Drawing.Point(263, 50);
+            this.lblRegistrationForm.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistrationForm.Location = new System.Drawing.Point(397, 121);
             this.lblRegistrationForm.Name = "lblRegistrationForm";
-            this.lblRegistrationForm.Size = new System.Drawing.Size(499, 34);
+            this.lblRegistrationForm.Size = new System.Drawing.Size(1156, 90);
             this.lblRegistrationForm.TabIndex = 3;
             this.lblRegistrationForm.Text = "S FACEY FOTOS DATASHEET";
             // 
@@ -53,11 +53,11 @@
             // 
             this.gridFotoDBview.AllowUserToAddRows = false;
             this.gridFotoDBview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridFotoDBview.Location = new System.Drawing.Point(40, 97);
+            this.gridFotoDBview.Location = new System.Drawing.Point(298, 258);
             this.gridFotoDBview.Name = "gridFotoDBview";
             this.gridFotoDBview.RowHeadersWidth = 51;
             this.gridFotoDBview.RowTemplate.Height = 24;
-            this.gridFotoDBview.Size = new System.Drawing.Size(1328, 353);
+            this.gridFotoDBview.Size = new System.Drawing.Size(1328, 642);
             this.gridFotoDBview.TabIndex = 4;
             // 
             // menuStrip1
@@ -65,13 +65,13 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1522, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1837, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // btnLoadBooking
             // 
-            this.btnLoadBooking.Location = new System.Drawing.Point(113, 461);
+            this.btnLoadBooking.Location = new System.Drawing.Point(530, 923);
             this.btnLoadBooking.Name = "btnLoadBooking";
             this.btnLoadBooking.Size = new System.Drawing.Size(151, 49);
             this.btnLoadBooking.TabIndex = 6;
@@ -81,7 +81,7 @@
             // 
             // btnModifyRecord
             // 
-            this.btnModifyRecord.Location = new System.Drawing.Point(458, 461);
+            this.btnModifyRecord.Location = new System.Drawing.Point(875, 923);
             this.btnModifyRecord.Name = "btnModifyRecord";
             this.btnModifyRecord.Size = new System.Drawing.Size(128, 49);
             this.btnModifyRecord.TabIndex = 7;
@@ -91,7 +91,7 @@
             // 
             // btnUserRecords
             // 
-            this.btnUserRecords.Location = new System.Drawing.Point(300, 461);
+            this.btnUserRecords.Location = new System.Drawing.Point(717, 923);
             this.btnUserRecords.Name = "btnUserRecords";
             this.btnUserRecords.Size = new System.Drawing.Size(120, 49);
             this.btnUserRecords.TabIndex = 8;
@@ -101,7 +101,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(626, 461);
+            this.btnDelete.Location = new System.Drawing.Point(1043, 923);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(119, 49);
             this.btnDelete.TabIndex = 9;
@@ -111,7 +111,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(780, 461);
+            this.btnLogout.Location = new System.Drawing.Point(1197, 923);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(119, 49);
             this.btnLogout.TabIndex = 10;
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1522, 535);
+            this.ClientSize = new System.Drawing.Size(1837, 1022);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUserRecords);
@@ -134,6 +134,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmDatabaseView";
             this.Text = "S Facey Fotos Database Records View";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridFotoDBview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

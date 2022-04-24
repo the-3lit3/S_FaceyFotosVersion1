@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegisterationForm));
             this.lblRegistrationForm = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
@@ -52,6 +53,8 @@
             this.lblCardType = new System.Windows.Forms.Label();
             this.tbCardNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +62,7 @@
             // 
             this.lblRegistrationForm.AutoSize = true;
             this.lblRegistrationForm.Font = new System.Drawing.Font("Copperplate Gothic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrationForm.Location = new System.Drawing.Point(106, 15);
+            this.lblRegistrationForm.Location = new System.Drawing.Point(63, 147);
             this.lblRegistrationForm.Name = "lblRegistrationForm";
             this.lblRegistrationForm.Size = new System.Drawing.Size(570, 34);
             this.lblRegistrationForm.TabIndex = 0;
@@ -69,7 +72,7 @@
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(68, 122);
+            this.lblFirstName.Location = new System.Drawing.Point(57, 249);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(104, 19);
             this.lblFirstName.TabIndex = 0;
@@ -79,7 +82,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(68, 150);
+            this.lblLastName.Location = new System.Drawing.Point(57, 277);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(100, 19);
             this.lblLastName.TabIndex = 0;
@@ -89,7 +92,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(68, 181);
+            this.lblEmail.Location = new System.Drawing.Point(57, 308);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(60, 19);
             this.lblEmail.TabIndex = 0;
@@ -99,7 +102,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(68, 268);
+            this.label4.Location = new System.Drawing.Point(57, 395);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 19);
             this.label4.TabIndex = 0;
@@ -109,7 +112,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(68, 268);
+            this.lblPassword.Location = new System.Drawing.Point(57, 395);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(97, 19);
             this.lblPassword.TabIndex = 0;
@@ -118,7 +121,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::S_FaceyFotosVersion1.Properties.Resources.Kandy;
-            this.pictureBox1.Location = new System.Drawing.Point(486, 82);
+            this.pictureBox1.Location = new System.Drawing.Point(459, 252);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(271, 165);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +133,7 @@
             this.btnRegisterSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnRegisterSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegisterSubmit.Location = new System.Drawing.Point(616, 400);
+            this.btnRegisterSubmit.Location = new System.Drawing.Point(589, 632);
             this.btnRegisterSubmit.Name = "btnRegisterSubmit";
             this.btnRegisterSubmit.Size = new System.Drawing.Size(141, 31);
             this.btnRegisterSubmit.TabIndex = 13;
@@ -140,28 +143,28 @@
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(272, 122);
+            this.tbFirstName.Location = new System.Drawing.Point(222, 252);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(172, 22);
             this.tbFirstName.TabIndex = 2;
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(272, 150);
+            this.tbLastName.Location = new System.Drawing.Point(222, 280);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(172, 22);
             this.tbLastName.TabIndex = 3;
             // 
             // tbEmailAddress
             // 
-            this.tbEmailAddress.Location = new System.Drawing.Point(272, 178);
+            this.tbEmailAddress.Location = new System.Drawing.Point(222, 308);
             this.tbEmailAddress.Name = "tbEmailAddress";
             this.tbEmailAddress.Size = new System.Drawing.Size(172, 22);
             this.tbEmailAddress.TabIndex = 4;
             // 
             // mtbPass1
             // 
-            this.mtbPass1.Location = new System.Drawing.Point(272, 265);
+            this.mtbPass1.Location = new System.Drawing.Point(222, 395);
             this.mtbPass1.Name = "mtbPass1";
             this.mtbPass1.PasswordChar = '*';
             this.mtbPass1.Size = new System.Drawing.Size(172, 22);
@@ -171,7 +174,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 206);
+            this.label1.Location = new System.Drawing.Point(57, 333);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 19);
             this.label1.TabIndex = 11;
@@ -179,7 +182,7 @@
             // 
             // mtbTelephone
             // 
-            this.mtbTelephone.Location = new System.Drawing.Point(272, 206);
+            this.mtbTelephone.Location = new System.Drawing.Point(222, 336);
             this.mtbTelephone.Mask = "(999) 000-0000";
             this.mtbTelephone.Name = "mtbTelephone";
             this.mtbTelephone.Size = new System.Drawing.Size(172, 22);
@@ -189,7 +192,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 239);
+            this.label2.Location = new System.Drawing.Point(57, 366);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 19);
             this.label2.TabIndex = 13;
@@ -197,14 +200,14 @@
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(272, 236);
+            this.tbUsername.Location = new System.Drawing.Point(222, 366);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(172, 22);
             this.tbUsername.TabIndex = 6;
             // 
             // mtbExpiry
             // 
-            this.mtbExpiry.Location = new System.Drawing.Point(272, 409);
+            this.mtbExpiry.Location = new System.Drawing.Point(222, 642);
             this.mtbExpiry.Mask = "00/00/0000";
             this.mtbExpiry.Name = "mtbExpiry";
             this.mtbExpiry.Size = new System.Drawing.Size(111, 22);
@@ -215,7 +218,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 414);
+            this.label3.Location = new System.Drawing.Point(58, 644);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 19);
             this.label3.TabIndex = 21;
@@ -223,7 +226,7 @@
             // 
             // tbCSV
             // 
-            this.tbCSV.Location = new System.Drawing.Point(434, 378);
+            this.tbCSV.Location = new System.Drawing.Point(384, 611);
             this.tbCSV.Name = "tbCSV";
             this.tbCSV.Size = new System.Drawing.Size(67, 22);
             this.tbCSV.TabIndex = 11;
@@ -232,7 +235,7 @@
             // 
             this.lblCsv.AutoSize = true;
             this.lblCsv.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCsv.Location = new System.Drawing.Point(389, 383);
+            this.lblCsv.Location = new System.Drawing.Point(339, 616);
             this.lblCsv.Name = "lblCsv";
             this.lblCsv.Size = new System.Drawing.Size(40, 19);
             this.lblCsv.TabIndex = 19;
@@ -245,7 +248,7 @@
             this.cmbCardType.Items.AddRange(new object[] {
             "Debit",
             "Credit"});
-            this.cmbCardType.Location = new System.Drawing.Point(272, 378);
+            this.cmbCardType.Location = new System.Drawing.Point(222, 611);
             this.cmbCardType.MaxDropDownItems = 10;
             this.cmbCardType.Name = "cmbCardType";
             this.cmbCardType.Size = new System.Drawing.Size(111, 24);
@@ -255,7 +258,7 @@
             // 
             this.lblCardType.AutoSize = true;
             this.lblCardType.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCardType.Location = new System.Drawing.Point(69, 378);
+            this.lblCardType.Location = new System.Drawing.Point(58, 608);
             this.lblCardType.Name = "lblCardType";
             this.lblCardType.Size = new System.Drawing.Size(77, 19);
             this.lblCardType.TabIndex = 17;
@@ -263,7 +266,7 @@
             // 
             // tbCardNumber
             // 
-            this.tbCardNumber.Location = new System.Drawing.Point(272, 347);
+            this.tbCardNumber.Location = new System.Drawing.Point(222, 580);
             this.tbCardNumber.Name = "tbCardNumber";
             this.tbCardNumber.Size = new System.Drawing.Size(229, 22);
             this.tbCardNumber.TabIndex = 9;
@@ -272,17 +275,42 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(69, 352);
+            this.label5.Location = new System.Drawing.Point(58, 582);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 19);
             this.label5.TabIndex = 15;
             this.label5.Text = "Card #";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(818, 252);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(907, 411);
+            this.richTextBox1.TabIndex = 23;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(979, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(630, 53);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "WELCOME TO S. FACEY FOTOS";
+            // 
             // frmRegisterationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 479);
+            this.ClientSize = new System.Drawing.Size(1767, 738);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.mtbExpiry);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbCSV);
@@ -309,6 +337,7 @@
             this.Controls.Add(this.lblRegistrationForm);
             this.Name = "frmRegisterationForm";
             this.Text = "REGISTER";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRegisterationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -342,5 +371,7 @@
         private System.Windows.Forms.Label lblCardType;
         private System.Windows.Forms.TextBox tbCardNumber;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

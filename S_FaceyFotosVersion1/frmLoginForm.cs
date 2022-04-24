@@ -59,7 +59,7 @@ namespace S_FaceyFotosVersion1
             }                
         }
 
-        private void linkedRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
             frmRegisterationForm shwFrm = new frmRegisterationForm();
             shwFrm.Show();

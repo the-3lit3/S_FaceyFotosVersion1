@@ -30,12 +30,17 @@
         {
             this.btnConfirm = new System.Windows.Forms.Button();
             this.gpShoot = new System.Windows.Forms.GroupBox();
+            this.tbPackageTypeDisplay = new System.Windows.Forms.TextBox();
+            this.tbShootDateDisplay = new System.Windows.Forms.TextBox();
+            this.tbShootTimeDisplay = new System.Windows.Forms.TextBox();
             this.tbLocationDisplay = new System.Windows.Forms.TextBox();
             this.lblLocation = new System.Windows.Forms.Label();
             this.lblPkg = new System.Windows.Forms.Label();
             this.lblShootTime = new System.Windows.Forms.Label();
             this.lblShootDate = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbExpiryDateDisplay = new System.Windows.Forms.TextBox();
+            this.tbCardTypeDisplay = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbCSVNumberDisplay = new System.Windows.Forms.TextBox();
             this.lblCsv = new System.Windows.Forms.Label();
@@ -53,6 +58,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblUnitCost = new System.Windows.Forms.Label();
             this.gpPersonal = new System.Windows.Forms.GroupBox();
+            this.tbPhoneNumberDisplay = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.tbEmailAddressDisplay = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -61,12 +67,7 @@
             this.tbFirstNameDisplay = new System.Windows.Forms.TextBox();
             this.lblFname = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.tbPhoneNumberDisplay = new System.Windows.Forms.TextBox();
-            this.tbPackageTypeDisplay = new System.Windows.Forms.TextBox();
-            this.tbShootDateDisplay = new System.Windows.Forms.TextBox();
-            this.tbShootTimeDisplay = new System.Windows.Forms.TextBox();
-            this.tbCardTypeDisplay = new System.Windows.Forms.TextBox();
-            this.tbExpiryDateDisplay = new System.Windows.Forms.TextBox();
+            this.lblRegisteredUsers = new System.Windows.Forms.Label();
             this.gpShoot.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gpBank.SuspendLayout();
@@ -77,7 +78,7 @@
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.Green;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConfirm.Location = new System.Drawing.Point(610, 388);
+            this.btnConfirm.Location = new System.Drawing.Point(1087, 548);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(117, 27);
             this.btnConfirm.TabIndex = 24;
@@ -95,12 +96,36 @@
             this.gpShoot.Controls.Add(this.lblShootTime);
             this.gpShoot.Controls.Add(this.lblShootDate);
             this.gpShoot.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpShoot.Location = new System.Drawing.Point(426, 37);
+            this.gpShoot.Location = new System.Drawing.Point(903, 197);
             this.gpShoot.Name = "gpShoot";
             this.gpShoot.Size = new System.Drawing.Size(319, 196);
             this.gpShoot.TabIndex = 21;
             this.gpShoot.TabStop = false;
             this.gpShoot.Text = "Package Details";
+            // 
+            // tbPackageTypeDisplay
+            // 
+            this.tbPackageTypeDisplay.Location = new System.Drawing.Point(155, 36);
+            this.tbPackageTypeDisplay.Name = "tbPackageTypeDisplay";
+            this.tbPackageTypeDisplay.ReadOnly = true;
+            this.tbPackageTypeDisplay.Size = new System.Drawing.Size(147, 25);
+            this.tbPackageTypeDisplay.TabIndex = 8;
+            // 
+            // tbShootDateDisplay
+            // 
+            this.tbShootDateDisplay.Location = new System.Drawing.Point(155, 67);
+            this.tbShootDateDisplay.Name = "tbShootDateDisplay";
+            this.tbShootDateDisplay.ReadOnly = true;
+            this.tbShootDateDisplay.Size = new System.Drawing.Size(147, 25);
+            this.tbShootDateDisplay.TabIndex = 9;
+            // 
+            // tbShootTimeDisplay
+            // 
+            this.tbShootTimeDisplay.Location = new System.Drawing.Point(155, 98);
+            this.tbShootTimeDisplay.Name = "tbShootTimeDisplay";
+            this.tbShootTimeDisplay.ReadOnly = true;
+            this.tbShootTimeDisplay.Size = new System.Drawing.Size(147, 25);
+            this.tbShootTimeDisplay.TabIndex = 10;
             // 
             // tbLocationDisplay
             // 
@@ -158,12 +183,28 @@
             this.groupBox3.Controls.Add(this.tbCardNumberDisplay);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(55, 239);
+            this.groupBox3.Location = new System.Drawing.Point(532, 399);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(365, 124);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Banking Information";
+            // 
+            // tbExpiryDateDisplay
+            // 
+            this.tbExpiryDateDisplay.Location = new System.Drawing.Point(119, 85);
+            this.tbExpiryDateDisplay.Name = "tbExpiryDateDisplay";
+            this.tbExpiryDateDisplay.ReadOnly = true;
+            this.tbExpiryDateDisplay.Size = new System.Drawing.Size(111, 25);
+            this.tbExpiryDateDisplay.TabIndex = 27;
+            // 
+            // tbCardTypeDisplay
+            // 
+            this.tbCardTypeDisplay.Location = new System.Drawing.Point(119, 54);
+            this.tbCardTypeDisplay.Name = "tbCardTypeDisplay";
+            this.tbCardTypeDisplay.ReadOnly = true;
+            this.tbCardTypeDisplay.Size = new System.Drawing.Size(111, 25);
+            this.tbCardTypeDisplay.TabIndex = 26;
             // 
             // label2
             // 
@@ -229,7 +270,7 @@
             this.gpBank.Controls.Add(this.label3);
             this.gpBank.Controls.Add(this.lblUnitCost);
             this.gpBank.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpBank.Location = new System.Drawing.Point(426, 238);
+            this.gpBank.Location = new System.Drawing.Point(903, 398);
             this.gpBank.Name = "gpBank";
             this.gpBank.Size = new System.Drawing.Size(319, 125);
             this.gpBank.TabIndex = 23;
@@ -325,12 +366,20 @@
             this.gpPersonal.Controls.Add(this.tbFirstNameDisplay);
             this.gpPersonal.Controls.Add(this.lblFname);
             this.gpPersonal.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpPersonal.Location = new System.Drawing.Point(55, 37);
+            this.gpPersonal.Location = new System.Drawing.Point(532, 197);
             this.gpPersonal.Name = "gpPersonal";
             this.gpPersonal.Size = new System.Drawing.Size(365, 196);
             this.gpPersonal.TabIndex = 20;
             this.gpPersonal.TabStop = false;
             this.gpPersonal.Text = "Personal Information";
+            // 
+            // tbPhoneNumberDisplay
+            // 
+            this.tbPhoneNumberDisplay.Location = new System.Drawing.Point(173, 129);
+            this.tbPhoneNumberDisplay.Name = "tbPhoneNumberDisplay";
+            this.tbPhoneNumberDisplay.ReadOnly = true;
+            this.tbPhoneNumberDisplay.Size = new System.Drawing.Size(175, 25);
+            this.tbPhoneNumberDisplay.TabIndex = 7;
             // 
             // lblPhone
             // 
@@ -401,66 +450,29 @@
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(426, 388);
+            this.btnCancel.Location = new System.Drawing.Point(532, 548);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 27);
             this.btnCancel.TabIndex = 25;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // tbPhoneNumberDisplay
+            // lblRegisteredUsers
             // 
-            this.tbPhoneNumberDisplay.Location = new System.Drawing.Point(173, 129);
-            this.tbPhoneNumberDisplay.Name = "tbPhoneNumberDisplay";
-            this.tbPhoneNumberDisplay.ReadOnly = true;
-            this.tbPhoneNumberDisplay.Size = new System.Drawing.Size(175, 25);
-            this.tbPhoneNumberDisplay.TabIndex = 7;
-            // 
-            // tbPackageTypeDisplay
-            // 
-            this.tbPackageTypeDisplay.Location = new System.Drawing.Point(155, 36);
-            this.tbPackageTypeDisplay.Name = "tbPackageTypeDisplay";
-            this.tbPackageTypeDisplay.ReadOnly = true;
-            this.tbPackageTypeDisplay.Size = new System.Drawing.Size(147, 25);
-            this.tbPackageTypeDisplay.TabIndex = 8;
-            // 
-            // tbShootDateDisplay
-            // 
-            this.tbShootDateDisplay.Location = new System.Drawing.Point(155, 67);
-            this.tbShootDateDisplay.Name = "tbShootDateDisplay";
-            this.tbShootDateDisplay.ReadOnly = true;
-            this.tbShootDateDisplay.Size = new System.Drawing.Size(147, 25);
-            this.tbShootDateDisplay.TabIndex = 9;
-            // 
-            // tbShootTimeDisplay
-            // 
-            this.tbShootTimeDisplay.Location = new System.Drawing.Point(155, 98);
-            this.tbShootTimeDisplay.Name = "tbShootTimeDisplay";
-            this.tbShootTimeDisplay.ReadOnly = true;
-            this.tbShootTimeDisplay.Size = new System.Drawing.Size(147, 25);
-            this.tbShootTimeDisplay.TabIndex = 10;
-            // 
-            // tbCardTypeDisplay
-            // 
-            this.tbCardTypeDisplay.Location = new System.Drawing.Point(119, 54);
-            this.tbCardTypeDisplay.Name = "tbCardTypeDisplay";
-            this.tbCardTypeDisplay.ReadOnly = true;
-            this.tbCardTypeDisplay.Size = new System.Drawing.Size(111, 25);
-            this.tbCardTypeDisplay.TabIndex = 26;
-            // 
-            // tbExpiryDateDisplay
-            // 
-            this.tbExpiryDateDisplay.Location = new System.Drawing.Point(119, 85);
-            this.tbExpiryDateDisplay.Name = "tbExpiryDateDisplay";
-            this.tbExpiryDateDisplay.ReadOnly = true;
-            this.tbExpiryDateDisplay.Size = new System.Drawing.Size(111, 25);
-            this.tbExpiryDateDisplay.TabIndex = 27;
+            this.lblRegisteredUsers.AutoSize = true;
+            this.lblRegisteredUsers.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegisteredUsers.Location = new System.Drawing.Point(355, 43);
+            this.lblRegisteredUsers.Name = "lblRegisteredUsers";
+            this.lblRegisteredUsers.Size = new System.Drawing.Size(1018, 90);
+            this.lblRegisteredUsers.TabIndex = 26;
+            this.lblRegisteredUsers.Text = "CONFIRM PHOTOSHOOT\r\n";
             // 
             // bookingReviewConfirmationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1835, 864);
+            this.Controls.Add(this.lblRegisteredUsers);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.gpShoot);
@@ -469,6 +481,7 @@
             this.Controls.Add(this.gpPersonal);
             this.Name = "bookingReviewConfirmationForm";
             this.Text = "Booking Confirmation";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.bookingReviewConfirmationForm_Load);
             this.gpShoot.ResumeLayout(false);
             this.gpShoot.PerformLayout();
@@ -479,6 +492,7 @@
             this.gpPersonal.ResumeLayout(false);
             this.gpPersonal.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -523,5 +537,6 @@
         private System.Windows.Forms.TextBox tbCardTypeDisplay;
         private System.Windows.Forms.TextBox tbPhoneNumberDisplay;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblRegisteredUsers;
     }
 }

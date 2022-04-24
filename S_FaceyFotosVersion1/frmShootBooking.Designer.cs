@@ -78,10 +78,10 @@
             // lblRegistrationForm
             // 
             this.lblRegistrationForm.AutoSize = true;
-            this.lblRegistrationForm.Font = new System.Drawing.Font("Copperplate Gothic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrationForm.Location = new System.Drawing.Point(199, 9);
+            this.lblRegistrationForm.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistrationForm.Location = new System.Drawing.Point(451, 137);
             this.lblRegistrationForm.Name = "lblRegistrationForm";
-            this.lblRegistrationForm.Size = new System.Drawing.Size(412, 34);
+            this.lblRegistrationForm.Size = new System.Drawing.Size(916, 90);
             this.lblRegistrationForm.TabIndex = 2;
             this.lblRegistrationForm.Text = "S FACEY FOTOS SHOOT";
             // 
@@ -96,7 +96,7 @@
             this.gpPersonal.Controls.Add(this.tbFname);
             this.gpPersonal.Controls.Add(this.lblFname);
             this.gpPersonal.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpPersonal.Location = new System.Drawing.Point(52, 100);
+            this.gpPersonal.Location = new System.Drawing.Point(575, 299);
             this.gpPersonal.Name = "gpPersonal";
             this.gpPersonal.Size = new System.Drawing.Size(365, 196);
             this.gpPersonal.TabIndex = 3;
@@ -183,7 +183,7 @@
             this.gpShoot.Controls.Add(this.lblShootDate);
             this.gpShoot.Controls.Add(this.dtShootDate);
             this.gpShoot.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpShoot.Location = new System.Drawing.Point(423, 100);
+            this.gpShoot.Location = new System.Drawing.Point(946, 299);
             this.gpShoot.Name = "gpShoot";
             this.gpShoot.Size = new System.Drawing.Size(319, 196);
             this.gpShoot.TabIndex = 4;
@@ -285,7 +285,7 @@
             this.groupBox3.Controls.Add(this.tbCardNumber);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(52, 302);
+            this.groupBox3.Location = new System.Drawing.Point(575, 501);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(365, 124);
             this.groupBox3.TabIndex = 4;
@@ -375,7 +375,7 @@
             this.gpBank.Controls.Add(this.label3);
             this.gpBank.Controls.Add(this.lblUnitCost);
             this.gpBank.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpBank.Location = new System.Drawing.Point(423, 301);
+            this.gpBank.Location = new System.Drawing.Point(946, 500);
             this.gpBank.Name = "gpBank";
             this.gpBank.Size = new System.Drawing.Size(319, 125);
             this.gpBank.TabIndex = 4;
@@ -465,7 +465,7 @@
             this.btnBookNow.BackColor = System.Drawing.Color.Green;
             this.btnBookNow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBookNow.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBookNow.Location = new System.Drawing.Point(625, 449);
+            this.btnBookNow.Location = new System.Drawing.Point(1148, 648);
             this.btnBookNow.Name = "btnBookNow";
             this.btnBookNow.Size = new System.Drawing.Size(117, 27);
             this.btnBookNow.TabIndex = 19;
@@ -476,7 +476,7 @@
             // linkLogout
             // 
             this.linkLogout.AutoSize = true;
-            this.linkLogout.Location = new System.Drawing.Point(674, 27);
+            this.linkLogout.Location = new System.Drawing.Point(1655, 87);
             this.linkLogout.Name = "linkLogout";
             this.linkLogout.Size = new System.Drawing.Size(48, 16);
             this.linkLogout.TabIndex = 6;
@@ -490,7 +490,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(427, 449);
+            this.btnClear.Location = new System.Drawing.Point(575, 648);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 27);
             this.btnClear.TabIndex = 20;
@@ -502,7 +502,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 515);
+            this.ClientSize = new System.Drawing.Size(1795, 857);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.linkLogout);
             this.Controls.Add(this.btnBookNow);
@@ -513,6 +513,7 @@
             this.Controls.Add(this.lblRegistrationForm);
             this.Name = "frmShootBooking";
             this.Text = "BOOK A SHOOT";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmShootBooking_Load);
             this.gpPersonal.ResumeLayout(false);
             this.gpPersonal.PerformLayout();
